@@ -86,7 +86,7 @@ export default function Login() {
         </Button>
       </form>
       <div>
-        Don't have an account?&nbsp;
+        Don`t have an account?&nbsp;
         <Link href="/signup" passHref>
           Sign Up
         </Link>
