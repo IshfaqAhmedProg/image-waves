@@ -1,0 +1,40 @@
+.container{
+    height: 80vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.extsignin{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1em;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.formfield{
+    border: none;
+}
+.formfield > label{
+    display: none;
+}
+.formfield >input{
+    height: 50px;
+    width: 250px;
+    border-radius: 0.3rem;
+    border-color: var(--accent);
+    padding-inline: 1rem;
+    font-size: 16px;
+} 
+.form > button{
+    border:none;
+}

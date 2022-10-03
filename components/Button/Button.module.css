@@ -1,0 +1,15 @@
+.buttonContainer{
+    font-family: 'Prompt';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 113.7%;
+ 
+}
+.primary{
+    color: var(--primary);
+    background-color: var(--accent);
+    border-radius: 10px;
+    border: none;
+    padding: 14px;
+}

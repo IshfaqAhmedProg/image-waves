@@ -1,0 +1,32 @@
+.container{
+/* outline: 1px solid red; */
+display: flex;
+flex-direction: row;
+height: fit-content;
+justify-content: space-between;
+align-items: center;
+}
+.heroBody{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 712px;
+    max-width: 680px;
+    margin-left: auto;
+}
+.heroBg{
+    padding: 0;
+    display: block;
+    height: 712px;
+    max-width: 680px;
+    margin-left: auto;
+}
+.heroTitle{
+    font-size: 52px;
+    color: var(--primary-dark);
+}
+.heroText{
+    width: 392px;
+    text-align: center;
+}

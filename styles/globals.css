@@ -1,9 +1,36 @@
+:root {
+  /* Color styles */
+  --primary--dark: hsla(224, 41.5%, 12.7%, 1);
+  --primary: hsla(208, 72.7%, 21.6%, 1);
+  --primary--light: hsla(208, 91%, 61%, 1);
+  --accent: hsla(115, 96.7%, 64.7%, 1);
+  --white: hsla(0, 0%, 100%, 1);
+  --black: hsla(0, 0%, 13.7%, 1);
+  --gray: hsla(0, 0%, 51%, 1);
+  --red: hsla(0, 86.2%, 57.3%, 1);
+  --green: hsla(112, 86.3%, 57.1%, 1);
+  --dark--gray: hsla(0, 0%, 25.5%, 1);
+  --accent--dark: hsla(115, 76.6%, 54.7%, 1);
+
+  /* Text-size styles */
+  /* base size: paragraph (16px) */
+  --landing-page-h1: 3.25rem;
+  --paragraph: 1rem;
+  --navbar-menu: 1rem;
+  --h1: 2.5rem;
+  --h2: 1.88rem;
+  --h3: 1.12rem;
+  --h1-impact: 2.81rem;
+  --p-impact: 1.25rem;
+  --carousel-title: 1.56rem;
+  --primary-button: 1.12rem;
+  --secondary-button: 1.12rem;
+}
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Prompt", sans-serif;
 }
 
 a {
@@ -14,13 +41,29 @@ a {
 * {
   box-sizing: border-box;
 }
-
-@media (prefers-color-scheme: dark) {
+h1 {
+  margin: 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 113.7%;
+}
+h2 {
+  margin: 0;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 113.7%;
+}
+.textHL {
+  color: var(--accent);
+}
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
   body {
     color: white;
-    background: black;
+    background: rgb(44, 44, 44);
   }
-}
+} */
