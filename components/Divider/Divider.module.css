@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: center;
   --gradient:var(--accent);
+  font-weight: 700;
 }
 /* Text Color */
 .light {
@@ -27,7 +28,7 @@
 
 /* Color for dual divider */
 .container.horizontal > .divider {
-  height: 3px;
+  height: 2px;
   background: linear-gradient(
     270deg,
     rgba(255, 255, 255, 0) 0%,
@@ -35,7 +36,7 @@
     rgba(255, 255, 255, 0) 100%
   );
   width: 100%;
-  margin-inline: 1rem;
+  margin-inline: 0.5rem;
 }
 .container.horizontal > .divider:nth-child(2) {
   background: linear-gradient(

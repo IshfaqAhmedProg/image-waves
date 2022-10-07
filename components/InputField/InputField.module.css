@@ -1,0 +1,54 @@
+.forminputgroup {
+    position: relative;
+    padding: 15px 0 0;
+    margin-top: 10px;
+    width: 100%;
+  }
+  .forminput {
+    font-family: inherit;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid var(--accent);
+    outline: 0;
+    font-size: 1.3rem;
+    color: var(--primary);
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+  }
+  .forminput::placeholder {
+    color: transparent;
+  }
+  .forminput:placeholder-shown ~ .forminputlabel {
+    font-size: 1rem;
+    cursor: text;
+    top: 50%;
+  }
+  .forminputlabel {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s ease-in-out;
+    font-size: 1rem;
+    color: var(--accent);
+    pointer-events: none;
+  }
+  .forminput:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to left, var(--accent) 0%, var(--primary--light) 100%);
+    border-image-slice: 1;
+  }
+  .forminput:focus ~ .forminputlabel {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s ease-in-out;
+    font-size: 0.8rem;
+    color: var(--primary--light);
+  }
+  /* reset input */
+  .forminput:required, .forminput:invalid {
+    box-shadow: none;
+  }

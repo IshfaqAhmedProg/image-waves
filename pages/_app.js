@@ -9,7 +9,7 @@ import "@fontsource/prompt/400.css";
 import "@fontsource/prompt/500.css";
 import "@fontsource/prompt/700.css";
 
-const noAuthRequired = ["/", "/login", "/signup"];
+const noAuthRequired = ["/", "/login", "/signup", "/interface/[interface]"];
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
@@ -22,6 +22,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <AuthContextProvider>
       <Navbar></Navbar>
+
       {noAuthRequired.includes(router.pathname) ? (
         <Component {...pageProps} />
       ) : (

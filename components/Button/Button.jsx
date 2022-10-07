@@ -1,10 +1,9 @@
 import React from "react";
 import styles from "./Button.module.css";
-export default function Button({ children, variant, onClick, type }) {
+export default function Button({ children, variant, ...others }) {
   return (
     <button
-      type={type}
-      onClick={onClick}
+      {...others}
       className={styles.buttonContainer + " " + styles[variant]}
     >
       {children}

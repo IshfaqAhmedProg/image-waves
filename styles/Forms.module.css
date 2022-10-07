@@ -1,40 +1,52 @@
-.container{
-    height: 80vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+.main {
+  display: flex;
+  justify-content: flex-start;
+  height: 100vh;
 }
-.extsignin{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border: none;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    font-size: 1em;
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 55vw;
+  width: 55vw;
+  overflow: hidden;
 }
-.form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.container {
+  width: 45vw;
+  min-width: 375px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 9rem;
+  padding-bottom: 4rem;
+  align-items: center;
+  color: var(--primary);
 }
-.formfield{
-    border: none;
+.container > h1 {
+  font-size: var(--h2);
+  color: var(--primary);
 }
-.formfield > label{
-    display: none;
+
+.form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
 }
-.formfield >input{
-    height: 50px;
-    width: 250px;
-    border-radius: 0.3rem;
-    border-color: var(--accent);
-    padding-inline: 1rem;
-    font-size: 16px;
-} 
-.form > button{
-    border:none;
+.formfield {
+  color: var(--primary);
+  text-align: center;
+  min-width: 80%;
+  border: none;
+}
+.form > button {
+  border: none;
+}
+.error {
+  color: var(--white);
+  padding: 6px 20px;
+  background: #ef9083;
+  border-radius: 6px;
 }

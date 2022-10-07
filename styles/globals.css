@@ -3,14 +3,16 @@
   --primary--dark: hsla(224, 41.5%, 12.7%, 1);
   --primary: hsla(208, 72.7%, 21.6%, 1);
   --primary--light: hsla(208, 91%, 61%, 1);
+  --accent--light: rgb(125, 248, 114);
   --accent: hsla(115, 96.7%, 64.7%, 1);
+  --accent--dark: rgb(49, 182, 36);
   --white: hsla(0, 0%, 100%, 1);
   --black: hsla(0, 0%, 13.7%, 1);
-  --gray: hsla(0, 0%, 51%, 1);
+  --light--gray: rgb(220, 220, 220);
+  --gray: rgb(174, 174, 174);
   --red: hsla(0, 86.2%, 57.3%, 1);
   --green: hsla(112, 86.3%, 57.1%, 1);
   --dark--gray: hsla(0, 0%, 25.5%, 1);
-  --accent--dark: hsla(115, 76.6%, 54.7%, 1);
 
   /* Text-size styles */
   /* base size: paragraph (16px) */
@@ -36,8 +38,11 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  transition: color 150ms ease;
 }
-
+a:hover{
+  color: var(--accent);
+}
 * {
   box-sizing: border-box;
 }
@@ -45,15 +50,18 @@ h1 {
   margin: 0;
   font-style: normal;
   font-weight: 700;
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 113.7%;
 }
 h2 {
   margin: 0;
   font-style: normal;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 1.88rem;
   line-height: 113.7%;
+}
+input[type="checkbox"]{
+  accent-color: var(--accent);
 }
 .textHL {
   color: var(--accent);

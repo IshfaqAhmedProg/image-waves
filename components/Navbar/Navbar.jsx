@@ -25,7 +25,6 @@ export default function Navbar() {
           </a>
         </Link>
       </div>
-
       <ul className={styles.menu}>
         <li className={styles.menuItem}>
           <Link href="/">Services</Link>
@@ -47,20 +46,35 @@ export default function Navbar() {
             >
               Logout
             </Button>
-          ) : router.pathname == "/login" ? ( //to show sign up button
+          ) : router.pathname != "/login" ? ( //to show sign up button
+            <Link href="/login" passHref>
+              {router.pathname != "/" ? (
+                <a>
+                  <Button variant="primary">Log In</Button>
+                </a>
+              ) : (
+                "Log In"
+              )}
+            </Link>
+          ) : (
             <Link href="/signup" passHref>
               <a>
                 <Button variant="primary">Sign Up</Button>
               </a>
             </Link>
-          ) : (
-            <Link href="/login" passHref>
-              <a>
-                <Button variant="primary">Log In</Button>
-              </a>
-            </Link>
           )}
         </li>
+        {router.pathname == "/" && user == null ? (
+          <li className={styles.menuItem}>
+            <Link href="/signup">
+              <a>
+                <Button variant="primary">Try for free!</Button>
+              </a>
+            </Link>
+          </li>
+        ) : (
+          ""
+        )}
       </ul>
     </div>
   );

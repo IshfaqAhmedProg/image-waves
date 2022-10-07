@@ -1,16 +1,21 @@
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import React, { useState, useEffect } from "react";
-import Button from "../components/Button/Button";
-import { useAuth } from "../contexts/AuthContext";
-import formStyles from "../styles/Forms.module.css";
 import Image from "next/image";
-import google from "../public/Logos/Google.svg";
-import { getRefinedFirebaseError } from "../shared/Functions/errorHandler";
 
+import Button from "../components/Button/Button";
+
+import { useAuth } from "../contexts/AuthContext";
+
+import { getRefinedFirebaseError } from "../shared/Functions/errorHandler";
+import formStyles from "../styles/Forms.module.css";
+import google from "../public/Logos/Google.svg";
+import bgimg from "../public/check1.jpg";
+import InputField from "../components/InputField/InputField";
+import Divider from "../components/Divider/Divider";
 export default function Login() {
   const router = useRouter();
-  const { user, login, googleLogin } = useAuth();
+  const { login, googleLogin } = useAuth();
   const [errorMsg, setErrorMsg] = useState("");
   const [data, setData] = useState({
     email: "",
@@ -18,7 +23,7 @@ export default function Login() {
   });
   function handleError(err) {
     setErrorMsg(getRefinedFirebaseError(err));
-    console.log(err);
+    console.log([err]);
   }
 
   const handleLogin = async (e) => {
@@ -39,58 +44,87 @@ export default function Login() {
     }
   };
   return (
-    <div className={formStyles.container}>
-      <h1>Login</h1>
-      <button className={formStyles.extsignin} onClick={handleGoogleLogin}>
-        Sign in with Google&nbsp; <Image src={google} alt="google logo" />
-      </button>
-      <form className={formStyles.form} onSubmit={handleLogin}>
-        <fieldset className={formStyles.formfield}>
-          <label>Email address</label>
-          <input
-            onChange={(e) =>
-              setData({
-                ...data,
-                email: e.target.value,
-              })
-            }
-            value={data.email}
-            required
-            type="email"
-            placeholder="Enter email"
-          />
-        </fieldset>
+    <div className={formStyles.main}>
+      <div className={formStyles.container}>
+        <h1>Log In</h1>
 
-        <fieldset className={formStyles.formfield}>
-          <label>Password</label>
-          <input
-            onChange={(e) =>
-              setData({
-                ...data,
-                password: e.target.value,
-              })
-            }
-            value={data.password}
-            required
-            type="password"
-            placeholder="Password"
-          />
-        </fieldset>
-        {errorMsg && (
+        <form className={formStyles.form} onSubmit={handleLogin}>
+          {errorMsg && (
+            <fieldset className={formStyles.formfield}>
+              <div className={formStyles.error}>{errorMsg}</div>
+            </fieldset>
+          )}
           <fieldset className={formStyles.formfield}>
-            <div id="error-label">{errorMsg}</div>
+            <InputField
+              onChange={(e) =>
+                setData({
+                  ...data,
+                  email: e.target.value,
+                })
+              }
+              value={data.email}
+              type="email"
+              placeholder="Enter email"
+              id="email"
+              required
+            >
+              Enter your Email
+            </InputField>
+
+            <InputField
+              onChange={(e) =>
+                setData({
+                  ...data,
+                  password: e.target.value,
+                })
+              }
+              value={data.password}
+              type="password"
+              placeholder="Enter password"
+              id="password"
+              required
+            >
+              Enter Password
+            </InputField>
           </fieldset>
-        )}
-        <Button type="submit" variant="primary">
-          Log In
+          <fieldset className={formStyles.formfield}>
+            <div className={formStyles.forgotpass}>
+              Forgot your password?
+              <Link href="/interface/reset_password">
+                <a>
+                  <b> Reset Password</b>
+                </a>
+              </Link>
+            </div>
+          </fieldset>
+
+          <Button type="submit" variant="primary">
+            Log In
+          </Button>
+        </form>
+        <div style={{ width: "20vw" }}>
+          <Divider direction="horizontal">or</Divider>
+        </div>
+        <Button variant="extsignin" onClick={handleGoogleLogin}>
+          Sign in with Google&nbsp; <Image src={google} alt="google logo" />
         </Button>
-      </form>
-      <div>
-        Don`t have an account?&nbsp;
-        <Link href="/signup" passHref>
-          Sign Up
-        </Link>
+        <div className={formStyles.formfield}>
+          Don`t have an account?&nbsp;
+          <Link href="/signup" passHref>
+            <a>
+              <b>Sign Up</b>
+            </a>
+          </Link>
+        </div>
       </div>
+      {console.log([bgimg])}
+      <div
+        className={formStyles.result}
+        style={{
+          backgroundImage: "url(/check1.jpg)",
+          backgroundSize: "cover",
+        }}
+      ></div>
     </div>
   );
 }

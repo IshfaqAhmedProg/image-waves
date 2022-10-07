@@ -1,26 +1,30 @@
-.container{
-    padding-inline:3.875rem ;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    width: 100vw;
-    z-index: 5;
-/*     background-color: black; */
+.container {
+  padding-inline: 3.875rem;
+  padding-block: 1rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100vw;
+  z-index: 5;
 }
-.logo{
-    width: 367px;
-    height: auto;
+/*TODO Mobile Optimisation*/
+.logo {
+  width: 367px;
+  height: auto;
 }
-.menu{
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
+
+.menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
 }
-.menuItem{
-    color: var(--white);
-    mix-blend-mode:screen;
-    display: inline-block;
-    padding-inline: 1.25rem;
+.menuItem {
+  display: inline-block;
+  padding-inline: 1.25rem;
+}
+.menuItem:not(:nth-last-child(1)) {
+  color: var(--white);
+  mix-blend-mode: exclusion;
 }
