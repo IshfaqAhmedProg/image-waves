@@ -8,6 +8,7 @@ import {
   signInWithPopup,
   sendPasswordResetEmail,
   sendEmailVerification,
+  signInWithRedirect,
 } from "firebase/auth";
 
 import { doc, setDoc } from "firebase/firestore";
@@ -53,10 +54,8 @@ export const AuthContextProvider = ({ children }) => {
   };
   const googleLogin = () => {
     const provider = new GoogleAuthProvider();
-    provider.setCustomParameters({
-      prompt: "select_account"
-    });
-    return signInWithPopup(auth, provider);
+    
+    return signInWithRedirect(auth, provider);
   };
   const logout = async () => {
     setUser(null);
