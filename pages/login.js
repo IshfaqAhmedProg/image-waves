@@ -40,7 +40,7 @@ export default function Login() {
       await googleLogin();
       router.replace("/dashboard");
     } catch (err) {
-      console.log(err);
+      handleError(err);
     }
   };
   return (
