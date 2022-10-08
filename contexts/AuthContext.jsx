@@ -16,7 +16,7 @@ import { auth, db } from "../firebase/config";
 const AuthContext = createContext({});
 export const useAuth = () => useContext(AuthContext);
 export const AuthContextProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState();
   const [loading, setLoading] = useState();
   useEffect(() => {
     setLoading(true);

@@ -14,7 +14,7 @@
 }
 .container {
   width: 45vw;
-  min-width: 375px;
+  min-width: 650px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

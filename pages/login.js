@@ -10,12 +10,11 @@ import { useAuth } from "../contexts/AuthContext";
 import { getRefinedFirebaseError } from "../shared/Functions/errorHandler";
 import formStyles from "../styles/Forms.module.css";
 import google from "../public/Logos/Google.svg";
-import bgimg from "../public/check1.jpg";
 import InputField from "../components/InputField/InputField";
 import Divider from "../components/Divider/Divider";
 export default function Login() {
   const router = useRouter();
-  const { login, googleLogin } = useAuth();
+  const { user, login, googleLogin } = useAuth();
   const [errorMsg, setErrorMsg] = useState("");
   const [data, setData] = useState({
     email: "",
@@ -43,6 +42,10 @@ export default function Login() {
       handleError(err);
     }
   };
+  if (user) {
+    router.replace("/dashboard");
+    return null;
+  }
   return (
     <div className={formStyles.main}>
       <div className={formStyles.container}>

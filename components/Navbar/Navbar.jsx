@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useAuth } from "../../contexts/AuthContext";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
 import Button from "../Button/Button";
+import HamburgerIcon from "./HamburgerIcon/hamburgerIcon";
 
 export default function Navbar() {
+  const [toggled, setToggled] = useState(false);
   const { user, logout } = useAuth();
   const router = useRouter();
   return (
@@ -25,7 +27,8 @@ export default function Navbar() {
           </a>
         </Link>
       </div>
-      <ul className={styles.menu}>
+      <HamburgerIcon onClick={() => setToggled(!toggled)} toggle={toggled} />
+      <ul className={toggled ? styles.menu + " " + styles.open : styles.menu}>
         <li className={styles.menuItem}>
           <Link href="/">Services</Link>
         </li>
@@ -35,9 +38,13 @@ export default function Navbar() {
         <li className={styles.menuItem}>
           <Link href="/">Contact Us</Link>
         </li>
-       {user && router.pathname!="/dashboard"?<li className={styles.menuItem}>
-          <Link href="/dashboard">Dashboard</Link>
-        </li>:""}
+        {user && router.pathname != "/dashboard" ? (
+          <li className={styles.menuItem}>
+            <Link href="/dashboard">Dashboard</Link>
+          </li>
+        ) : (
+          ""
+        )}
         <li className={styles.menuItem}>
           {user ? ( //to show logout button
             <Button

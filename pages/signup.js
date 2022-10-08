@@ -12,7 +12,8 @@ import { getRefinedFirebaseError } from "../shared/Functions/errorHandler";
 
 const Signup = () => {
   const router = useRouter();
-  const { sendEV, googleLogin, signup } = useAuth();
+  const [loading, setloading] = useState(false);
+  const { sendEV, googleLogin, signup, user } = useAuth();
   const [errorMsg, setErrorMsg] = useState("");
   const [data, setData] = useState({
     email: "",
@@ -25,9 +26,11 @@ const Signup = () => {
   }
   const handleSignup = async (e) => {
     e.preventDefault();
+    setloading(true);
     try {
       await signup(data.email, data.password);
       sendEV();
+      setloading(false);
       router.replace("/dashboard");
     } catch (err) {
       handleError(err);
@@ -41,6 +44,10 @@ const Signup = () => {
       handleError(err);
     }
   };
+  if (user) {
+    router.replace("/dashboard");
+    return null;
+  }
   return (
     <div className={formStyles.main}>
       <div className={formStyles.container}>
@@ -94,6 +101,7 @@ const Signup = () => {
               name="terms"
               value="terms"
               tabIndex="3"
+              required
             />
             <label htmlFor="terms">
               &nbsp; I Accept the <b>Terms Of Service</b> and{" "}
@@ -105,8 +113,17 @@ const Signup = () => {
               <div className={formStyles.error}>{errorMsg}</div>
             </fieldset>
           )}
-          <Button type="submit" variant="primary" tabIndex="4">
-            Create account
+          {
+            //TODO dynamic button on submit
+            console.log("loading", loading)
+          }
+          <Button
+            type="submit"
+            variant="primary"
+            tabIndex="4"
+            disabled={loading}
+          >
+            {loading ? "Please Wait..." : "Create account"}
           </Button>
         </form>
         <div style={{ width: "20vw" }}>

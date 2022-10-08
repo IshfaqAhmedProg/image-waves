@@ -24,13 +24,62 @@
 .menu {
   margin: 0;
   padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   list-style-type: none;
+  isolation: isolate;
 }
 .menuItem {
   display: inline-block;
-  padding-inline: 1.25rem;
+  padding-left: 2.5rem;
 }
 .menuItem:not(:nth-last-child(1)) {
   color: var(--primary);
-  mix-blend-mode: exclusion;
+}
+@media screen and (max-width: 1290px) {
+  .menu {
+    background-color: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(20px);
+    position: absolute;
+    height: 100vh;
+    width: 30vw;
+    top: 0;
+    right: -100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 7rem;
+    z-index: -1;
+    transition: right 0.3s ease-in;
+  }
+  .menuItem {
+    padding-left: 0;
+    padding-block: 1.5rem;
+    position: relative;
+  }
+  .menuItem:not(:nth-last-child(1)) {
+    mix-blend-mode: normal;
+  }
+  .menuItem:not(:nth-last-child(-n + 2))::before {
+    content: "";
+    background: linear-gradient(
+      to left,
+      var(--accent) 0%,
+      var(--primary--light) 100%
+    );
+    position: absolute;
+    height: 2px;
+    width: 25vw;
+    left: 50%;
+    top: 100%;
+    translate: -50%;
+  }
+}
+@media screen and (max-width: 934px) {
+  .menu {
+    width: 100vw;
+  }
+}
+.open {
+  right: 0;
 }

@@ -28,8 +28,8 @@
   color: var(--landing-page-h1--color);
 }
 .herodesc {
-    color: var(--paragraph--color);
-  width: 392px;
+  color: var(--paragraph--color);
+  width: min(80vw, 392px);
   text-align: center;
 }
 @media screen and (max-width: 1290px) {
@@ -39,14 +39,18 @@
   .herobg {
     width: 100vw;
   }
-  .herotext{
+  .herotext {
     left: 50%;
   }
-  .herotitle{
+  .herotitle {
+    color: var(--white);
     text-align: center;
   }
-  .herobg > div >div {
-   filter: blur(15px)contrast(60%)brightness(140%);
-   scale: 1.05;
+  .herodesc {
+    color: var(--white);
+  }
+  .herobg > div > div {
+    filter: blur(15px) contrast(60%) brightness(80%);
+    scale: 1.05;
   }
 }
