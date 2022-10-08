@@ -38,6 +38,9 @@
   color: var(--primary);
 }
 @media screen and (max-width: 1290px) {
+  .container{
+    padding-inline: 2rem;
+  }
   .menu {
     background-color: rgba(255, 255, 255, 0.4);
     backdrop-filter: blur(20px);
