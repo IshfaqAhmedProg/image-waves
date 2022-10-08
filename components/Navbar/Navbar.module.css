@@ -1,6 +1,6 @@
 .container {
   padding-inline: 3.875rem;
-  padding-block: 1rem;
+  padding-block: 0.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -8,10 +8,16 @@
   position: fixed;
   width: 100vw;
   z-index: 5;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6) 0%,
+    rgba(255, 254, 254, 0.1) 67.51%,
+    rgba(255, 254, 254, 0) 94.67%
+  );
 }
 /*TODO Mobile Optimisation*/
 .logo {
-  width: 367px;
+  width: 250px;
   height: auto;
 }
 
@@ -25,6 +31,6 @@
   padding-inline: 1.25rem;
 }
 .menuItem:not(:nth-last-child(1)) {
-  color: var(--white);
+  color: var(--primary);
   mix-blend-mode: exclusion;
 }

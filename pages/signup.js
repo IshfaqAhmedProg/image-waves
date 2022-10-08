@@ -12,7 +12,7 @@ import { getRefinedFirebaseError } from "../shared/Functions/errorHandler";
 
 const Signup = () => {
   const router = useRouter();
-  const { googleLogin, signup } = useAuth();
+  const { sendEV, googleLogin, signup } = useAuth();
   const [errorMsg, setErrorMsg] = useState("");
   const [data, setData] = useState({
     email: "",
@@ -27,7 +27,8 @@ const Signup = () => {
     e.preventDefault();
     try {
       await signup(data.email, data.password);
-      router.push("/dashboard");
+      sendEV();
+      router.replace("/dashboard");
     } catch (err) {
       handleError(err);
     }
@@ -44,7 +45,9 @@ const Signup = () => {
     <div className={formStyles.main}>
       <div className={formStyles.container}>
         <h1>Create your account</h1>
-
+        {
+          //TODO ReAdd submit handler later
+        }
         <form className={formStyles.form} onSubmit={handleSignup}>
           <fieldset className={formStyles.formfield}>
             <InputField
@@ -109,7 +112,10 @@ const Signup = () => {
         <div style={{ width: "20vw" }}>
           <Divider direction="horizontal">or</Divider>
         </div>
-        <Button variant="extsignin" onClick={handleGoogleLogin}>
+        {
+          //TODO ReAdd google submit handler later
+        }
+        <Button variant="extsignin" /* onClick={handleGoogleLogin} */>
           Sign Up with Google&nbsp; <Image src={google} alt="google logo" />
         </Button>
         <div className={formStyles.formfield}>

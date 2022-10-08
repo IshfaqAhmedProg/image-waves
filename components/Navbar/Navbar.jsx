@@ -35,6 +35,9 @@ export default function Navbar() {
         <li className={styles.menuItem}>
           <Link href="/">Contact Us</Link>
         </li>
+       {user && router.pathname!="/dashboard"?<li className={styles.menuItem}>
+          <Link href="/dashboard">Dashboard</Link>
+        </li>:""}
         <li className={styles.menuItem}>
           {user ? ( //to show logout button
             <Button

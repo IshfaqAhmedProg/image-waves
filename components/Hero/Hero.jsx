@@ -9,21 +9,22 @@ export default function Hero() {
   });
   return (
     <div className={styles.container}>
-      <div className={styles.heroBody}>
-        <h1 className={styles.heroTitle}>
+      <div className={styles.herotextbg}></div>
+      <div className={styles.herotext}>
+      <h1 className={styles.herotitle}>
           Imagethetics is your <br /> Online
           <span className="textHL"> Photo Editing</span>
           <br /> Studio!
         </h1>
-        <p className={styles.heroText}>
+        <p className={styles.herodesc}>
           Upload your images to get instant service from some of the best in the
           industry! Whatever you require, we`ve got it!
         </p>
       </div>
-      <div className={styles.heroBg}>
-      <BGImageTransition/>
+      <div className={styles.herobg}>
+
+    <BGImageTransition/>
       </div>
-    
     </div>
   );
 }

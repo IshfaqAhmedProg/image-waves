@@ -47,8 +47,10 @@ export default function Login() {
     <div className={formStyles.main}>
       <div className={formStyles.container}>
         <h1>Log In</h1>
-
-        <form className={formStyles.form} onSubmit={handleLogin}>
+        {
+          //TODO ReAdd submit handler later
+        }
+        <form className={formStyles.form} /* onSubmit={handleLogin} */>
           {errorMsg && (
             <fieldset className={formStyles.formfield}>
               <div className={formStyles.error}>{errorMsg}</div>
@@ -105,6 +107,9 @@ export default function Login() {
         <div style={{ width: "20vw" }}>
           <Divider direction="horizontal">or</Divider>
         </div>
+        {
+          //TODO ReAdd google submit handler later
+        }
         <Button variant="extsignin" onClick={handleGoogleLogin}>
           Sign in with Google&nbsp; <Image src={google} alt="google logo" />
         </Button>
@@ -117,7 +122,6 @@ export default function Login() {
           </Link>
         </div>
       </div>
-      {console.log([bgimg])}
       <div
         className={formStyles.result}
         style={{

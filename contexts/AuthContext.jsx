@@ -6,9 +6,12 @@ import {
   GoogleAuthProvider,
   signOut,
   signInWithPopup,
-  sendPasswordResetEmail
+  sendPasswordResetEmail,
+  sendEmailVerification,
 } from "firebase/auth";
-import { auth } from "../firebase/config";
+
+import { doc, setDoc } from "firebase/firestore";
+import { auth, db } from "../firebase/config";
 
 const AuthContext = createContext({});
 export const useAuth = () => useContext(AuthContext);
@@ -22,7 +25,7 @@ export const AuthContextProvider = ({ children }) => {
         setUser({
           uid: user.uid,
           email: user.email,
-          displayName: user.displayName,
+          verified: user.emailVerified,
         });
       } else {
         setUser(null);
@@ -34,7 +37,16 @@ export const AuthContextProvider = ({ children }) => {
     };
   }, []);
   const signup = (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password);
+    return createUserWithEmailAndPassword(auth, email, password)
+      .then(async (cred) => {
+        await setDoc(doc(db, "users", cred.user.uid), {
+          UID: cred.user.uid,
+          Email: cred.user.email,
+        });
+      })
+      .catch((err) => {
+        console.log([err]);
+      });
   };
   const login = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
@@ -47,11 +59,27 @@ export const AuthContextProvider = ({ children }) => {
     setUser(null);
     await signOut(auth);
   };
-  const resetPass =(email) => {
-    return sendPasswordResetEmail(auth,email)
+  const resetPass = (email) => {
+    return sendPasswordResetEmail(auth, email);
+  };
+  const sendEV = () => {
+    return sendEmailVerification(auth.currentUser).then(() => {
+      console.log("email sent");
+    });
   };
   return (
-    <AuthContext.Provider value={{ user, login, googleLogin, signup, logout, resetPass }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        login,
+        googleLogin,
+        signup,
+        logout,
+        sendEV,
+        resetPass,
+        sendEV,
+      }}
+    >
       {loading ? "loading" : children}
     </AuthContext.Provider>
   );

@@ -1,32 +1,52 @@
-.container{
-/* outline: 1px solid red; */
-display: flex;
-flex-direction: row;
-height: fit-content;
-justify-content: space-between;
-align-items: center;
+.container {
+  width: 100vw;
+  height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
 }
-.heroBody{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-    max-width: 50vw;
-    margin-left: auto;
+.herotextbg {
+  width: 50vw;
+  min-width: 650px;
 }
-.heroBg{
-    padding: 0;
-    display: block;
-    height: 80vh;
-    max-width: 50vw;
-    margin-left: auto;
+.herotext {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  translate: -50% -50%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
 }
-.heroTitle{
-    font-size: 52px;
-    color: var(--primary-dark);
+.herobg {
+  width: 50vw;
+  z-index: -1;
 }
-.heroText{
-    width: 392px;
+.herotitle {
+  font-size: 52px;
+  color: var(--landing-page-h1--color);
+}
+.herodesc {
+    color: var(--paragraph--color);
+  width: 392px;
+  text-align: center;
+}
+@media screen and (max-width: 1290px) {
+  .herotextbg {
+    display: none;
+  }
+  .herobg {
+    width: 100vw;
+  }
+  .herotext{
+    left: 50%;
+  }
+  .herotitle{
     text-align: center;
+  }
+  .herobg > div >div {
+   filter: blur(15px)contrast(60%)brightness(140%);
+   scale: 1.05;
+  }
 }

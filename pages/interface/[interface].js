@@ -8,6 +8,12 @@ function Interface({ pageName }) {
     case "terms_and_conditions":
       return <div>termsAndConditions</div>;
       break;
+    case "pricing":
+      return <div>Pricing</div>;
+      break;
+    case "services":
+      return <div>Services</div>;
+      break;
     default:
       return <div>error:404</div>;
       break;

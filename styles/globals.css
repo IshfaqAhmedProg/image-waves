@@ -13,7 +13,10 @@
   --red: hsla(0, 86.2%, 57.3%, 1);
   --green: hsla(112, 86.3%, 57.1%, 1);
   --dark--gray: hsla(0, 0%, 25.5%, 1);
-
+  --paragraph--color:var(--black);
+  --landing-page-h1--color:var(--primary--dark);
+  --title--color:var(--primary);
+  --subtitle--color:var(--primary--light);
   /* Text-size styles */
   /* base size: paragraph (16px) */
   --landing-page-h1: 3.25rem;
