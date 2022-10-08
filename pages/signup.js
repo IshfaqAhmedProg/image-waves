@@ -115,7 +115,7 @@ const Signup = () => {
         {
           //TODO ReAdd google submit handler later
         }
-        <Button variant="extsignin" /* onClick={handleGoogleLogin} */>
+        <Button variant="extsignin" onClick={handleGoogleLogin}>
           Sign Up with Google&nbsp; <Image src={google} alt="google logo" />
         </Button>
         <div className={formStyles.formfield}>

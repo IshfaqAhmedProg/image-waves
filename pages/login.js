@@ -50,7 +50,7 @@ export default function Login() {
         {
           //TODO ReAdd submit handler later
         }
-        <form className={formStyles.form} /* onSubmit={handleLogin} */>
+        <form className={formStyles.form} onSubmit={handleLogin}>
           {errorMsg && (
             <fieldset className={formStyles.formfield}>
               <div className={formStyles.error}>{errorMsg}</div>
