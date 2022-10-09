@@ -157,11 +157,11 @@ export const getRefinedFirebaseError = (errorMesssage) => {
     "web-storage-unsupported":
       "This browser is not supported or 3rd party cookies and data may be disabled.",
   };
-  console.log("stringified", stringified);
+/*   console.log("stringified", stringified);
   console.log("trimmed", trimmed);
   console.log("final", finalformat);
   console.log(authErrors[finalformat]);
-  console.log(authErrors.hasOwnProperty(finalformat));
+  console.log(authErrors.hasOwnProperty(finalformat)); */
   let refinedMssg = "";
   switch (authErrors.hasOwnProperty(finalformat)) {
     case true:

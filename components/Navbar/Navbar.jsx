@@ -29,23 +29,23 @@ export default function Navbar() {
       </div>
       <HamburgerIcon onClick={() => setToggled(!toggled)} toggle={toggled} />
       <ul className={toggled ? styles.menu + " " + styles.open : styles.menu}>
-        <li className={styles.menuItem}>
+        <li className={styles.menuItem} onClick={() => setToggled(!toggled)}>
           <Link href="/">Services</Link>
         </li>
-        <li className={styles.menuItem}>
+        <li className={styles.menuItem} onClick={() => setToggled(!toggled)}>
           <Link href="/">Pricing</Link>
         </li>
-        <li className={styles.menuItem}>
+        <li className={styles.menuItem} onClick={() => setToggled(!toggled)}>
           <Link href="/">Contact Us</Link>
         </li>
         {user && router.pathname != "/dashboard" ? (
-          <li className={styles.menuItem}>
+          <li className={styles.menuItem} onClick={() => setToggled(!toggled)}>
             <Link href="/dashboard">Dashboard</Link>
           </li>
         ) : (
           ""
         )}
-        <li className={styles.menuItem}>
+        <li className={styles.menuItem} onClick={() => setToggled(!toggled)}>
           {user ? ( //to show logout button
             <Button
               onClick={() => {
@@ -56,7 +56,7 @@ export default function Navbar() {
             >
               Logout
             </Button>
-          ) : router.pathname != "/login" ? ( //to show sign up button
+          ) : router.pathname != "/login" ? ( //to show log in button
             <Link href="/login" passHref>
               {router.pathname != "/" ? (
                 <a>
@@ -66,7 +66,7 @@ export default function Navbar() {
                 "Log In"
               )}
             </Link>
-          ) : (
+          ) : ( //to show sign up button
             <Link href="/signup" passHref>
               <a>
                 <Button variant="primary">Sign Up</Button>
@@ -75,7 +75,7 @@ export default function Navbar() {
           )}
         </li>
         {router.pathname == "/" && user == null ? (
-          <li className={styles.menuItem}>
+          <li className={styles.menuItem} onClick={() => setToggled(!toggled)}>
             <Link href="/signup">
               <a>
                 <Button variant="primary">Try for free!</Button>

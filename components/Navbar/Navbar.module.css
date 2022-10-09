@@ -15,7 +15,6 @@
     rgba(255, 254, 254, 0) 94.67%
   );
 }
-/*TODO Mobile Optimisation*/
 .logo {
   width: 250px;
   height: auto;
@@ -60,9 +59,7 @@
     padding-block: 1.5rem;
     position: relative;
   }
-  .menuItem:not(:nth-last-child(1)) {
-    mix-blend-mode: normal;
-  }
+  
   .menuItem:not(:nth-last-child(-n + 2))::before {
     content: "";
     background: linear-gradient(
@@ -80,7 +77,7 @@
 }
 @media screen and (max-width: 934px) {
   .menu {
-    width: 100vw;
+    width: 80vw;
   }
 }
 .open {

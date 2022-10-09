@@ -9,10 +9,11 @@ import google from "../public/Logos/Google.svg";
 import InputField from "../components/InputField/InputField";
 import Divider from "../components/Divider/Divider";
 import { getRefinedFirebaseError } from "../shared/Functions/errorHandler";
+import loader from "../public/Icons/loadericon.svg";
 
 const Signup = () => {
   const router = useRouter();
-  const [loading, setloading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const { sendEV, googleLogin, signup, user } = useAuth();
   const [errorMsg, setErrorMsg] = useState("");
   const [data, setData] = useState({
@@ -20,29 +21,27 @@ const Signup = () => {
     password: "",
     terms: false,
   });
-  function handleError(err) {
-    setErrorMsg(getRefinedFirebaseError(err));
-    console.log([err]);
+  function handleError(error) {
+    setErrorMsg(getRefinedFirebaseError(error));
+    console.log([error]);
   }
   const handleSignup = async (e) => {
     e.preventDefault();
-    setloading(true);
-    try {
-      await signup(data.email, data.password);
-      sendEV();
-      setloading(false);
-      router.replace("/dashboard");
-    } catch (err) {
-      handleError(err);
-    }
+    setLoading(true);
+    signup(data.email, data.password)
+      .then(() => {
+        router.replace("/dashboard");
+        sendEV();
+      })
+      .catch((error) => handleError(error))
+      .finally(() => setLoading(false));
   };
   const handleGoogleLogin = async () => {
-    try {
-      await googleLogin();
-      router.replace("/dashboard");
-    } catch (err) {
-      handleError(err);
-    }
+      setLoading(true);
+      googleLogin()
+        .then(router.replace("/dashboard"))
+        .catch((error) => handleError(error))
+        .finally(()=>setLoading(false))      
   };
   if (user) {
     router.replace("/dashboard");
@@ -123,7 +122,11 @@ const Signup = () => {
             tabIndex="4"
             disabled={loading}
           >
-            {loading ? "Please Wait..." : "Create account"}
+            {loading ? (
+              <Image src={loader} alt="loading icon" width={35} height={35} />
+            ) : (
+              "Create account"
+            )}
           </Button>
         </form>
         <div style={{ width: "20vw" }}>

@@ -18,6 +18,8 @@ export const useAuth = () => useContext(AuthContext);
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState();
   const [loading, setLoading] = useState();
+
+  //AuthState Change Use Effect
   useEffect(() => {
     setLoading(true);
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -36,48 +38,57 @@ export const AuthContextProvider = ({ children }) => {
       unsubscribe();
     };
   }, []);
+
+  //Sign Up Auth function
   const signup = (email, password) => {
-    return createUserWithEmailAndPassword(auth, email, password)
-      .then(async (cred) => {
+    return createUserWithEmailAndPassword(auth, email, password).then(
+      async (cred) => {
         await setDoc(doc(db, "users", cred.user.uid), {
           UID: cred.user.uid,
           Email: cred.user.email,
         });
-      })
-      .catch((err) => {
-        console.log([err]);
-      });
+      }
+    );
   };
+  //login Auth function
   const login = (email, password) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
+  //Googlelogin Auth function
   const googleLogin = () => {
     const provider = new GoogleAuthProvider();
     return signInWithPopup(auth, provider);
   };
+  //logout Auth function
   const logout = async () => {
     setUser(null);
     await signOut(auth);
   };
+  //Password Reset Auth function
   const resetPass = (email) => {
     return sendPasswordResetEmail(auth, email);
   };
+  //Send Email Verification Auth Function
   const sendEV = () => {
-    return sendEmailVerification(auth.currentUser).then(() => {
-      console.log("email sent");
-    });
+    let sender = null;
+    if (auth.currentUser != null) {
+      sender = sendEmailVerification(auth.currentUser).then(() => {
+        console.log("email sent");
+      });
+    }
+    return sender;
   };
+
   return (
     <AuthContext.Provider
       value={{
-        user,
         login,
         googleLogin,
+        user,
         signup,
+        sendEV,
         logout,
-        sendEV,
         resetPass,
-        sendEV,
       }}
     >
       {loading ? "loading" : children}
