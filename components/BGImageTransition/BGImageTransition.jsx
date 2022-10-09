@@ -46,6 +46,7 @@ export default function BGImageTransition() {
               objectFit="cover"
               alt={"background image " + (index + 1)}
               className={styles.image}
+              loading='lazy'
             />
           </div>
         );

@@ -13,6 +13,7 @@ import {
 import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../firebase/config";
 
+
 const AuthContext = createContext({});
 export const useAuth = () => useContext(AuthContext);
 export const AuthContextProvider = ({ children }) => {
