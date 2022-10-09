@@ -5,6 +5,7 @@
   display: grid;
   place-items: center;
   grid-template-areas: "bg-inner";
+  background-color: var(--primary);
 }
 .imagediv {
   position: relative;

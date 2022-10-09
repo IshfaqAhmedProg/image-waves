@@ -4,17 +4,21 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 
 import Button from "../components/Button/Button";
+import Divider from "../components/Divider/Divider";
+import InputField from "../components/InputField/InputField";
 
 import { useAuth } from "../contexts/AuthContext";
 
-import { getRefinedFirebaseError } from "../shared/Functions/errorHandler";
 import formStyles from "../styles/Forms.module.css";
+
+import { getRefinedFirebaseError } from "../shared/Functions/errorHandler";
 import google from "../public/Logos/Google.svg";
-import InputField from "../components/InputField/InputField";
-import Divider from "../components/Divider/Divider";
+import loader from "../public/Icons/loadericon.svg";
+
 export default function Login() {
   const router = useRouter();
   const { user, login, googleLogin } = useAuth();
+  const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
   const [data, setData] = useState({
     email: "",
@@ -97,14 +101,18 @@ export default function Login() {
               Forgot your password?
               <Link href="/interface/reset_password">
                 <a>
-                  <b> Reset Password</b>
+                  <b> Recover Password</b>
                 </a>
               </Link>
             </div>
           </fieldset>
 
           <Button type="submit" variant="primary">
-            Log In
+            {loading ? (
+              <Image src={loader} alt="loading icon" width={35} height={35} />
+            ) : (
+              "Log In"
+            )}
           </Button>
         </form>
         <div style={{ width: "20vw" }}>

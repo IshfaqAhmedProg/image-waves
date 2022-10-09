@@ -1,14 +1,18 @@
-import { useRouter } from "next/router";
 import React, { useState } from "react";
-import { useAuth } from "../contexts/AuthContext";
+import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
-import formStyles from "../styles/Forms.module.css";
+
 import Button from "../components/Button/Button";
-import google from "../public/Logos/Google.svg";
-import InputField from "../components/InputField/InputField";
 import Divider from "../components/Divider/Divider";
+import InputField from "../components/InputField/InputField";
+
+import { useAuth } from "../contexts/AuthContext";
+
+import formStyles from "../styles/Forms.module.css";
+
 import { getRefinedFirebaseError } from "../shared/Functions/errorHandler";
+import google from "../public/Logos/Google.svg";
 import loader from "../public/Icons/loadericon.svg";
 
 const Signup = () => {
@@ -54,7 +58,7 @@ const Signup = () => {
         {
           //TODO ReAdd submit handler later
         }
-        <form className={formStyles.form} /* onSubmit={handleSignup} */>
+        <form className={formStyles.form} onSubmit={handleSignup}>
           <fieldset className={formStyles.formfield}>
             <InputField
               tabIndex="1"

@@ -3,16 +3,13 @@ import Image from "next/image";
 import styles from "./Hero.module.css";
 import BGImageTransition from "../BGImageTransition/BGImageTransition";
 export default function Hero() {
-  const [data, setData] = useState({
-    email: "",
-    password: "",
-  });
+
   return (
     <div className={styles.container}>
       <div className={styles.herotextbg}></div>
       <div className={styles.herotext}>
-      <h1 className={styles.herotitle}>
-          Imagethetics is your <br /> Online
+        <h1 className={styles.herotitle}>
+          ImageWaves is your <br /> Online
           <span className="textHL"> Photo Editing</span>
           <br /> Studio!
         </h1>
@@ -22,8 +19,7 @@ export default function Hero() {
         </p>
       </div>
       <div className={styles.herobg}>
-
-    <BGImageTransition/>
+        <BGImageTransition />
       </div>
     </div>
   );
