@@ -53,7 +53,7 @@ export default function Login() {
         {
           //TODO ReAdd submit handler later
         }
-        <form className={formStyles.form} onSubmit={handleLogin}>
+        <form className={formStyles.form} /* onSubmit={handleLogin} */>
           {errorMsg && (
             <fieldset className={formStyles.formfield}>
               <div className={formStyles.error}>{errorMsg}</div>
@@ -113,7 +113,7 @@ export default function Login() {
         {
           //TODO ReAdd google submit handler later
         }
-        <Button variant="extsignin" onClick={handleGoogleLogin}>
+        <Button variant="extsignin" /* onClick={handleGoogleLogin} */>
           Sign in with Google&nbsp; <Image src={google} alt="google logo" />
         </Button>
         <div className={formStyles.formfield}>
