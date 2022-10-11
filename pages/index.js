@@ -1,8 +1,8 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Hero from "../components/Hero/Hero";
+import PopularServices from "../components/PopularServices/PopularServices";
 export default function Home() {
-  
   return (
     <div className={styles.container}>
       <Head>
@@ -12,8 +12,12 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <Hero></Hero>
-       
+        <section>
+          <Hero></Hero>
+        </section>
+        <section>
+          <PopularServices />
+        </section>
       </main>
       <footer></footer>
     </div>

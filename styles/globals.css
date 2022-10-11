@@ -1,3 +1,6 @@
+/* * {
+  outline: 1px solid #f00 !important;
+} */
 :root {
   /* Color styles */
   --primary--dark: hsla(224, 41.5%, 12.7%, 1);
@@ -13,10 +16,10 @@
   --red: hsla(0, 86.2%, 57.3%, 1);
   --green: hsla(112, 86.3%, 57.1%, 1);
   --dark--gray: hsla(0, 0%, 25.5%, 1);
-  --paragraph--color:var(--black);
-  --landing-page-h1--color:var(--primary--dark);
-  --title--color:var(--primary);
-  --subtitle--color:var(--primary--light);
+  --paragraph--color: var(--black);
+  --landing-page-h1--color: var(--primary--dark);
+  --title--color: var(--primary);
+  --subtitle--color: var(--primary--light);
   /* Text-size styles */
   /* base size: paragraph (16px) */
   --landing-page-h1: 3.25rem;
@@ -30,41 +33,55 @@
   --carousel-title: 1.56rem;
   --primary-button: 1.12rem;
   --secondary-button: 1.12rem;
-
 }
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: "Prompt", sans-serif;
+  scroll-snap-type: y mandatory ;
 }
-
+section{
+    scroll-snap-align: start;
+}
 a {
   color: inherit;
   text-decoration: none;
   transition: color 150ms ease;
 }
-a:hover{
+a:hover {
   color: var(--accent);
 }
 * {
   box-sizing: border-box;
 }
+p{
+  font-size: var(--paragraph);
+  line-height: 24px;
+}
 h1 {
   margin: 0;
   font-style: normal;
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: var(--h1);
   line-height: 113.7%;
 }
 h2 {
   margin: 0;
   font-style: normal;
   font-weight: 700;
-  font-size: 1.88rem;
+  font-size: var(--h2);
   line-height: 113.7%;
 }
-input[type="checkbox"]{
+@media screen and (max-width:428px){
+  :root{
+    --landing-page-h1:2.5rem;
+    --h1:2rem;
+    --h2:1.3rem
+  }
+ 
+}
+input[type="checkbox"] {
   accent-color: var(--accent);
 }
 .textHL {

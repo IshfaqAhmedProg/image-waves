@@ -13,6 +13,7 @@ export default function Navbar() {
   const router = useRouter();
   return (
     <div className={styles.container}>
+      <div className={styles.bg}></div>
       <div className={styles.logo}>
         <Link href="/" passHref>
           <a>
