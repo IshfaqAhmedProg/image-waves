@@ -61,12 +61,7 @@
 .previewdesc > h2 {
   color: var(--primary);
 }
-.previewdesc > p {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 3;
-  overflow: hidden;
-}
+
 .previewarrow {
   width: max(20px, 2vw);
   display: flex;
@@ -120,6 +115,10 @@
     color: var(--primary--light);
   }
   .previewdesc > p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
     color: var(--white);
   }
   .previewarrow:nth-child(1) {

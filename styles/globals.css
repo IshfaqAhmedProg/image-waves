@@ -70,7 +70,7 @@ h2 {
   font-size: var(--h2);
   line-height: 113.7%;
 }
-@media screen and (min-width: 428px) {
+@media screen and (max-width: 428px) {
   :root {
     --landing-page-h1: 2.5rem;
     --h1: 2rem;
