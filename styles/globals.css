@@ -43,6 +43,7 @@ body {
 }
 section{
     scroll-snap-align: start;
+    overflow: hidden;
 }
 a {
   color: inherit;
