@@ -58,7 +58,7 @@ const Signup = () => {
         {
           //TODO ReAdd submit handler later
         }
-        <form className={formStyles.form} onSubmit={handleSignup}>
+        <form className={formStyles.form} /* onSubmit={handleSignup} */>
           <fieldset className={formStyles.formfield}>
             <InputField
               tabIndex="1"
@@ -135,7 +135,7 @@ const Signup = () => {
         {
           //TODO ReAdd google submit handler later
         }
-        <Button variant="extsignin" onClick={handleGoogleLogin}>
+        <Button variant="extsignin" /* onClick={handleGoogleLogin} */>
           Sign Up with Google&nbsp; <Image src={google} alt="google logo" />
         </Button>
         <div className={formStyles.formfield}>
