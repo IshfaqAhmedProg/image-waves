@@ -1,0 +1,23 @@
+.bglinescontainer {
+  position: relative;
+  width: 50%;
+  height: 80%;
+  float: right;
+}
+.bglines {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  top: -30%;
+}
+.line {
+  animation: drawline var(--dur) ease-in-out var(--delay) forwards;
+  stroke-linecap: round;
+  stroke-dasharray: var(--line-length);
+  stroke-dashoffset: var(--line-length);
+}
+@keyframes drawline {
+  100% {
+    stroke-dashoffset: 0;
+  }
+}

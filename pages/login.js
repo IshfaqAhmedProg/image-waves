@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Head from "next/head";
 
 import Button from "../components/Button/Button";
 import Divider from "../components/Divider/Divider";
@@ -52,6 +53,10 @@ export default function Login() {
   }
   return (
     <div className={formStyles.main}>
+      <Head>
+        <title>imageWAVES-Login to your account</title>
+        <meta name="description" content="imageWAVES login page" />
+      </Head>
       <div className={formStyles.container}>
         <h1>Log In</h1>
         {

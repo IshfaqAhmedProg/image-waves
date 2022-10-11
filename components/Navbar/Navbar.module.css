@@ -15,6 +15,10 @@
     rgba(255, 254, 254, 0) 94.67%
   ); */
   /*  */
+  isolation: isolate;
+}
+.container>div:nth-child(3){
+  z-index: 3;
 }
 .bg {
   position: absolute;
@@ -25,6 +29,15 @@
 .logo {
   width: 250px;
   height: auto;
+}
+.menubg {
+  width: 100vw;
+  height: 100vh;
+  background: #22222255;
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  display: none;
 }
 
 .menu {
@@ -46,6 +59,12 @@
 }
 
 @media screen and (max-width: 1290px) {
+  .menubg{
+    display: block;
+  }
+  .hidden{
+    display: none;
+  }
   .container {
     padding-inline: 2rem;
   }
@@ -60,7 +79,7 @@
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 7rem;
-    z-index: -1;
+    z-index: 1;
     transition: right 0.3s ease-in;
   }
   .menuItem {

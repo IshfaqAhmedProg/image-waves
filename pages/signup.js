@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
+import Head from "next/head";
 
 import Button from "../components/Button/Button";
 import Divider from "../components/Divider/Divider";
@@ -53,6 +54,10 @@ const Signup = () => {
   }
   return (
     <div className={formStyles.main}>
+      <Head>
+        <title>imageWAVES-Create a new account</title>
+        <meta name="description" content="imageWAVES login page" />
+      </Head>
       <div className={formStyles.container}>
         <h1>Create your account</h1>
         {

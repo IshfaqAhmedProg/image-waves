@@ -5,6 +5,7 @@ import {
   ReactCompareSlider,
   ReactCompareSliderHandle,
 } from "react-compare-slider";
+import LineDrawer from "../LineDrawer/LineDrawer";
 const PopularServices = () => {
   const [service, setService] = useState({
     name: "Clipping Path",
@@ -14,21 +15,19 @@ const PopularServices = () => {
   });
 
   return (
-    <div className={styles.popcontainer}>
-      <div className={styles.poptextbg}></div>
-      <div className={styles.poptextcontent}>
-        <div className={styles.poptitle}>
+    <div className={styles.container}>
+      <div className={styles.textbg}></div>
+      <div className={styles.textcontent}>
+        <div className={styles.title}>
           <h2>Our Most</h2>
           <h1>Popular Services</h1>
         </div>
-        <div className={styles.poppreview}>
-          <div className={styles.poppreviewdesc}>
+        <div className={styles.preview}>
+          <div className={styles.previewdesc}>
             <h2>{service.name}</h2>
-            <p>
-              {service.desc}
-            </p>
+            <p>{service.desc}</p>
           </div>
-          <div className={styles.poppreviewarrow}>
+          <div className={styles.previewarrow}>
             <svg
               viewBox="0 0 32 48"
               fill="none"
@@ -42,7 +41,7 @@ const PopularServices = () => {
               />
             </svg>
           </div>
-          <div className={styles.poppreviewcomp}>
+          <div className={styles.previewcomp}>
             <ReactCompareSlider
               handle={
                 <ReactCompareSliderHandle
@@ -81,7 +80,7 @@ const PopularServices = () => {
               }}
             ></ReactCompareSlider>
           </div>
-          <div className={styles.poppreviewarrow}>
+          <div className={styles.previewarrow}>
             <svg
               viewBox="0 0 32 48"
               fill="none"
@@ -97,7 +96,30 @@ const PopularServices = () => {
           </div>
         </div>
       </div>
-      <div className={styles.popbg}></div>
+      <div className={styles.bg}>
+        <LineDrawer viewBox="0 0 608 759" duration={3000} delay={1000} stagger={300} id='line'>
+          <path
+            d="M208.5 35C335.833 55.1667 546.768 98.1451 590.5 188C651.823 314 495 370 605.5 510C694.795 623.134 903 592.5 961 633"
+            stroke="#5CFC4EAA"
+            stroke-width="70"
+          />
+          <path
+            d="M84 92C193.533 109.348 354.886 139.075 428.5 205.5C440.463 216.294 456.387 236.439 462.5 249C526.5 380.5 372 470.5 523 588C571 625.351 655 662 736.5 672"
+            stroke="#5CFC4E99"
+            stroke-width="51"
+          />
+          <path
+            d="M7 140C134.333 160.167 345.268 203.145 389 293C453 424.5 296.5 468.5 407 608.5C496.295 721.634 701.5 697.5 759.5 738"
+            stroke="#5CFC4E55"
+            stroke-width="26"
+          />
+          <path
+            d="M1.5,193L123,217.953C212.35,243.238 294.531,279.669 320,332C384,463.5 227.5,507.5 338,647.5C400.955,727.262 521.522,738.794 607.5,752.85"
+            stroke="#5CFC4E22"
+            stroke-width="12"
+          />
+        </LineDrawer>
+      </div>
     </div>
   );
 };

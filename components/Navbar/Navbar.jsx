@@ -18,17 +18,23 @@ export default function Navbar() {
         <Link href="/" passHref>
           <a>
             <Image
-              src="/Logos/Logo.png"
+              src="/Logos/LogoWhiteH.png"
               alt="Logo"
-              width={4}
-              height={1}
-              layout="responsive"
+              width={247}
+              height={60}
+              layout="fixed"
               priority
             />
           </a>
         </Link>
       </div>
       <HamburgerIcon onClick={() => setToggled(!toggled)} toggle={toggled} />
+      <div
+      className={toggled?styles.menubg:styles.menubg+" "+styles.hidden}
+        
+        onClick={() => setToggled(!toggled)}
+      ></div>
+
       <ul className={toggled ? styles.menu + " " + styles.open : styles.menu}>
         <li className={styles.menuItem} onClick={() => setToggled(!toggled)}>
           <Link href="/">Services</Link>
@@ -67,7 +73,8 @@ export default function Navbar() {
                 "Log In"
               )}
             </Link>
-          ) : ( //to show sign up button
+          ) : (
+            //to show sign up button
             <Link href="/signup" passHref>
               <a>
                 <Button variant="primary">Sign Up</Button>
