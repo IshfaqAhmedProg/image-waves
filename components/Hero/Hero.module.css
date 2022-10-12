@@ -14,9 +14,17 @@
 }
 .herotextbg>div>svg{
   rotate: 0;
-  scale: 1.2;
+  scale: 0.8;
   transform-origin: center;
-  animation: rotate 7s ease 2s infinite forwards;
+  animation: rotate 10s linear 2s infinite forwards,scale 5s ease-in 2s infinite alternate-reverse;
+}
+@keyframes scale {
+  0%{
+    scale: 1.1;
+  }
+  100%{
+    scale: 0.8;
+  }
 }
 @keyframes rotate {
   
