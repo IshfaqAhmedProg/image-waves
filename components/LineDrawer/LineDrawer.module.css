@@ -3,13 +3,10 @@
   width: 100%;
   height: 100%;
   max-width: 650px;
-  float: right;
 }
 .bglines {
   z-index: 1;
   position: absolute;
-  right: 0;
-  top: -32%;
 }
 .line {
   animation: drawline var(--dur) ease-in-out var(--delay) forwards;
