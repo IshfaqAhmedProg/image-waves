@@ -3,7 +3,7 @@
 } */
 :root {
   /* Color styles */
-  --primary--dark: hsla(224, 41.5%, 12.7%, 1);
+  --primary--dark: hsla(224, 42%, 13%, 1);
   --primary: hsla(208, 72.7%, 21.6%, 1);
   --primary--light: hsla(208, 91%, 61%, 1);
   --accent--light: rgb(125, 248, 114);
@@ -76,7 +76,6 @@ h2 {
     --h1: 2rem;
     --h2: 1.3rem;
   }
-
 }
 input[type="checkbox"] {
   accent-color: var(--accent);

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Divider.module.css";
-export default function Divider({ children, direction, colorMode }) {
+export default function Divider({ children, direction, colorMode=null }) {
   return children ? (
     <div
       id="divider"

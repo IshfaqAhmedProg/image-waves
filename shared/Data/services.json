@@ -1,0 +1,23 @@
+{
+  "clipping-path": {
+    "name": "Clipping Path",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delenitisit accusantium aspernatur repudiandae tempore",
+    "price": "25",
+    "beforeImg": ["check1.jpg", "Clipping Path Before"],
+    "afterImg": ["check2.png", "Clipping Path After"]
+  },
+  "background-removal": {
+    "name": "Background Removal",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delenitisit accusantium aspernatur repudiandae tempore",
+    "price": "12",
+    "beforeImg": ["check1.jpg", "Background Removal Before"],
+    "afterImg": ["check2.png", "Background Removal After"]
+  },
+  "color-change": {
+    "name": "Color Change",
+    "desc": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Delenitisit accusantium aspernatur repudiandae tempore",
+    "price": "60",
+    "beforeImg": ["check1.jpg", "Color Change Before"],
+    "afterImg": ["check2.png", "Color Change After"]
+  }
+}

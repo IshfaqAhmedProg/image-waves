@@ -2,6 +2,8 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import Hero from "../components/Hero/Hero";
 import PopularServices from "../components/PopularServices/PopularServices";
+import PromoSection from "../components/PromoSection/PromoSection";
+import ServicesCarousel from "../components/ServicesCarousel/ServicesCarousel";
 
 export default function Home() {
   return (
@@ -18,6 +20,12 @@ export default function Home() {
         </section>
         <section>
           <PopularServices />
+        </section>
+        <section>
+          <PromoSection />
+        </section>
+        <section>
+          <ServicesCarousel />
         </section>
       </main>
       <footer></footer>

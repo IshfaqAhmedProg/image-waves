@@ -34,7 +34,7 @@ const LineDrawer = ({
       line.style.setProperty("--delay", delay + "ms");
       dur = dur + stagger;
     });
-  });
+  },[]);
   return (
     <div
       className={styles.bglinescontainer}

@@ -1,20 +1,24 @@
 import React, { useEffect, useState } from "react";
 import styles from "./PopularServices.module.css";
 import Image from "next/image";
-import {
-  ReactCompareSlider,
-  ReactCompareSliderHandle,
-} from "react-compare-slider";
-const LineDrawer = React.lazy(() => import("../LineDrawer/LineDrawer"));
-
-
+//const LineDrawer = React.lazy(() => import("../LineDrawer/LineDrawer"));
+import LineDrawer from "../LineDrawer/LineDrawer";
+import Services from "../../shared/Data/services.json";
+import CompareImageSlider from "../CompareImageSlider/CompareImageSlider";
 const PopularServices = () => {
-  const [service, setService] = useState({
-    name: "Clipping Path",
-    desc: "Lorem ipsum dolor, sit amet consectetur adipisicing elit consectetur adipisicing elitconsectetur adipisicing elitconsectetur adipisicing elit. Nadolorem",
-    beforeImg: "/check1.jpg",
-    afterImg: "/check2.png",
-  });
+  const [service, setService] = useState({});
+  const services = ["clipping-path", "background-removal", "color-change"];
+  const [active, setActive] = useState(0);
+  useEffect(() => {
+    setService({
+      name: Services[services[active]].name,
+      desc: Services[services[active]].desc,
+      beforeImg: Services[services[active]].beforeImg[0],
+      beforeAlt: Services[services[active]].beforeImg[1],
+      afterImg: Services[services[active]].afterImg[0],
+      afterAlt: Services[services[active]].afterImg[1],
+    });
+  }, [active]);
 
   return (
     <div className={styles.container}>
@@ -29,7 +33,12 @@ const PopularServices = () => {
             <h2>{service.name}</h2>
             <p>{service.desc}</p>
           </div>
-          <div className={styles.previewarrow}>
+          <div
+            className={styles.previewarrow}
+            onClick={() =>
+              active != 0 ? setActive(active - 1) : setActive(active)
+            }
+          >
             <svg
               viewBox="0 0 32 48"
               fill="none"
@@ -44,45 +53,36 @@ const PopularServices = () => {
             </svg>
           </div>
           <div className={styles.previewcomp}>
-            <ReactCompareSlider
-              handle={
-                <ReactCompareSliderHandle
-                  buttonStyle={{
-                    WebkitBackdropFilter: "blur(20px)",
-                    backdropFilter: "blur(20px)",
-                    border: "2px solid #5CFC4E55",
-                    background: "#5CFC4E35",
-                    color: "#FFFFFF",
-                  }}
-                  linesStyle={{ color: "#5CFC4E", opacity: 0.5 }}
-                />
-              }
-              boundsPadding={0}
-              changePositionOnHover
-              itemOne={
+            {
+              //TODO change to Compare Image Slider component
+            }
+            <CompareImageSlider
+              beforeImg={
                 <Image
-                  alt="Image one"
-                  src={service.beforeImg}
+                  alt={service.beforeAlt}
+                  src={"/" + service.beforeImg}
                   layout="fill"
                   objectFit="cover"
                 />
               }
-              itemTwo={
+              afterImg={
                 <Image
-                  alt="Image two"
-                  src={service.afterImg}
+                  alt={service.afterAlt}
+                  src={"/" + service.afterImg}
                   layout="fill"
                   objectFit="cover"
                 />
               }
-              position={50}
-              style={{
-                width: "100%",
-                minHeight: "100%",
-              }}
-            ></ReactCompareSlider>
+            />
           </div>
-          <div className={styles.previewarrow}>
+          <div
+            className={styles.previewarrow}
+            onClick={() =>
+              active < services.length - 1
+                ? setActive(active + 1)
+                : setActive(active)
+            }
+          >
             <svg
               viewBox="0 0 32 48"
               fill="none"
@@ -106,7 +106,7 @@ const PopularServices = () => {
           stagger={300}
           id="popline"
           right={0}
-          top="-32%"
+          top="-35%"
           float="right"
         >
           <path

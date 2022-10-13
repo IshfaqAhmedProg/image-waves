@@ -24,7 +24,7 @@
   position: absolute;
   inset: 0;
   backdrop-filter: blur(20px);
-  mask: linear-gradient(black, rgb(81, 81, 81) 70%, transparent 95%);
+  mask: linear-gradient(black, rgb(134, 134, 134) 50%, transparent 95%);
 }
 .logo {
   width: 250px;
