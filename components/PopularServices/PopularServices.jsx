@@ -5,18 +5,18 @@ import Image from "next/image";
 import LineDrawer from "../LineDrawer/LineDrawer";
 import Services from "../../shared/Data/services.json";
 import CompareImageSlider from "../CompareImageSlider/CompareImageSlider";
+import Button from "../Button/Button";
 const PopularServices = () => {
   const [service, setService] = useState({});
-  const services = ["clipping-path", "background-removal", "color-change"];
   const [active, setActive] = useState(0);
   useEffect(() => {
     setService({
-      name: Services[services[active]].name,
-      desc: Services[services[active]].desc,
-      beforeImg: Services[services[active]].beforeImg[0],
-      beforeAlt: Services[services[active]].beforeImg[1],
-      afterImg: Services[services[active]].afterImg[0],
-      afterAlt: Services[services[active]].afterImg[1],
+      name: Services[active].ServiceName,
+      details: Services[active].Details,
+      beforeImg: Services[active].BeforeImageLink[0],
+      beforeAlt: Services[active].BeforeImageLink[1],
+      afterImg: Services[active].AfterImageLink[0],
+      afterAlt: Services[active].AfterImageLink[1],
     });
   }, [active]);
 
@@ -31,7 +31,7 @@ const PopularServices = () => {
         <div className={styles.preview}>
           <div className={styles.previewdesc}>
             <h2>{service.name}</h2>
-            <p>{service.desc}</p>
+            <p>{service.details}</p>
           </div>
           <div
             className={styles.previewarrow}
@@ -39,18 +39,7 @@ const PopularServices = () => {
               active != 0 ? setActive(active - 1) : setActive(active)
             }
           >
-            <svg
-              viewBox="0 0 32 48"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M27 42.9998L8 23.9998L27 4.99976"
-                stroke="#828282"
-                strokeWidth="10"
-                strokeLinecap="round"
-              />
-            </svg>
+            <Button variant="leftarrow" />
           </div>
           <div className={styles.previewcomp}>
             {
@@ -78,23 +67,12 @@ const PopularServices = () => {
           <div
             className={styles.previewarrow}
             onClick={() =>
-              active < services.length - 1
-                ? setActive(active + 1)
-                : setActive(active)
+              active === Services.length - 1
+                ? setActive(active)
+                : setActive(active + 1)
             }
           >
-            <svg
-              viewBox="0 0 32 48"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M5 4.99976L24 23.9998L5 42.9998"
-                stroke="#828282"
-                strokeWidth="10"
-                strokeLinecap="round"
-              />
-            </svg>
+            <Button variant="rightarrow" />
           </div>
         </div>
       </div>

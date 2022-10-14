@@ -71,3 +71,24 @@
 .primary:active::before {
   background-color: var(--accent--dark);
 }
+.arrow {
+  background: none;
+  border: none;
+padding: 0;
+width: 100%;
+}
+.arrow>svg{
+  width: 98%;
+  transition: filter 0.3s ease-in-out;
+}
+.arrow:hover > svg {
+  scale: 0.95;
+  filter: brightness(150%);
+}
+.arrow:active > svg {
+  scale: 0.8;
+  filter: brightness(80%);
+}
+.rightarrow{
+  rotate: 180deg;
+}

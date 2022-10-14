@@ -1,0 +1,49 @@
+.cardcontainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 1.875rem;
+  align-items: center;
+  background: var(--white);
+  box-shadow: 0px -4px 14px rgba(10, 78, 141, 0.24);
+  border-radius: 25px;
+  isolation: isolate;
+  padding: 1.25rem;
+  margin: 0.5rem;
+}
+.cardimage {
+  background-color: var(--gray);
+  width: 395px;
+  height: 279px;
+  border-radius: 1.4375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.carddetails {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+}
+.cardtitle {
+  font-size: var(--carousel-title);
+  font-weight: 700;
+  color: var(--primary);
+}
+.cardprice {
+  color: var(--primary--light);
+}
+.carddesc {
+  color: var(--black);
+  max-width: 20.4375rem;
+  text-align: center;
+}
+.cardsubmit {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--dark--gray);
+}

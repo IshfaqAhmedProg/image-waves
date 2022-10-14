@@ -10,12 +10,12 @@
   --accent: hsla(115, 96.7%, 64.7%, 1);
   --accent--dark: rgb(49, 182, 36);
   --white: hsla(0, 0%, 100%, 1);
-  --black: hsla(0, 0%, 13.7%, 1);
+  --black: hsla(0, 0%, 20%, 1);
   --light--gray: rgb(220, 220, 220);
   --gray: rgb(174, 174, 174);
   --red: hsla(0, 86.2%, 57.3%, 1);
   --green: hsla(112, 86.3%, 57.1%, 1);
-  --dark--gray: hsla(0, 0%, 25.5%, 1);
+  --dark--gray: rgb(81, 81, 81);
   --paragraph--color: var(--black);
   --landing-page-h1--color: var(--primary--dark);
   --title--color: var(--primary);
@@ -55,6 +55,7 @@ a:hover {
 p {
   font-size: var(--paragraph);
   line-height: 24px;
+  margin: 0;
 }
 h1 {
   margin: 0;
@@ -69,6 +70,9 @@ h2 {
   font-weight: 700;
   font-size: var(--h2);
   line-height: 113.7%;
+}
+h3{
+  margin:0;
 }
 @media screen and (max-width: 428px) {
   :root {

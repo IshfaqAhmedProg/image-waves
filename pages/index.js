@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>imageWAVES</title>
+        <title>ImageWaves</title>
         <meta name="description" content="Online Image editing website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
