@@ -37,13 +37,11 @@ const ServicesCarousel = () => {
         scrollLock={true}
       >
         {Services.map((service) => {
-          console.log(service.ServiceName);
-          console.log([service]);
           return (
             <div key={service.ID}>
               <ServicesCard
-                beforeImageLink={service.BeforeImageLink[0]}
-                afterImageLink={service.AfterImageLink[0]}
+                beforeImageLink={service.BeforeImageLink}
+                afterImageLink={service.AfterImageLink}
                 serviceName={service.ServiceName}
                 pricing={service.Pricing}
                 details={service.Details}

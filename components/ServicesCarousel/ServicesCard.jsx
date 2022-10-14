@@ -8,35 +8,44 @@ import styles from "./ServicesCarousel.module.css";
 //TODO Design the card
 //TODO Add Props
 //TODO image comparison component
-const ServicesCard = ({beforeImageLink,afterImageLink,serviceName,pricing,details}) => {
+const ServicesCard = ({
+  beforeImageLink,
+  afterImageLink,
+  serviceName,
+  pricing,
+  details,
+}) => {
   return (
     <div className={styles.cardcontainer}>
       {console.log(serviceName)}
-      <div className={styles.cardimage}> <CompareImageSlider
-              beforeImg={
-                <Image
-                  src={"/" + beforeImageLink}
-                  layout="fill"
-                  objectFit="cover"
-                />
-              }
-              afterImg={
-                <Image
-                  src={"/" + afterImageLink}
-                  layout="fill"
-                  objectFit="cover"
-                />
-              }
-            /></div>
+      <div className={styles.cardimage}>
+        {" "}
+        <CompareImageSlider
+          beforeImg={
+            <Image
+              alt={beforeImageLink[1]}
+              src={"/" + beforeImageLink[0]}
+              layout="fill"
+              objectFit="cover"
+            />
+          }
+          afterImg={
+            <Image
+              alt={afterImageLink[1]}
+              src={"/" + afterImageLink[0]}
+              layout="fill"
+              objectFit="cover"
+            />
+          }
+        />
+      </div>
       <div className={styles.carddetails}>
         <div className={styles.cardtitle}>{serviceName}</div>
         <div className={styles.cardprice}>
           <h3>Starting at {pricing}$ /per image</h3>
         </div>
         <div className={styles.carddesc}>
-          <p>
-            {details}
-          </p>
+          <p>{details}</p>
         </div>
       </div>
       <div className={styles.cardsubmit}>
