@@ -26,7 +26,7 @@ const ServicesCarousel = () => {
             },
           },
           {
-            breakpoint: 940,
+            breakpoint: 1124,
             settings: {
               slidesToShow: 2,
             },
@@ -115,11 +115,12 @@ const ServicesCarousel = () => {
           display: flex;
           justify-content: center;
           align-items: center;
+          margin-inline: 1rem;
         }
 
         .container {
           max-width: 90%;
-          margin: 0 1rem;
+          margin: 0 auto;
           position: relative;
         }
       `}</style>
