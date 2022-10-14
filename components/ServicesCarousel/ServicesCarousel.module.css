@@ -19,6 +19,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 .carddetails {
   display: flex;
@@ -46,4 +47,11 @@
   justify-content: center;
   align-items: center;
   color: var(--dark--gray);
+}
+@media screen and (max-width: 940px) {
+  .cardimage{
+    width: 280px;
+    height: 200px;
+  }
+  
 }

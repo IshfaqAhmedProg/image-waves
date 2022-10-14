@@ -63,9 +63,7 @@
     height: 15vw;
     width: 15vw;
   }
-  .content {
-    justify-content: center;
-  }
+  
   .contentcontainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
