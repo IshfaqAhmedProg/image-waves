@@ -119,7 +119,7 @@ const ServicesCarousel = () => {
 
         .container {
           max-width: 90%;
-          margin: 0 auto;
+          margin: 0 1rem;
           position: relative;
         }
       `}</style>
