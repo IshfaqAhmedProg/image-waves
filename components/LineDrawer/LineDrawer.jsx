@@ -21,8 +21,8 @@ const LineDrawer = ({
   right = 0,
   top = 0,
   float = "none",
-  width=null,
-  height=null
+  width = null,
+  height = null,
 }) => {
   useEffect(() => {
     const lines = document.querySelectorAll("#" + id);
@@ -34,7 +34,7 @@ const LineDrawer = ({
       line.style.setProperty("--delay", delay + "ms");
       dur = dur + stagger;
     });
-  },[id]);
+  });
   return (
     <div
       className={styles.bglinescontainer}

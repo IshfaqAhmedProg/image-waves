@@ -79,8 +79,8 @@ const PopularServices = () => {
       <div className={styles.bg}>
         <LineDrawer
           viewBox="0 0 608 759"
-          duration={3000}
-          delay={1000}
+          duration={2000}
+          delay={0}
           stagger={300}
           id="popline"
           right={0}
