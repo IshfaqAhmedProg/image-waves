@@ -17,9 +17,7 @@ const ServicesCard = ({
 }) => {
   return (
     <div className={styles.cardcontainer}>
-      {console.log(serviceName)}
       <div className={styles.cardimage}>
-        {" "}
         <CompareImageSlider
           beforeImg={
             <Image

@@ -50,7 +50,7 @@
 }
 @media screen and (max-width: 1290px) {
   .container {
-    padding-top: 30%;
+    padding-top: 20%;
     height: fit-content;
     gap: 3rem;
   }
@@ -59,14 +59,28 @@
   }
 }
 @media screen and (max-width: 940px) {
+  .container{
+    padding-top: 30%;
+  }
   .contentimage {
     height: 15vw;
     width: 15vw;
   }
-  
+
   .contentcontainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
+  }
+  .contentdesc {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 4;
+    overflow: hidden;
+  }
+}
+@media screen and (max-height: 812px) {
+  .container {
+    padding-top: 70%;
   }
 }

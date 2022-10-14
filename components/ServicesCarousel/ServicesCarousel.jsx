@@ -4,12 +4,11 @@ import "glider-js/glider.min.css";
 import ServicesCard from "./ServicesCard";
 import styles from "./ServicesCarousel.module.css";
 import Services from "../../shared/Data/services.json";
-import Arrowicon from "../../public/Icons/Arrowicon.jsx";
 import Button from "../Button/Button";
 //TODO services json data from firestore
 const ServicesCarousel = () => {
   return (
-    <div className="container">
+    <div className={styles.container}>
       <Glider
         draggable
         hasArrows
@@ -35,6 +34,13 @@ const ServicesCarousel = () => {
         slidesToShow={1}
         slidesToScroll={1}
         scrollLock={true}
+        dragVelocity={1}
+        easing={function easeInBack(x) {
+          const c1 = 1.70158;
+          const c3 = c1 + 1;
+
+          return c3 * x * x * x - c1 * x * x;
+        }}
       >
         {Services.map((service) => {
           return (
@@ -115,11 +121,8 @@ const ServicesCarousel = () => {
           align-items: center;
           margin-inline: 1rem;
         }
-
-        .container {
-          max-width: 90%;
-          margin: 0 auto;
-          position: relative;
+        .glider-dot .active {
+          background: #31b624;
         }
       `}</style>
     </div>

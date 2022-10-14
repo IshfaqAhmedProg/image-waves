@@ -1,3 +1,14 @@
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+  position: relative;
+  accent-color: var(--accent);
+}
+@-moz-document url-prefix() {
+  .container {
+    overflow: hidden;
+  }
+}
 .cardcontainer {
   display: flex;
   flex-direction: column;
@@ -28,6 +39,7 @@
   align-items: center;
   gap: 0.625rem;
 }
+
 .cardtitle {
   font-size: var(--carousel-title);
   font-weight: 700;
@@ -40,6 +52,10 @@
   color: var(--black);
   max-width: 20.4375rem;
   text-align: center;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
 }
 .cardsubmit {
   display: flex;
@@ -49,9 +65,8 @@
   color: var(--dark--gray);
 }
 @media screen and (max-width: 940px) {
-  .cardimage{
+  .cardimage {
     width: 280px;
     height: 200px;
   }
-  
 }
