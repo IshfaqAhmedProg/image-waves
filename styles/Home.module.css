@@ -1,0 +1,131 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  padding-inline: 3vw;
+  padding-top: 10vh;
+  padding-bottom: 3vh;
+  display: flex;
+  flex-direction: row;
+  gap: 1.8rem;
+}
+.menu {
+  height: 100%;
+  width: 25%;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--primary);
+  border-radius: 1rem;
+  isolation: isolate;
+}
+
+.menulist {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0px 26px;
+  gap: 29px;
+  list-style: none;
+  color: var(--primary--light);
+  width: 100%;
+}
+.menulist > li {
+  width: 100%;
+  transition: scale 0.15s ease;
+  transform-origin: left;
+}
+.menulist>li:hover{
+    scale: 0.95;
+}
+.menulist>li>h4{
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.menulist > li:nth-child(1) {
+  display: flex;
+  justify-content: center;
+}
+.menucontact {
+  padding: 1rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  isolation: isolate;
+  border-radius: 1rem;
+  color: var(--primary--light);
+  background: #082441;
+}
+.menucontact > p {
+  color: var(--white);
+  line-height: 110%;
+}
+.menucontact > p > a {
+  color: var(--primary--light);
+}
+.displaycontainer {
+  width: 75%;
+}
+.display {
+  color: var(--primary);
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.cards {
+  height: 40%;
+}
+.list {
+  height: 60%;
+}
+.content {
+  width: 100%;
+  height: 100%;
+  margin-top: 2rem;
+}
+.list > .content {
+  padding-inline: 1rem;
+  border-radius: 1rem;
+  overflow-y: scroll;
+  box-shadow: inset 0px 0px 13px rgba(15, 58, 95, 0.25);
+}
+.list > .content > .order {
+  margin-block: 1rem;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0px 2px 17px -4px rgba(10, 78, 141, 0.24);
+  border-radius: 1rem;
+  color: var(--primary--light);
+}
+.orderdetail {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 20%;
+}
+.orderdetail:nth-child(4) {
+  justify-content: flex-start;
+}
+.list > .content > .order > .orderdetail > h4 {
+  color: var(--primary);
+}
+.orderdetail > span[data-status="Complete"] {
+  color: var(--accent);
+}
+.orderdetail > span[data-status="Recieved"] {
+  color: var(--orange);
+}
+.orderdetail > span[data-status="Processing"] {
+  color: var(--primary);
+}

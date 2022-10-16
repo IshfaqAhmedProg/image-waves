@@ -42,9 +42,6 @@ const PopularServices = () => {
             <Button variant="leftarrow" />
           </div>
           <div className={styles.previewcomp}>
-            {
-              //TODO change to Compare Image Slider component
-            }
             <CompareImageSlider
               beforeImg={
                 <Image

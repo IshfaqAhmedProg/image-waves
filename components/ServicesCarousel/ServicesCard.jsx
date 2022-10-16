@@ -5,9 +5,6 @@ import Button from "../Button/Button";
 import CompareImageSlider from "../CompareImageSlider/CompareImageSlider";
 import styles from "./ServicesCarousel.module.css";
 
-//TODO Design the card
-//TODO Add Props
-//TODO image comparison component
 const ServicesCard = ({
   beforeImageLink,
   afterImageLink,

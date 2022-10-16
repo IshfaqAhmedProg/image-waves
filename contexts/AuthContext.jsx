@@ -58,7 +58,14 @@ export const AuthContextProvider = ({ children }) => {
   //Googlelogin Auth function
   const googleLogin = () => {
     const provider = new GoogleAuthProvider();
-    return signInWithPopup(auth, provider);
+    return signInWithPopup(auth, provider).then(
+      async (cred) => {
+        await setDoc(doc(db, "users", cred.user.uid), {
+          UID: cred.user.uid,
+          Email: cred.user.email,
+        });
+      }
+    );;
   };
   //logout Auth function
   const logout = async () => {

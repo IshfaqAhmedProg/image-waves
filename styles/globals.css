@@ -14,6 +14,7 @@
   --light--gray: rgb(220, 220, 220);
   --gray: rgb(174, 174, 174);
   --red: hsla(0, 86.2%, 57.3%, 1);
+  --orange: hsla(36, 86%, 57%, 1);
   --green: hsla(112, 86.3%, 57.1%, 1);
   --dark--gray: rgb(81, 81, 81);
   --paragraph--color: var(--black);
@@ -39,6 +40,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Prompt", sans-serif;
+  box-sizing: border-box;
 }
 
 a {
@@ -71,8 +73,15 @@ h2 {
   font-size: var(--h2);
   line-height: 113.7%;
 }
-h3{
-  margin:0;
+h3 {
+  margin: 0;
+}
+h4 {
+  margin: 0;
+  font-style: normal;
+  font-size: var(--p-impact);
+  font-weight: 700;
+  line-height: 113.7%;
 }
 @media screen and (max-width: 428px) {
   :root {
