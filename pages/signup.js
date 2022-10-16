@@ -63,7 +63,7 @@ const Signup = () => {
         {
           //TODO ReAdd submit handler later
         }
-        <form className={formStyles.form} /* onSubmit={handleSignup} */>
+        <form className={formStyles.form} onSubmit={handleSignup}>
           <fieldset className={formStyles.formfield}>
             <InputField
               tabIndex="1"

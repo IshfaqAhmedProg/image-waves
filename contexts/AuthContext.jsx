@@ -13,7 +13,6 @@ import {
 import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../firebase/config";
 
-
 const AuthContext = createContext({});
 export const useAuth = () => useContext(AuthContext);
 export const AuthContextProvider = ({ children }) => {
@@ -58,14 +57,12 @@ export const AuthContextProvider = ({ children }) => {
   //Googlelogin Auth function
   const googleLogin = () => {
     const provider = new GoogleAuthProvider();
-    return signInWithPopup(auth, provider).then(
-      async (cred) => {
-        await setDoc(doc(db, "users", cred.user.uid), {
-          UID: cred.user.uid,
-          Email: cred.user.email,
-        });
-      }
-    );;
+    return signInWithPopup(auth, provider).then(async (cred) => {
+      await setDoc(doc(db, "users", cred.user.uid), {
+        UID: cred.user.uid,
+        Email: cred.user.email,
+      });
+    });
   };
   //logout Auth function
   const logout = async () => {
@@ -99,7 +96,11 @@ export const AuthContextProvider = ({ children }) => {
         resetPass,
       }}
     >
-      {loading ? "loading" : children}
+      {loading ? (
+        <div style={{ display: "flex", justifyContent: "center", fontSize:"50px" }}>Loading</div>
+      ) : (
+        children
+      )}
     </AuthContext.Provider>
   );
 };
