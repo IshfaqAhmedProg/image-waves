@@ -12,6 +12,7 @@ import {
 
 import { doc, setDoc } from "firebase/firestore";
 import { auth, db } from "../firebase/config";
+import Loader from "../components/Loader/Loader";
 
 const AuthContext = createContext({});
 export const useAuth = () => useContext(AuthContext);
@@ -96,11 +97,7 @@ export const AuthContextProvider = ({ children }) => {
         resetPass,
       }}
     >
-      {loading ? (
-        <div style={{ display: "flex", justifyContent: "center", fontSize:"50px" }}>Loading</div>
-      ) : (
-        children
-      )}
+      {loading ? <Loader /> : children}
     </AuthContext.Provider>
   );
 };
