@@ -105,6 +105,7 @@ export const AuthContextProvider = ({ children }) => {
             fontWeight: "500",
             alignItems: "center",
             color: "#41A2F7",
+            height: "100vh",
           }}
         >
           Loading...
