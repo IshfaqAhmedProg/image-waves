@@ -99,13 +99,13 @@ export const AuthContextProvider = ({ children }) => {
       {loading ? (
         <div
           style={{
-            display: "flex",
-            justifyContent: "center",
+            position:"fixed",
+            top:'50%',
+            left:'50%',
+            translate:'-50% -50%',
             fontSize: "20px",
             fontWeight: "500",
-            alignItems: "center",
             color: "#41A2F7",
-            height: "100vh",
           }}
         >
           Loading...
