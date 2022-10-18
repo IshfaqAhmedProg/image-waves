@@ -57,13 +57,9 @@ export const AuthContextProvider = ({ children }) => {
   //Googlelogin Auth function
   const googleLogin = () => {
     const provider = new GoogleAuthProvider();
-    return signInWithPopup(auth, provider).then(async (cred) => {
-      await setDoc(doc(db, "users", cred.user.uid), {
-        UID: cred.user.uid,
-        Email: cred.user.email,
-      });
-    });
+    return signInWithPopup(auth, provider);
   };
+  //TODO database entry when authenticating with google
   //logout Auth function
   const logout = async () => {
     setUser(null);
@@ -99,10 +95,10 @@ export const AuthContextProvider = ({ children }) => {
       {loading ? (
         <div
           style={{
-            position:"fixed",
-            top:'50%',
-            left:'50%',
-            translate:'-50% -50%',
+            position: "fixed",
+            top: "50%",
+            left: "50%",
+            translate: "-50% -50%",
             fontSize: "20px",
             fontWeight: "500",
             color: "#41A2F7",

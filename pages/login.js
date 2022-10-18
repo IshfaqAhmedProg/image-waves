@@ -26,8 +26,9 @@ export default function Login() {
     password: "",
   });
   function handleError(err) {
-    setErrorMsg(getRefinedFirebaseError(err));
-    console.log([err]);
+    if (err == null) return;
+    console.log(err);
+    /* setErrorMsg(getRefinedFirebaseError(err)) */
   }
 
   const handleLogin = async (e) => {

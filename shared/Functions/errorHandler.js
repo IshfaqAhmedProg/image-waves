@@ -1,7 +1,12 @@
 export const getRefinedFirebaseError = (errorMesssage) => {
-  const stringified = errorMesssage.toString();
-  const trimmed = stringified.match(/(\/)[^)]*/g).toString();
-  const finalformat = trimmed.replace("/", "");
+  let finalformat;
+  if (errorMesssage != null) {
+    const stringified = errorMesssage.toString();
+    const trimmed = stringified.match(/(\/)[^)]*/g).toString();
+    finalformat = trimmed.replace("/", "");
+  } else {
+    finalformat = "";
+  }
   const authErrors = {
     "admin-restricted-operation":
       "This operation is restricted to administrators only.",
@@ -133,7 +138,7 @@ export const getRefinedFirebaseError = (errorMesssage) => {
       "The maximum allowed number of second factors on a user has been exceeded.",
     "tenant-id-mismatch":
       "The provided tenant ID does not match the Auth instance's tenant ID",
-    "timeout": "The operation has timed out.",
+    timeout: "The operation has timed out.",
     "user-token-expired":
       "The user's credential is no longer valid. The user must sign in again.",
     "too-many-requests":
@@ -157,19 +162,16 @@ export const getRefinedFirebaseError = (errorMesssage) => {
     "web-storage-unsupported":
       "This browser is not supported or 3rd party cookies and data may be disabled.",
   };
-/*   console.log("stringified", stringified);
-  console.log("trimmed", trimmed);
-  console.log("final", finalformat);
-  console.log(authErrors[finalformat]);
-  console.log(authErrors.hasOwnProperty(finalformat)); */
   let refinedMssg = "";
-  switch (authErrors.hasOwnProperty(finalformat)) {
-    case true:
-      refinedMssg = authErrors[finalformat];
-      break;
-    default:
-      refinedMssg = "The world has been destroyed";
-      break;
+  if (finalformat != "") {
+    switch (authErrors.hasOwnProperty(finalformat)) {
+      case true:
+        refinedMssg = authErrors[finalformat];
+        break;
+      default:
+        refinedMssg = "The world has been destroyed";
+        break;
+    }
   }
 
   return refinedMssg;

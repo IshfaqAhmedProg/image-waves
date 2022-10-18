@@ -3,11 +3,11 @@
   font-style: normal;
   line-height: 113.7%;
   cursor: pointer;
-}
-.extsignin {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.extsignin {
   border: none;
   padding: 1rem 2rem;
   font-size: 1em;
@@ -74,10 +74,10 @@
 .arrow {
   background: none;
   border: none;
-padding: 0;
-width: 100%;
+  padding: 0;
+  width: 100%;
 }
-.arrow>svg{
+.arrow > svg {
   width: 98%;
   transition: filter 0.3s ease-in-out;
 }
@@ -89,6 +89,6 @@ width: 100%;
   scale: 0.8;
   filter: brightness(80%);
 }
-.rightarrow{
+.rightarrow {
   rotate: 180deg;
 }

@@ -35,12 +35,7 @@ const ServicesCarousel = () => {
         slidesToScroll={1}
         scrollLock={true}
         dragVelocity={1}
-        easing={function easeInBack(x) {
-          const c1 = 1.70158;
-          const c3 = c1 + 1;
-
-          return c3 * x * x * x - c1 * x * x;
-        }}
+      
       >
         {Services.map((service) => {
           return (
