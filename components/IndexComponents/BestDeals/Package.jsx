@@ -8,7 +8,7 @@ const Package = ({ title, contents, features, price, goto, buttontext }) => {
     <div
       className={styles.package}
       data-aos="fade-left"
-      data-aos-delay={300 * (parseInt(title) - 1)}
+      data-aos-delay={100 * (parseInt(title) - 1)}
       data-aos-anchor-placement="top-center"
     >
       <h2 className={styles.packagetitle}>
