@@ -10,6 +10,7 @@ const Package = ({ title, contents, features, price, goto, buttontext }) => {
       data-aos="fade-left"
       data-aos-delay={100 * (parseInt(title) - 1)}
       data-aos-anchor-placement="top-center"
+      data-aos-duration={(parseInt(title) / 100) * 20000}
     >
       <h2 className={styles.packagetitle}>
         Package <span>{title}</span>
