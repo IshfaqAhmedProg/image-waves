@@ -3,14 +3,13 @@ import Glider from "react-glider";
 import "glider-js/glider.min.css";
 import ServicesCard from "./ServicesCard";
 import styles from "./ServicesCarousel.module.css";
-import Services from "../../shared/Data/services.json";
-import Button from "../Button/Button";
+import Services from "../../../shared/Data/services.json";
+import Button from "../../Button/Button";
 //TODO services json data from firestore
 const ServicesCarousel = () => {
   return (
     <div className={styles.container}>
       <Glider
-        draggable
         hasArrows
         hasDots
         arrows={{
@@ -34,8 +33,6 @@ const ServicesCarousel = () => {
         slidesToShow={1}
         slidesToScroll={1}
         scrollLock={true}
-        dragVelocity={1}
-      
       >
         {Services.map((service) => {
           return (

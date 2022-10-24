@@ -1,11 +1,11 @@
 import Image from "next/image";
 import React from "react";
 import styles from "./PromoSection.module.css";
-import Divider from "../Divider/Divider";
-import SFDicon from "../../public/Icons/SFDicon.svg";
-import CSicon from "../../public/Icons/CSicon.svg";
-import CSaicon from "../../public/Icons/CSaicon.svg";
-import AFicon from "../../public/Icons/AFicon.svg";
+import Divider from "../../Divider/Divider";
+import SFDicon from "../../../public/Icons/SFDicon.svg";
+import CSicon from "../../../public/Icons/CSicon.svg";
+import CSaicon from "../../../public/Icons/CSaicon.svg";
+import AFicon from "../../../public/Icons/AFicon.svg";
 const PromoSection = () => {
   return (
     <div className={styles.container}>

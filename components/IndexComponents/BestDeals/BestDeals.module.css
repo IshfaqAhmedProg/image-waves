@@ -1,0 +1,110 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  padding-block: 5rem;
+  height: max-content;
+  gap: 2rem;
+}
+.title {
+  text-align: right;
+  color: var(--primary);
+}
+.title > h1:nth-child(2) {
+  color: var(--accent);
+}
+.packages {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+  flex-wrap: wrap;
+  overflow: hidden;
+}
+/*style for active package*/
+.packages > div:nth-child(1) {
+  padding-block: 2.625rem;
+  height: 38.8125rem;
+  width: 22.0625rem;
+  background-color: var(--primary--light);
+}
+@media screen and (max-width:1365px) {
+.packages > div:nth-child(1) {
+    width: 19rem;
+    height: auto;
+}
+}
+.package {
+  min-width: 19rem;
+  padding-block: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--primary);
+  border-radius: 1.0625rem;
+  isolation: isolate;
+  color: var(--white);
+}
+.packages > div:not(:first-child) > .packagetitle {
+  color: var(--primary--light);
+}
+.packages > div:not(:first-child) > .packagetitle > span {
+  color: var(--primary--dark);
+}
+.packagetitle {
+  position: relative;
+  color: var(--primary);
+}
+.packagetitle > span {
+  color: var(--primary);
+  position: absolute;
+  right: -30%;
+  top: 25%;
+  scale: 3.5;
+  z-index: -1;
+}
+.packagecontent {
+  padding: 1rem 2rem;
+  background: var(--primary--dark);
+  width: 90%;
+  min-height: 10.375rem;
+  border-radius: 1.0625rem;
+}
+.packages > div:nth-child(1) > .packagecontent {
+  background: var(--primary);
+}
+.packagecontent > li {
+  margin-top: 0.3rem;
+}
+.packagefeatures {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  list-style-type: none;
+  gap: 0.8rem;
+}
+
+.packagefeatures > li {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.packagefeatures > li > div {
+  width: 10%;
+  height: auto;
+  position: relative;
+}
+.packageprice {
+  text-align: center;
+}
+.packageprice span {
+  color: var(--accent);
+}

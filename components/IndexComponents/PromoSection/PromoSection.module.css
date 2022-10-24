@@ -59,9 +59,6 @@
   }
 }
 @media screen and (max-width: 940px) {
-  .container{
-    padding-top: 30%;
-  }
   .contentimage {
     height: 15vw;
     width: 15vw;
@@ -77,10 +74,5 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 4;
     overflow: hidden;
-  }
-}
-@media screen and (max-height: 812px) {
-  .container {
-    padding-top: 70%;
   }
 }

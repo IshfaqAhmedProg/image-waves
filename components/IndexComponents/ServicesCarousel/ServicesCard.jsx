@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import Button from "../Button/Button";
-import CompareImageSlider from "../CompareImageSlider/CompareImageSlider";
+import Button from "../../Button/Button";
+import CompareImageSlider from "../../CompareImageSlider/CompareImageSlider";
 import styles from "./ServicesCarousel.module.css";
 
 const ServicesCard = ({

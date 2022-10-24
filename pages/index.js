@@ -1,19 +1,18 @@
 import Head from "next/head";
-import Hero from "../components/Hero/Hero";
-import PopularServices from "../components/PopularServices/PopularServices";
-import PromoSection from "../components/PromoSection/PromoSection";
-import ServicesCarousel from "../components/ServicesCarousel/ServicesCarousel";
-
+import BestDeals from "../components/IndexComponents/BestDeals/BestDeals";
+import Hero from "../components/IndexComponents/Hero/Hero";
+import PopularServices from "../components/IndexComponents/PopularServices/PopularServices";
+import PromoSection from "../components/IndexComponents/PromoSection/PromoSection";
+import ServicesCarousel from "../components/IndexComponents/ServicesCarousel/ServicesCarousel";
 export default function Home() {
   return (
-    <div >
+    <div>
       <Head>
         <title>ImageWaves</title>
         <meta name="description" content="Online Image editing website" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <main >
+      <main>
         <section>
           <Hero></Hero>
         </section>
@@ -25,6 +24,9 @@ export default function Home() {
         </section>
         <section>
           <ServicesCarousel />
+        </section>
+        <section>
+          <BestDeals />
         </section>
       </main>
       <footer></footer>
