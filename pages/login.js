@@ -28,25 +28,25 @@ export default function Login() {
   function handleError(err) {
     if (err == null) return;
     console.log(err);
-    /* setErrorMsg(getRefinedFirebaseError(err)) */
+    setErrorMsg(getRefinedFirebaseError(err));
   }
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    try {
-      await login(data.email, data.password);
-      router.replace("/dashboard");
-    } catch (err) {
-      handleError(err);
-    }
+    setLoading(true);
+    login(data.email, data.password)
+      .then(() => {
+        router.replace("/dashboard");
+      })
+      .catch((error) => handleError(error))
+      .finally(() => setLoading(false));
   };
-  const handleGoogleLogin = async () => {
-    try {
-      await googleLogin();
-      router.replace("/dashboard");
-    } catch (err) {
-      handleError(err);
-    }
+  const handleGoogleLogin = () => {
+    setLoading(true);
+    googleLogin()
+      .then(() => router.replace("/dashboard"))
+      .catch((error) => handleError(error))
+      .finally(() => setLoading(false));
   };
   if (user) {
     router.replace("/dashboard");

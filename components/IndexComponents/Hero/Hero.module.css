@@ -59,6 +59,9 @@ rotate: 360deg;
 /*-------------------Hero styles-end------------------*/
 
 @media screen and (max-width: 1290px) {
+  .herocontainer{
+    height: 100vh;
+  }
   .herotextbg {
     display: none;
   }

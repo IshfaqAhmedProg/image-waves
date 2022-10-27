@@ -25,8 +25,12 @@ const PopularServices = () => {
       <div className={styles.textbg}></div>
       <div className={styles.textcontent}>
         <div className={styles.title}>
-          <h2>Our Most</h2>
-          <h1>Popular Services</h1>
+          <h2 data-aos="fade-right" data-aos-delay="600">
+            Our Most
+          </h2>
+          <h1 data-aos="fade-right" data-aos-delay="900">
+            Popular Services
+          </h1>
         </div>
         <div className={styles.preview}>
           <div className={styles.previewdesc}>
@@ -41,7 +45,7 @@ const PopularServices = () => {
           >
             <Button variant="leftarrow" />
           </div>
-          <div className={styles.previewcomp}>
+          <div className={styles.previewcomp} data-aos="zoom-in" data-aos-delay="1200">
             <CompareImageSlider
               beforeImg={
                 <Image

@@ -2,16 +2,34 @@ import React from "react";
 import styles from "./BestDeals.module.css";
 import Button from "../../Button/Button";
 import Image from "next/image";
-const Package = ({ title, contents, features, price, goto, buttontext }) => {
-  console.log(contents);
+const Package = ({
+  title,
+  contents,
+  features,
+  price,
+  goto,
+  buttontext,
+  bestDeal,
+}) => {
   return (
     <div
       className={styles.package}
       data-aos="fade-left"
       data-aos-delay={100 * (parseInt(title) - 1)}
-      data-aos-anchor-placement="top-center"
+      data-aos-anchor-placement="bottom-bottom"
       data-aos-duration={(parseInt(title) / 100) * 20000}
     >
+      {bestDeal ? (
+        <div
+          className={styles.bestbanner}
+          data-aos="zoom-in-right"
+          data-aos-delay="800"
+        >
+          Best Deal!
+        </div>
+      ) : (
+        ""
+      )}
       <h2 className={styles.packagetitle}>
         Package <span>{title}</span>
       </h2>

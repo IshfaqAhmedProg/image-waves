@@ -23,6 +23,13 @@
   box-shadow: 0px 0rem 0rem rgba(0, 0, 0, 0.25);
 }
 .primary {
+  --text: var(--primary);
+  --hover-text: var(--accent--dark);
+  --active-text: var(--white);
+  --bg-color-before: var(--accent);
+  --bg-color-after: var(--accent--light);
+  --hover-bg-before: var(--accent--dark);
+  --active-bg-before: var(--accent--dark);
   position: relative;
   padding: 0.875rem;
   background: none;
@@ -30,17 +37,17 @@
   border-radius: 0.625rem;
   font-size: var(--h3);
   font-weight: 700;
-  color: var(--primary);
+  color: var(--text);
   transition: all 0.2s ease-in-out;
   overflow: hidden;
 }
 .primary:hover {
   transform: scale(1.05) translate(-0.1rem, -0.1rem);
-  color: var(--accent--dark);
+  color: var(--hover-text);
 }
 .primary:active {
   transform: scale(0.95, 0.95);
-  color: var(--white);
+  color: var(--active-text);
 }
 .primary::before {
   content: "";
@@ -48,29 +55,31 @@
   inset: 0;
   z-index: -2;
   transition: background-color 0.3s ease-out;
-
-  background-color: var(--accent);
+  border-radius: 0.625rem;
+  background-color: var(--bg-color-before);
 }
 .primary::after {
   content: "";
   position: absolute;
   inset: 0;
-  border-radius: 0.625rem;
+  border-radius: 0.63rem;
   z-index: -1;
-  transform: scale(0, 0.9);
+  translate: -100% 0;
+  scale: 0.99 0.95;
   transform-origin: top left;
-  transition: transform 0.3s ease;
-  background-color: var(--accent--light);
+  transition: translate 0.3s ease;
+  background-color: var(--bg-color-after);
 }
 .primary:hover::before {
-  background-color: var(--accent--dark);
+  background-color: var(--hover-bg-before);
 }
 .primary:hover::after {
-  transform: scale(0.99, 0.95);
+  translate: 0;
 }
 .primary:active::before {
-  background-color: var(--accent--dark);
+  background-color: var(--active-bg-before);
 }
+
 .arrow {
   background: none;
   border: none;

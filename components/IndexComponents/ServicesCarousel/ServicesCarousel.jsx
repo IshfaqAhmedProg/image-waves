@@ -48,29 +48,15 @@ const ServicesCarousel = () => {
           );
         })}
       </Glider>
-      <div className="arrows">
-        <div className="arrow">
+      <div className={styles.arrows}>
+        <div className={styles.arrow}>
           <Button id="buttonPrev" variant="leftarrow" />
         </div>
-        <div className="arrow">
+        <div className={styles.arrow}>
           <Button id="buttonNext" variant="rightarrow" />
         </div>
       </div>
       <style jsx>{`
-        .arrows {
-          position: absolute;
-          inset: 0;
-          width: 100%;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          pointer-events: none;
-        }
-        .arrow {
-          pointer-events: all;
-          height: fit-content;
-          width: 30px;
-        }
         .glider-prev {
           top: 50%;
           width: 50px;

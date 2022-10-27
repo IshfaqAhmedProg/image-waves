@@ -32,15 +32,18 @@
   width: 22.0625rem;
   background-color: var(--primary--light);
 }
-@media screen and (max-width:1365px) {
-.packages > div:nth-child(1) {
+@media screen and (max-width: 1365px) {
+  .packages > div:nth-child(1) {
     width: 19rem;
     height: auto;
+  }
 }
-}
+
+/* Package.jsx Styles */
 .package {
   min-width: 19rem;
   padding-block: 3rem;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -50,6 +53,7 @@
   border-radius: 1.0625rem;
   isolation: isolate;
   color: var(--white);
+  overflow: hidden;
 }
 .packages > div:not(:first-child) > .packagetitle {
   color: var(--primary--light);
@@ -107,4 +111,15 @@
 }
 .packageprice span {
   color: var(--accent);
+}
+.bestbanner {
+  position: absolute;
+  left: -8%;
+  top: 3%;
+  background-color: var(--accent);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 0.2rem 1.5rem;
+  rotate: -45deg;
 }

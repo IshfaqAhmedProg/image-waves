@@ -9,6 +9,21 @@
     overflow: hidden;
   }
 }
+.arrows {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+.arrow {
+  pointer-events: all;
+  height: fit-content;
+  width: 30px;
+}
+
 .cardcontainer {
   display: flex;
   flex-direction: column;
@@ -21,6 +36,7 @@
   isolation: isolate;
   padding: 1.25rem;
   margin: 0.5rem;
+  translate: 0 0 0;
 }
 .cardimage {
   background-color: var(--gray);
@@ -68,5 +84,8 @@
   .cardimage {
     width: 280px;
     height: 200px;
+  }
+  .arrow{
+    width: 20px;
   }
 }

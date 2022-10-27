@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test:chrome": "npx playwright test --headed --browser=chromium",
+    "test:firefox": "npx playwright test --headed --browser=firefox",
+    "test:safari": "npx playwright test --headed --browser=webkit"
   },
   "dependencies": {
     "@fontsource/prompt": "^4.5.9",
@@ -19,6 +22,7 @@
     "react-glider": "^4.0.2"
   },
   "devDependencies": {
+    "@playwright/test": "^1.27.1",
     "eslint": "8.24.0",
     "eslint-config-next": "12.3.1"
   }

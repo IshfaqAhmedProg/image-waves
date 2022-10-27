@@ -44,7 +44,7 @@ const ServicesCard = ({
         </div>
       </div>
       <div className={styles.cardsubmit}>
-        <Button variant="primary">Order Now</Button>
+        <Button variant="primary" alternate>Order Now</Button>
         <Link href="/">Details</Link>
       </div>
     </div>

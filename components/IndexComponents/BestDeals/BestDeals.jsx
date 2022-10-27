@@ -8,8 +8,9 @@ const BestDeals = () => {
       <Divider direction="horizontal" />
       <div className={styles.title}>
         <h1 data-aos="zoom-in-down">Get the Best Deals</h1>
-        <h1 data-aos="zoom-in-right"
-        data-aos-delay="500">Today!</h1>
+        <h1 data-aos="zoom-in-right" data-aos-delay="300">
+          Today!
+        </h1>
       </div>
       <div className={styles.packages}>
         <Package
@@ -28,6 +29,7 @@ const BestDeals = () => {
           ]}
           price="225"
           buttontext="Try for Free Now!"
+          bestDeal
         />
         <Package
           title="2"

@@ -41,12 +41,12 @@ const Signup = () => {
       .catch((error) => handleError(error))
       .finally(() => setLoading(false));
   };
-  const handleGoogleLogin = async () => {
-      setLoading(true);
-      googleLogin()
-        .then(router.replace("/dashboard"))
-        .catch((error) => handleError(error))
-        .finally(()=>setLoading(false))      
+  const handleGoogleLogin = () => {
+    setLoading(true);
+    googleLogin()
+      .then(() => router.replace("/dashboard"))
+      .catch((error) => handleError(error))
+      .finally(() => setLoading(false));
   };
   if (user) {
     router.replace("/dashboard");
@@ -140,7 +140,7 @@ const Signup = () => {
         {
           //TODO ReAdd google submit handler later
         }
-        <Button variant="extsignin" /* onClick={handleGoogleLogin} */>
+        <Button variant="extsignin" onClick={handleGoogleLogin}>
           Sign Up with Google&nbsp; <Image src={google} alt="google logo" />
         </Button>
         <div className={formStyles.formfield}>

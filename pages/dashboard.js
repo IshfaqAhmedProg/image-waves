@@ -62,7 +62,7 @@ const Dashboard = () => {
         </ul>
         <div className={styles.menucontact}>
           <p>If you have any questions or queries please</p>
-          <Button variant="primary">
+          <Button variant="primary" alternate>
             Send us a<br />
             Message!
           </Button>
@@ -89,8 +89,8 @@ const Dashboard = () => {
             <path
               d="M2 1.5L11 10.5L2 19.5"
               stroke="white"
-              stroke-width="3"
-              stroke-linecap="round"
+              strokeWidth="3"
+              strokeLinecap="round"
             />
           </svg>
         </div>

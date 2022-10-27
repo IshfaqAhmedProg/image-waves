@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styles from "./Hero.module.css";
 import BGImageTransition from '../../BGImageTransition/BGImageTransition'
 const LineDrawer = React.lazy(() => import("../../LineDrawer/LineDrawer"));

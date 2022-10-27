@@ -6,6 +6,7 @@
   --primary--dark: hsla(224, 42%, 13%, 1);
   --primary: hsla(208, 72.7%, 21.6%, 1);
   --primary--light: hsla(208, 91%, 61%, 1);
+  --primary--lighter: hsla(208, 91%, 70%, 1);
   --accent--light: rgb(125, 248, 114);
   --accent: hsla(115, 96.7%, 64.7%, 1);
   --accent--dark: rgb(49, 182, 36);

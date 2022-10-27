@@ -1,6 +1,7 @@
 import Head from "next/head";
 import BestDeals from "../components/IndexComponents/BestDeals/BestDeals";
 import Hero from "../components/IndexComponents/Hero/Hero";
+import OrderSteps from "../components/IndexComponents/OrderSteps/OrderSteps";
 import PopularServices from "../components/IndexComponents/PopularServices/PopularServices";
 import PromoSection from "../components/IndexComponents/PromoSection/PromoSection";
 import ServicesCarousel from "../components/IndexComponents/ServicesCarousel/ServicesCarousel";
@@ -27,6 +28,9 @@ export default function Home() {
         </section>
         <section>
           <BestDeals />
+        </section>
+        <section>
+          <OrderSteps />
         </section>
       </main>
       <footer></footer>
