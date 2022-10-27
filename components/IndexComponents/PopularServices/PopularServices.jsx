@@ -25,15 +25,15 @@ const PopularServices = () => {
       <div className={styles.textbg}></div>
       <div className={styles.textcontent}>
         <div className={styles.title}>
-          <h2 data-aos="fade-right" data-aos-delay="600">
+          <h2 data-aos="fade-right">
             Our Most
           </h2>
-          <h1 data-aos="fade-right" data-aos-delay="900">
+          <h1 data-aos="fade-right">
             Popular Services
           </h1>
         </div>
         <div className={styles.preview}>
-          <div className={styles.previewdesc}>
+          <div className={styles.previewdesc} data-aos="fade-up">
             <h2>{service.name}</h2>
             <p>{service.details}</p>
           </div>
@@ -42,10 +42,11 @@ const PopularServices = () => {
             onClick={() =>
               active != 0 ? setActive(active - 1) : setActive(active)
             }
+            data-aos="fade-right"
           >
             <Button variant="leftarrow" />
           </div>
-          <div className={styles.previewcomp} data-aos="zoom-in" data-aos-delay="1200">
+          <div className={styles.previewcomp} data-aos="zoom-in">
             <CompareImageSlider
               beforeImg={
                 <Image
@@ -72,6 +73,7 @@ const PopularServices = () => {
                 ? setActive(active)
                 : setActive(active + 1)
             }
+            data-aos="fade-left"
           >
             <Button variant="rightarrow" />
           </div>

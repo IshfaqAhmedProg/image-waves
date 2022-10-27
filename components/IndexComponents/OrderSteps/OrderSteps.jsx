@@ -5,15 +5,19 @@ const OrderSteps = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        <h2>Place Your</h2>
-        <h1>
+        <h2 data-aos="fade-right">Place Your</h2>
+        <h1 data-aos="zoom-in-up">
           Order In <span>3-Easy</span>
           <br />
           Steps!
         </h1>
       </div>
       <div className={styles.cards}>
-        <div className={styles.card + " " + styles.container} data-order="1">
+        <div
+          className={styles.card + " " + styles.container}
+          data-order="1"
+          data-aos="fade-in"
+        >
           <h1>1</h1>
           <div className={styles.cardicon}>
             <svg
@@ -36,7 +40,11 @@ const OrderSteps = () => {
           <h4>Upload Your Photos</h4>
           <p>Get a free quote or Order Now to start uploading your photos</p>
         </div>
-        <div className={styles.card + " " + styles.container} data-order="2">
+        <div
+          className={styles.card + " " + styles.container}
+          data-order="2"
+          data-aos="fade-in"
+        >
           <h1>2</h1>
           <div className={styles.cardicon}>
             <svg
@@ -51,32 +59,32 @@ const OrderSteps = () => {
                 fill="#41A2F7"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M37.5977 8.22178C37.6046 7.61197 38.109 7.12316 38.7244 7.12997L54.1006 7.30035C54.716 7.30717 55.2093 7.80704 55.2024 8.41685C55.1955 9.02665 54.6911 9.51547 54.0757 9.50865L38.6994 9.33827C38.0841 9.33145 37.5908 8.83158 37.5977 8.22178Z"
                 fill="#41A2F7"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M37.5254 14.6258C37.5323 14.016 38.0367 13.5272 38.6521 13.534L54.0284 13.7044C54.6437 13.7112 55.137 14.2111 55.1301 14.8209C55.1232 15.4307 54.6188 15.9195 54.0034 15.9127L38.6272 15.7423C38.0118 15.7355 37.5185 15.2356 37.5254 14.6258Z"
                 fill="#41A2F7"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M37.4532 21.0299C37.46 20.4201 37.9645 19.9313 38.5798 19.9381L53.9561 20.1085C54.5715 20.1153 55.0647 20.6152 55.0579 21.225C55.051 21.8348 54.5466 22.3236 53.9312 22.3168L38.5549 22.1464C37.9396 22.1396 37.4463 21.6397 37.4532 21.0299Z"
                 fill="#41A2F7"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M37.3809 27.434C37.3878 26.8242 37.8922 26.3353 38.5076 26.3422L53.8838 26.5125C54.4992 26.5194 54.9925 27.0192 54.9856 27.629C54.9787 28.2388 54.4743 28.7277 53.8589 28.7208L38.4827 28.5505C37.8673 28.5436 37.374 28.0438 37.3809 27.434Z"
                 fill="#41A2F7"
               />
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M37.3087 33.838C37.3155 33.2282 37.82 32.7394 38.4353 32.7462L53.8116 32.9166C54.427 32.9234 54.9202 33.4233 54.9134 34.0331C54.9065 34.6429 54.402 35.1317 53.7867 35.1249L38.4104 34.9545C37.7951 34.9477 37.3018 34.4478 37.3087 33.838Z"
                 fill="#41A2F7"
               />
@@ -98,7 +106,11 @@ const OrderSteps = () => {
             Fill the form with your detailed instructions, and send us a sample.
           </p>
         </div>
-        <div className={styles.card + " " + styles.container} data-order="3">
+        <div
+          className={styles.card + " " + styles.container}
+          data-order="3"
+          data-aos="fade-in"
+        >
           <h1>3</h1>
           <div className={styles.cardicon}>
             <svg

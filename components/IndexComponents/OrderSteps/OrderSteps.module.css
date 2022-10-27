@@ -30,13 +30,37 @@
 }
 .card[data-order="1"] {
   background-color: var(--primary--dark);
+  animation: steps 1.5s ease-in-out;
+  animation-iteration-count: infinite;
 }
 .card[data-order="2"] {
   background-color: var(--primary);
+  animation: steps 1.5s ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: 0.3s;
 }
 .card[data-order="3"] {
   background-color: var(--primary--light);
+  animation: steps 1.5s ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: 0.6s;
 }
+@keyframes steps {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
 .card > h1:first-of-type {
   position: absolute;
   left: 10%;

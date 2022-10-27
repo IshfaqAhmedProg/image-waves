@@ -10,6 +10,7 @@ const ServicesCarousel = () => {
   return (
     <div className={styles.container}>
       <Glider
+        draggable
         hasArrows
         hasDots
         arrows={{
@@ -36,7 +37,7 @@ const ServicesCarousel = () => {
       >
         {Services.map((service) => {
           return (
-            <div key={service.ID}>
+            <div key={service.ID} data-aos="zoom-out">
               <ServicesCard
                 beforeImageLink={service.BeforeImageLink}
                 afterImageLink={service.AfterImageLink}
