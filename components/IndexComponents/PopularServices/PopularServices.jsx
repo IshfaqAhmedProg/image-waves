@@ -42,7 +42,7 @@ const PopularServices = () => {
             onClick={() =>
               active != 0 ? setActive(active - 1) : setActive(active)
             }
-            data-aos="fade-right"
+            data-aos="fade-in"
           >
             <Button variant="leftarrow" />
           </div>
@@ -73,7 +73,7 @@ const PopularServices = () => {
                 ? setActive(active)
                 : setActive(active + 1)
             }
-            data-aos="fade-left"
+            data-aos="fade-in"
           >
             <Button variant="rightarrow" />
           </div>

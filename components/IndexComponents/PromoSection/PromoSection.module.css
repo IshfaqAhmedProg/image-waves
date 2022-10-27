@@ -5,6 +5,7 @@
   justify-content: space-around;
   align-items: center;
   height: 90vh;
+  overflow: hidden;
 }
 .title {
   max-width: 356px;
