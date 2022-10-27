@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./PopularServices.module.css";
 import Image from "next/image";
-//const LineDrawer = React.lazy(() => import("../LineDrawer/LineDrawer"));
 import LineDrawer from "../../LineDrawer/LineDrawer";
 import Services from "../../../shared/Data/services.json";
 import CompareImageSlider from "../../CompareImageSlider/CompareImageSlider";
