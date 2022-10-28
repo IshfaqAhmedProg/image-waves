@@ -17,7 +17,7 @@ export default function Button({ children, variant, alternate, ...others }) {
         coloredPrimary.current.style.setProperty(element[0], element[1]);
       });
     }
-  }, [alternate]);
+  });
   return (
     <>
       {variant == "leftarrow" || variant == "rightarrow" ? (
