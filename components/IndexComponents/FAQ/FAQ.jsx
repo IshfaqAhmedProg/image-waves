@@ -80,7 +80,7 @@ const FAQ = () => {
         {faqContent.map((element) => {
           const index = faqContent.indexOf(element).toString();
           return (
-            <div className={styles.element}>
+            <div className={styles.element} key={index}>
               <div
                 className={styles.question}
                 onClick={() => {

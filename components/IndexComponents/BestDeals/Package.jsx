@@ -48,7 +48,7 @@ const Package = ({
           return (
             <li key={feature}>
               <div>
-                <Image src={"/Icons/" + feature[0]} layout="fill" />
+                <Image src={"/Icons/" + feature[0]} alt="feature icon" layout="fill" />
               </div>
               {feature[1]}
             </li>

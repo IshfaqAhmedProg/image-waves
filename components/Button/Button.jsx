@@ -13,11 +13,11 @@ export default function Button({ children, variant, alternate, ...others }) {
   ];
   useEffect(() => {
     if (alternate != null) {
-      variantBlue.forEach(element => {
-        coloredPrimary.current.style.setProperty(element[0],element[1])
+      variantBlue.forEach((element) => {
+        coloredPrimary.current.style.setProperty(element[0], element[1]);
       });
     }
-  }, []);
+  }, [alternate]);
   return (
     <>
       {variant == "leftarrow" || variant == "rightarrow" ? (

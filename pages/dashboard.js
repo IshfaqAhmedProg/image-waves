@@ -34,19 +34,19 @@ const Dashboard = () => {
           </li>
           <li>
             <h4>
-              <Image src={OrdersIcon} />
+              <Image src={OrdersIcon} alt="All Orders" />
               <Link href="/">All Orders</Link>
             </h4>
           </li>
           <li>
             <h4>
-              <Image src={ImageIcon} />
+              <Image src={ImageIcon} alt="Images" />
               <Link href="/">Your Images</Link>
             </h4>
           </li>
           <li>
             <h4>
-              <Image src={ServiceIcon} />
+              <Image src={ServiceIcon} alt="Services" />
               <Link href="/">Services</Link>
             </h4>
           </li>
@@ -55,7 +55,7 @@ const Dashboard = () => {
           </li>
           <li>
             <h4>
-              <Image src={AccountIcon} />
+              <Image src={AccountIcon} alt="Account" />
               <Link href="/">Account</Link>
             </h4>
           </li>
