@@ -1,5 +1,6 @@
 import Head from "next/head";
 import BestDeals from "../components/IndexComponents/BestDeals/BestDeals";
+import FAQ from "../components/IndexComponents/FAQ/FAQ";
 import Hero from "../components/IndexComponents/Hero/Hero";
 import OrderSteps from "../components/IndexComponents/OrderSteps/OrderSteps";
 import PopularServices from "../components/IndexComponents/PopularServices/PopularServices";
@@ -31,6 +32,9 @@ export default function Home() {
         </section>
         <section>
           <OrderSteps />
+        </section>
+        <section>
+          <FAQ />
         </section>
       </main>
       <footer></footer>

@@ -77,8 +77,8 @@
     overflow: hidden;
   }
 }
-@media screen and (max-height: 780px) {
-  .container{
+@media screen and (max-height: 767px) {
+  .container {
     padding-top: 30%;
   }
 }

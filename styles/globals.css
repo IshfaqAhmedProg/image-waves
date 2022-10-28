@@ -84,9 +84,15 @@ h4 {
   font-weight: 700;
   line-height: 113.7%;
 }
-ul{
+ul {
   margin: 0;
   padding: 0;
+}
+input[type="checkbox"] {
+  accent-color: var(--accent);
+}
+.textHL {
+  color: var(--accent);
 }
 @media screen and (max-width: 428px) {
   :root {
@@ -95,12 +101,7 @@ ul{
     --h2: 1.3rem;
   }
 }
-input[type="checkbox"] {
-  accent-color: var(--accent);
-}
-.textHL {
-  color: var(--accent);
-}
+
 /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

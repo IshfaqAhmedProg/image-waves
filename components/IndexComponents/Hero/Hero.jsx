@@ -17,7 +17,7 @@ export default function Hero() {
           right="78%"
           top="6%"
           width="493px"
-          hieght="555px"
+          height="555px"
         >
           <path
             opacity="0.5"
