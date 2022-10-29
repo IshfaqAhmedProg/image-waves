@@ -9,26 +9,37 @@ import PopularServices from "../components/IndexComponents/PopularServices/Popul
 import PromoSection from "../components/IndexComponents/PromoSection/PromoSection";
 import ServicesCarousel from "../components/IndexComponents/ServicesCarousel/ServicesCarousel"; */
 const Hero = dynamic(() => import("../components/IndexComponents/Hero/Hero"));
-const PopularServices = dynamic(() =>
-  import("../components/IndexComponents/PopularServices/PopularServices")
+const PopularServices = dynamic(
+  () => import("../components/IndexComponents/PopularServices/PopularServices"),
+  { loading: () => <p>Loading caused by client page transition ...</p> }
 );
-const PromoSection = dynamic(() =>
-  import("../components/IndexComponents/PromoSection/PromoSection")
+const PromoSection = dynamic(
+  () => import("../components/IndexComponents/PromoSection/PromoSection"),
+  { loading: () => <p>Loading caused by client page transition ...</p> }
 );
-const ServicesCarousel = dynamic(() =>
-  import("../components/IndexComponents/ServicesCarousel/ServicesCarousel")
+const ServicesCarousel = dynamic(
+  () =>
+    import("../components/IndexComponents/ServicesCarousel/ServicesCarousel"),
+  { loading: () => <p>Loading caused by client page transition ...</p> }
 );
-const BestDeals = dynamic(() =>
-  import("../components/IndexComponents/BestDeals/BestDeals")
+const BestDeals = dynamic(
+  () => import("../components/IndexComponents/BestDeals/BestDeals"),
+  { loading: () => <p>Loading caused by client page transition ...</p> }
 );
-const OrderSteps = dynamic(() =>
-  import("../components/IndexComponents/OrderSteps/OrderSteps")
+const OrderSteps = dynamic(
+  () => import("../components/IndexComponents/OrderSteps/OrderSteps"),
+  { loading: () => <p>Loading caused by client page transition ...</p> }
 );
-const FAQ = dynamic(() => import("../components/IndexComponents/FAQ/FAQ"));
-const Banner = dynamic(() =>
-  import("../components/IndexComponents/Banner/Banner")
+const FAQ = dynamic(() => import("../components/IndexComponents/FAQ/FAQ"), {
+  loading: () => <p>Loading caused by client page transition ...</p>,
+});
+const Banner = dynamic(
+  () => import("../components/IndexComponents/Banner/Banner"),
+  { loading: () => <p>Loading caused by client page transition ...</p> }
 );
-const Footer = dynamic(() => import("../components/Footer/Footer"));
+const Footer = dynamic(() => import("../components/Footer/Footer"), {
+  loading: () => <p>Loading caused by client page transition ...</p>,
+});
 export default function Home() {
   //TODO fix code Splitting
   return (
