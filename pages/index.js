@@ -41,6 +41,10 @@ export default function Home() {
     () => import("../components/IndexComponents/Banner/Banner"),
     { ssr: false }
   );
+  const Footer = dynamic(
+    () => import("../components/Footer/Footer"),
+    { ssr: false }
+  );
   return (
     <>
       <Head>
