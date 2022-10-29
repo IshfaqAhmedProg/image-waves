@@ -13,10 +13,11 @@
   );
   position: relative;
   isolation: isolate;
+  overflow: hidden;
 }
 .bg {
   position: absolute;
-  left: -2%;
+  left: -3%;
   rotate: 4deg;
   top: -6%;
 z-index: -1;

@@ -1,0 +1,27 @@
+.container {
+  padding-block: 3rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--dark--gray);
+}
+
+.content {
+  display: flex;
+  gap: 4rem;
+  padding-inline: 0.625rem;
+  text-align: center;
+}
+.options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  max-width: 9.3125rem;
+}

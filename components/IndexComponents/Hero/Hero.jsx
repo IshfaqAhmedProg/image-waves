@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Hero.module.css";
-import BGImageTransition from '../../BGImageTransition/BGImageTransition'
+import BGImageTransition from "../../BGImageTransition/BGImageTransition";
 const LineDrawer = React.lazy(() => import("../../LineDrawer/LineDrawer"));
 
 export default function Hero() {
@@ -50,7 +50,7 @@ export default function Hero() {
           <span className="textHL"> Photo Editing</span>
           <br /> Studio!
         </h1>
-        <p className={styles.herodesc}>
+        <p className={styles.herodesc} data-aos="zoom-in">
           Upload your images to get instant service from some of the best in the
           industry! Whatever you require, we`ve got it!
         </p>

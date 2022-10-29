@@ -127,7 +127,7 @@ export default function Login() {
         {
           //TODO ReAdd google submit handler later
         }
-        <Button variant="extsignin" onClick={handleGoogleLogin}>
+        <Button variant="plain" onClick={handleGoogleLogin}>
           Sign in with Google&nbsp; <Image src={google} alt="google logo" />
         </Button>
         <div className={formStyles.formfield}>

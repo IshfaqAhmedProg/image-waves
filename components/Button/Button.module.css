@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
 }
-.extsignin {
+.plain {
   border: none;
   padding: 1rem 2rem;
   font-size: 1em;
@@ -17,7 +17,7 @@
   box-shadow: 0px 0.0625rem 0.25rem rgba(0, 0, 0, 0.25);
   border-radius: 0.625rem;
 }
-.extsignin:hover {
+.plain:hover {
   background: var(--light--gray);
   scale: 0.99;
   box-shadow: 0px 0rem 0rem rgba(0, 0, 0, 0.25);
@@ -79,7 +79,24 @@
 .primary:active::before {
   background-color: var(--active-bg-before);
 }
-
+.secondary {
+  padding: 1rem;
+  border-radius: 300px;
+  border: 1px solid#5bfc4d;
+  font-weight: 400;
+  font-size: 16px;
+  background: var(--primary--dark);
+  line-height: 113.7%;
+  color: var(--white);
+  transition: all 0.3s ease-in-out;
+}
+.secondary:hover,
+.secondary:focus {
+  scale: 0.9;
+  color: var(--primary);
+  border-color: var(--white);
+  background: var(--accent);
+}
 .arrow {
   background: none;
   border: none;
@@ -100,4 +117,60 @@
 }
 .rightarrow {
   rotate: 180deg;
+}
+.large {
+  padding: 1rem 2rem;
+  font-size: var(--h2);
+  font-weight: 700;
+  color: var(--accent);
+  border: none;
+  background: var(--primary);
+  border-radius: 10px;
+  position: relative;
+  isolation: isolate;
+  transition: all 0.3s ease-in-out;
+}
+.large::before {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  top: 120%;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: var(--accent);
+  transform: perspective(5em) rotateX(65deg) scale(1, 0.8);
+  filter: blur(1em);
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+.large::after {
+  pointer-events: none;
+  content: "";
+  position: absolute;
+  bottom: 140%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--accent);
+  transform: perspective(8em) rotateX(-65deg) translateZ(1em) scale(1, 0.8);
+  filter: blur(1.5em);
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+.large:hover,
+.large:active {
+  background: var(--accent);
+  scale: 1.05;
+  color: var(--white);
+  text-shadow: 0px 0px 3px #ffffff, 0px 0px 13px #ffffff55;
+  box-shadow: 0px 0px 3px var(--accent), 0px 0px 30px #5cfc4e55;
+}
+.large:hover.large::after,
+.large:active.large::after {
+  opacity: 0.8;
+}
+.large:hover.large::before,
+.large:active.large::before {
+  opacity: 0.8;
 }

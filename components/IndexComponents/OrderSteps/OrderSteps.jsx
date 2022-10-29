@@ -44,6 +44,7 @@ const OrderSteps = () => {
           className={styles.card + " " + styles.container}
           data-order="2"
           data-aos="fade-in"
+          data-aos-delay="300"
         >
           <h1>2</h1>
           <div className={styles.cardicon}>
@@ -110,6 +111,7 @@ const OrderSteps = () => {
           className={styles.card + " " + styles.container}
           data-order="3"
           data-aos="fade-in"
+          data-aos-delay="600"
         >
           <h1>3</h1>
           <div className={styles.cardicon}>
@@ -138,7 +140,7 @@ const OrderSteps = () => {
         </div>
       </div>
       <div className={styles.buttons}>
-        <Button variant="extsignin">Get a Free Quote!</Button>
+        <Button variant="plain">Get a Free Quote!</Button>
         <Button variant="primary">Order Now!</Button>
       </div>
     </div>

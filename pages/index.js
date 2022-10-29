@@ -1,6 +1,8 @@
 import Head from "next/head";
+import Banner from "../components/IndexComponents/Banner/Banner";
 import BestDeals from "../components/IndexComponents/BestDeals/BestDeals";
 import FAQ from "../components/IndexComponents/FAQ/FAQ";
+import Footer from "../components/Footer/Footer";
 import Hero from "../components/IndexComponents/Hero/Hero";
 import OrderSteps from "../components/IndexComponents/OrderSteps/OrderSteps";
 import PopularServices from "../components/IndexComponents/PopularServices/PopularServices";
@@ -8,7 +10,7 @@ import PromoSection from "../components/IndexComponents/PromoSection/PromoSectio
 import ServicesCarousel from "../components/IndexComponents/ServicesCarousel/ServicesCarousel";
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>ImageWaves</title>
         <meta name="description" content="Online Image editing website" />
@@ -36,8 +38,11 @@ export default function Home() {
         <section>
           <FAQ />
         </section>
+        <section>
+          <Banner />
+        </section>
       </main>
-      <footer></footer>
-    </div>
+      <Footer />
+    </>
   );
 }

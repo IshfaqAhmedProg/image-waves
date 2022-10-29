@@ -17,7 +17,7 @@ const Package = ({
       data-aos="fade-left"
       data-aos-delay={100 * (parseInt(title) - 1)}
       data-aos-anchor-placement="bottom-bottom"
-      data-aos-duration={(parseInt(title) / 100) * 20000}
+      data-aos-duration={(parseInt(title) / 100) * 200}
       data-aos-once="true"
     >
       {bestDeal ? (

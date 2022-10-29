@@ -99,6 +99,10 @@ const ServicesCarousel = () => {
           justify-content: center;
           align-items: center;
           margin-inline: 1rem;
+          margin-block: 1.5rem;
+        }
+        .glider-draggable {
+          overflow: hidden;
         }
         .glider-dot .active {
           background: #31b624;
