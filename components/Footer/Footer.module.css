@@ -12,7 +12,10 @@
   gap: 1rem;
   color: var(--dark--gray);
 }
-
+.logo{
+  display: flex;
+  justify-content: center;
+}
 .content {
   display: flex;
   gap: 4rem;
@@ -24,4 +27,9 @@
   flex-wrap: wrap;
   gap: 0.5rem;
   max-width: 9.3125rem;
+}
+@media screen and (max-width:940px) {
+  .logo{
+    width: 100%;
+  }
 }
