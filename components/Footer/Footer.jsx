@@ -7,6 +7,9 @@ import MaestroLogo from "../../public/Logos/PaymentMethod/Maestro.png";
 import MastercardLogo from "../../public/Logos/PaymentMethod/Mastercard.png";
 import PayPalLogo from "../../public/Logos/PaymentMethod/PayPal.png";
 import VisaLogo from "../../public/Logos/PaymentMethod/Visa.png";
+import FacebookLogo from "../../public/Logos/Socials/Facebook.svg";
+import PinterestLogo from "../../public/Logos/Socials/Pinterest.svg";
+import LinkedInLogo from "../../public/Logos/Socials/LinkedIn.svg";
 
 import styles from "./Footer.module.css";
 
@@ -33,11 +36,30 @@ const Footer = () => {
           <Link href="/">Wedding Photo Editing</Link>
         </div>
         <div className={styles.menu + " " + styles.address}>
-          <h4>Address</h4>
-          Lorem ipsum,
-          <br /> dolor sit
-          <br /> 1235486 568-986
-          <br /> alps
+          <h4>Contact Us</h4>
+          <p>
+            <span>Email us at:</span> support@imagewaves.com
+            <br /> dolor sit
+            <br /> 1235486 568-986
+            <br /> alps
+          </p>
+          <div className={styles.socials}>
+            <Link href="/">
+              <a>
+                <Image src={FacebookLogo} alt="contact us on facebook" />
+              </a>
+            </Link>
+            <Link href="/">
+              <a>
+                <Image src={LinkedInLogo} alt="contact us on Linked In" />
+              </a>
+            </Link>
+            <Link href="/">
+              <a>
+                <Image src={PinterestLogo} alt="contact us on Pinterest" />
+              </a>
+            </Link>
+          </div>
         </div>
         <div className={styles.menu + " " + styles.payment}>
           <h4>We Accept</h4>

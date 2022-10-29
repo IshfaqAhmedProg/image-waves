@@ -12,12 +12,14 @@
   gap: 1rem;
   color: var(--dark--gray);
 }
-.logo{
+.logo {
   display: flex;
   justify-content: center;
 }
 .content {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 4rem;
   padding-inline: 0.625rem;
   text-align: center;
@@ -28,8 +30,16 @@
   gap: 0.5rem;
   max-width: 9.3125rem;
 }
-@media screen and (max-width:940px) {
-  .logo{
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+}
+.menu span{
+  font-weight: bold;
+}
+@media screen and (max-width: 940px) {
+  .logo {
     width: 100%;
   }
 }
