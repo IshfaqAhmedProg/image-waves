@@ -18,7 +18,7 @@ export default function Navbar() {
         <Link href="/" passHref>
           <a>
             <Image
-              src="/Logos/LogoWhiteH.png"
+              src="/Logos/LogoWhiteH.svg"
               alt="Logo"
               width={247}
               height={60}
