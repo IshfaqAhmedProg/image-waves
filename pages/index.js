@@ -1,7 +1,6 @@
 import React, { Suspense } from "react";
 import Head from "next/head";
 import dynamic from "next/dynamic";
-import Hero from "../components/IndexComponents/Hero/Hero";
 /* import Banner from "../components/IndexComponents/Banner/Banner";
 import BestDeals from "../components/IndexComponents/BestDeals/BestDeals";
 import FAQ from "../components/IndexComponents/FAQ/FAQ";
@@ -9,6 +8,7 @@ import FAQ from "../components/IndexComponents/FAQ/FAQ";
 import PopularServices from "../components/IndexComponents/PopularServices/PopularServices";
 import PromoSection from "../components/IndexComponents/PromoSection/PromoSection";
 import ServicesCarousel from "../components/IndexComponents/ServicesCarousel/ServicesCarousel"; */
+const Hero = dynamic(() => import("../components/IndexComponents/Hero/Hero"));
 const PopularServices = dynamic(() =>
   import("../components/IndexComponents/PopularServices/PopularServices")
 );
