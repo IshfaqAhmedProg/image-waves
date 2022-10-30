@@ -8,11 +8,11 @@ import bg5 from "../../public/Splashscreen/5.webp";
 import bg6 from "../../public/Splashscreen/6.webp";
 import bg7 from "../../public/Splashscreen/7.webp";
 import styles from "./BGImageTransition.module.css";
-import { shimmer, toBase64 } from "../../shared/Functions/blurData";
 export default function BGImageTransition() {
   const images = [bg1, bg2, bg3, bg4, bg5, bg6, bg7];
   const [active, setActive] = useState(1);
   const delay = 3000; //ms
+
   function activeSlide() {
     //set active slide
     active > images.length - 1 ? setActive(1) : setActive(active + 1);
@@ -29,7 +29,25 @@ export default function BGImageTransition() {
     }
   }
   //Loading
+  //TODO bring back shimmer
+  const shimmer = (w, h) => `
+  <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <defs>
+      <linearGradient id="g">
+      <stop stop-color="#131A2E" offset="20%" />
+      <stop stop-color="#31b624" offset="50%" />
+      <stop stop-color="#131A2E" offset="70%" />
+      </linearGradient>
+    </defs>
+    <rect width="${w}" height="${h}" fill="#131A2E" />
+    <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
+    <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
+  </svg>`;
 
+  const toBase64 = (str) =>
+    typeof window === "undefined"
+      ? Buffer.from(str).toString("base64")
+      : window.btoa(str);
   return (
     <div
       className={styles.container}
