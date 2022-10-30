@@ -66,7 +66,6 @@ export default function BGImageTransition() {
               layout="fill"
               objectFit="cover"
               alt={"background image " + (index + 1)}
-              className={styles.image}
               loading="lazy"
               placeholder="blur"
               blurDataURL={`data:image/svg+xml;base64,${toBase64(

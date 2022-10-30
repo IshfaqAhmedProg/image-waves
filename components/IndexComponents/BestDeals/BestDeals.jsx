@@ -27,7 +27,7 @@ const BestDeals = () => {
             ["CSaicon.svg", "100% Client Satisfaction"],
             ["FreeTrialicon.svg", "Free Trial"],
           ]}
-          price="225"
+          price="350"
           buttontext="Try for Free Now!"
           bestDeal
         />
@@ -63,7 +63,7 @@ const BestDeals = () => {
             ["CSaicon.svg", "100% Client Satisfaction"],
             ["FreeTrialicon.svg", "Free Trial"],
           ]}
-          price="125"
+          price="175"
           buttontext="Order Now!"
         />
       </div>
