@@ -1,6 +1,5 @@
-import Image from 'next/image'
-import React, { useState } from 'react'
-import styles from '../../styles/Home.module.css'
+import React from 'react'
+import styles from '../../../styles/Home.module.css'
 const OrdersInterface = ({ordernum,orderamount,orderdate,orderstatus}) => {
   return (
     <div className={styles.order}>

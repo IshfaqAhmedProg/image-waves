@@ -3,20 +3,22 @@ import Button from "../components/Button/Button";
 import styles from "../styles/Home.module.css";
 import Divider from "../components/Divider/Divider";
 import Link from "next/link";
-import OrdersInterface from "../components/Orders/OrdersInterface";
 import Image from "next/image";
 import OrdersIcon from "../public/Icons/Ordersicon.svg";
 import ImageIcon from "../public/Icons/Imageicon.svg";
 import ServiceIcon from "../public/Icons/Serviceicon.svg";
 import AccountIcon from "../public/Icons/Accounticon.svg";
+import OrdersInterface from "../components/DashboardComponents/Orders/OrdersInterface";
+import { useRouter } from "next/router";
 const Dashboard = () => {
   const [sbToggle, setSbToggle] = useState(false);
+  const router=useRouter()
   return (
     <div className={styles.container}>
       <div className={styles.menu + " " + (sbToggle ? styles.toggled : "")}>
         <ul className={styles.menulist}>
           <li>
-            <Button variant="primary">
+            <Button variant="primary" onClick={()=>router.push('/secure/new_order')}>
               <svg
                 width="20"
                 height="20"

@@ -142,6 +142,7 @@
 .list .orderdetail > span[data-status="Processing"] {
   color: var(--primary);
 }
+
 @media screen and (max-width: 1290px) {
   .neworderbutton::before {
     content: "New Order";
@@ -179,11 +180,10 @@
   .orderdetail {
     flex-direction: column;
   }
-
 }
 
 @media screen and (max-width: 940px) {
-  .menu{
+  .menu {
     left: -80%;
     width: 80vw;
   }

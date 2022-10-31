@@ -8,8 +8,8 @@ function Interface({ pageName }) {
     case "terms_and_conditions":
       return <div>termsAndConditions</div>;
       break;
-    case "pricing":
-      return <div>Pricing</div>;
+    case "help":
+      return <div>help</div>;
       break;
     case "services":
       return <div>Services</div>;
@@ -24,8 +24,10 @@ export async function getStaticPaths() {
     paths: [
       { params: { interface: "reset_password" } },
       { params: { interface: "terms_and_conditions" } },
+      { params: { interface: "services" } },
+      { params: { interface: "help" } },
     ],
-    fallback: false, 
+    fallback: false,
   };
 }
 

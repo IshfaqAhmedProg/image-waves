@@ -37,10 +37,10 @@ export default function Navbar() {
 
       <ul className={toggled ? styles.menu + " " + styles.open : styles.menu}>
         <li className={styles.menuItem} onClick={() => setToggled(!toggled)}>
-          <Link href="/">Services</Link>
+          <Link href="/interface/services">Services</Link>
         </li>
         <li className={styles.menuItem} onClick={() => setToggled(!toggled)}>
-          <Link href="/">Pricing</Link>
+          <Link href="/interface/help">Help</Link>
         </li>
         <li className={styles.menuItem} onClick={() => setToggled(!toggled)}>
           <Link href="/">Contact Us</Link>

@@ -17,7 +17,7 @@
   --red: hsla(0, 86.2%, 57.3%, 1);
   --orange: hsla(36, 86%, 57%, 1);
   --green: hsla(112, 86.3%, 57.1%, 1);
-  --dark--gray: rgb(81, 81, 81);
+  --gray--dark: rgb(81, 81, 81);
   --paragraph--color: var(--black);
   --landing-page-h1--color: var(--primary--dark);
   --title--color: var(--primary);

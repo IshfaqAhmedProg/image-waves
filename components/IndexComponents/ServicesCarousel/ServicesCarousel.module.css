@@ -79,7 +79,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: var(--dark--gray);
+  color: var(--gray--dark);
 }
 @media screen and (max-width: 940px) {
   .cardimage {
