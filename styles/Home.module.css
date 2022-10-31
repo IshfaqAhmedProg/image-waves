@@ -176,6 +176,7 @@
   .displaycontainer {
     width: 100%;
     isolation: isolate;
+    z-index: -1;
   }
 
   .orderdetail {
