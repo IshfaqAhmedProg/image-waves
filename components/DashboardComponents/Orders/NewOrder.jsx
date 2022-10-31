@@ -68,7 +68,7 @@ const NewOrder = () => {
             <ul className={styles.servicelist}>
               {Services.map((service) => {
                 return (
-                  <li className={styles.service + " " + styles.outer}>
+                  <li key={service.ID} className={styles.service + " " + styles.outer}>
                     <div className={styles.servicetitle}>
                       <span>{service.ServiceName}</span>
                       <span>starts at {service.Pricing}&#162;/image</span>
