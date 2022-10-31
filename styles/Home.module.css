@@ -172,10 +172,10 @@
     padding: 1.5rem 0.2rem;
     cursor: pointer;
     transition: left 0.4s ease-in-out;
-    z-index: 10;
   }
   .displaycontainer {
     width: 100%;
+    isolation: isolate;
   }
 
   .orderdetail {
