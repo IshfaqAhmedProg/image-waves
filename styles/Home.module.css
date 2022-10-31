@@ -175,10 +175,11 @@
   }
   .displaycontainer {
     width: 100%;
+  }
+  .toggled ~ .displaycontainer {
     isolation: isolate;
     z-index: -1;
   }
-
   .orderdetail {
     flex-direction: column;
   }
