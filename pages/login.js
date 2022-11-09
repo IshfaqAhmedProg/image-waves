@@ -60,9 +60,15 @@ export default function Login() {
       </Head>
       <div className={formStyles.container}>
         <h1>Log In</h1>
+        <Button variant="plain" onClick={handleGoogleLogin}>
+          Sign in with Google&nbsp; <Image src={google} alt="google logo" />
+        </Button>
         {
           //TODO ReAdd submit handler later
         }
+        <div style={{ width: "20vw" }}>
+          <Divider direction="horizontal">or</Divider>
+        </div>
         <form className={formStyles.form} /* onSubmit={handleLogin} */>
           {errorMsg && (
             <fieldset className={formStyles.formfield}>
@@ -121,15 +127,11 @@ export default function Login() {
             )}
           </Button>
         </form>
-        <div style={{ width: "20vw" }}>
-          <Divider direction="horizontal">or</Divider>
-        </div>
+
         {
           //TODO ReAdd google submit handler later
         }
-        <Button variant="plain" onClick={handleGoogleLogin}>
-          Sign in with Google&nbsp; <Image src={google} alt="google logo" />
-        </Button>
+
         <div className={formStyles.formfield}>
           Don`t have an account?&nbsp;
           <Link href="/signup" passHref>

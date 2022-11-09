@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import LogoFull from "../../public/Logos/LogoFull.png";
+import LogoFull from "../../public/Logos/LogoFull.svg";
 import AmexLogo from "../../public/Logos/PaymentMethod/Amex.png";
 import MaestroLogo from "../../public/Logos/PaymentMethod/Maestro.png";
 import MastercardLogo from "../../public/Logos/PaymentMethod/Mastercard.png";
@@ -34,6 +34,7 @@ const Footer = () => {
           <Link href="/">Portrait Retouching</Link>
           <Link href="/">Photo Correction</Link>
           <Link href="/">Wedding Photo Editing</Link>
+          <Link href="/">and More..</Link>
         </div>
         <div className={styles.menu + " " + styles.address}>
           <h4>Contact Us</h4>

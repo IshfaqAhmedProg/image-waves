@@ -3,7 +3,6 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 import Hero from "../components/IndexComponents/Hero/Hero";
 import PopularServices from "../components/IndexComponents/PopularServices/PopularServices";
-import PromoSection from "../components/IndexComponents/PromoSection/PromoSection";
 /*import ServicesCarousel from "../components/IndexComponents/ServicesCarousel/ServicesCarousel"; 
 import BestDeals from "../components/IndexComponents/BestDeals/BestDeals";
 import OrderSteps from "../components/IndexComponents/OrderSteps/OrderSteps";
@@ -13,11 +12,11 @@ import Footer from "../components/Footer/Footer";*/
 /* const PopularServices = dynamic(
   () => import("../components/IndexComponents/PopularServices/PopularServices"),
   { loading: () => <p>Loading caused by client page transition ...</p> }
-);
+); */
 const PromoSection = dynamic(
   () => import("../components/IndexComponents/PromoSection/PromoSection"),
   { loading: () => <p>Loading caused by client page transition ...</p> }
-); */
+);
 const ServicesCarousel = dynamic(
   () =>
     import("../components/IndexComponents/ServicesCarousel/ServicesCarousel"),

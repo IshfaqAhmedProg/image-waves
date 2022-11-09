@@ -60,6 +60,7 @@ export default function Navbar() {
                 logout();
               }}
               variant="primary"
+              alternate
             >
               Logout
             </Button>
