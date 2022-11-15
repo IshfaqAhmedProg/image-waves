@@ -11,7 +11,7 @@ export const useOrderContext = () => useContext(OrderContext);
 export const OrderContextProvider = ({ children }) => {
   const { user } = useAuth();
   const [images, setImages] = useState([]);
-  const [service, setService] = useState("");
+  const [service, setService] = useState([]);
   // const [urls, setUrls] = useState([]);
   // const [progress, setProgress] = useState(0);
   // const storage = getStorage();
@@ -20,7 +20,8 @@ export const OrderContextProvider = ({ children }) => {
     for (let i = 0; i < e.target.files.length; i++) {
       const newImage = e.target.files[i];
       newImage["id"] = user.email + "IMG" + i;
-      newImage["service"] = service;
+      newImage["service"] = service[0];
+      newImage["price"] = service[1];
       setImages((prevState) => [...prevState, newImage]);
     }
   };

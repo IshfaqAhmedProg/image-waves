@@ -4,12 +4,12 @@ import Image from "next/image";
 import Button from "../../Button/Button";
 import CompareImageSlider from "../../CompareImageSlider/CompareImageSlider";
 import styles from "./ServicesCarousel.module.css";
-
+import { formatPrice } from "../../../shared/Functions/formatPrice";
 const ServicesCard = ({
   beforeImageLink,
   afterImageLink,
   serviceName,
-  pricing,
+  price,
   details,
 }) => {
   return (
@@ -37,14 +37,16 @@ const ServicesCard = ({
       <div className={styles.carddetails}>
         <div className={styles.cardtitle}>{serviceName}</div>
         <div className={styles.cardprice}>
-          <h3>Starting at {pricing}$ /per image</h3>
+          <h3>Starting at {formatPrice(price)} /per image</h3>
         </div>
         <div className={styles.carddesc}>
           <p>{details}</p>
         </div>
       </div>
       <div className={styles.cardsubmit}>
-        <Button variant="primary" alternate>Order Now</Button>
+        <Button variant="primary" alternate>
+          Order Now
+        </Button>
         <Link href="/">Details</Link>
       </div>
     </div>

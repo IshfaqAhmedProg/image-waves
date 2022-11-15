@@ -1,15 +1,19 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useOrderContext } from "../../../contexts/OrderContext";
 import styles from "../../../styles/Modal.module.css";
 import Divider from "../../Divider/Divider";
 import InputField from "../../InputField/InputField";
 import forms from "../../../styles/Forms.module.css";
+import { formatPrice } from "../../../shared/Functions/formatPrice";
 const NewOrderService = ({ service }) => {
   const [active, setActive] = useState(false);
   const { handleInputChange, setService, images } = useOrderContext();
-  const imageCount = images.filter(
-    (item) => item.service === service.ServiceName
-  ).length;
+  const [imageCount, setImageCount] = useState("");
+  useEffect(() => {
+    setImageCount(
+      images.filter((item) => item.service === service.ServiceName).length
+    );
+  }, [images, service.ServiceName]);
 
   return (
     <li
@@ -19,9 +23,9 @@ const NewOrderService = ({ service }) => {
     >
       <div className={styles.servicetitle} onClick={() => setActive(!active)}>
         <span>{service.ServiceName}</span>
-        <span>starts at {service.Pricing}&#162;/image</span>
+        <span>starts at {formatPrice(service.Price)}/image</span>
         <span>
-          <input type="checkbox" />
+          <input type="checkbox" checked={imageCount != "" ? true : false} />
           <p>{imageCount != 0 ? imageCount + " image(s) selected" : ""}</p>
         </span>
         <span>
@@ -54,13 +58,13 @@ const NewOrderService = ({ service }) => {
               or
             </Divider>
           </fieldset>
-          <fieldset className={forms.formfield+" "+styles.sss}>
+          <fieldset className={forms.formfield + " " + styles.sss}>
             <p>Upload the images you need {service.ServiceName} done on.</p>
             <input
               multiple
               type="file"
               onChange={handleInputChange}
-              onClick={() => setService(service.ServiceName)}
+              onClick={() => setService([service.ServiceName, service.Price])}
             />
           </fieldset>
         </form>

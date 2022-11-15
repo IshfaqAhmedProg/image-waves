@@ -79,6 +79,12 @@
 .primary:active::before {
   background-color: var(--active-bg-before);
 }
+.primary:disabled,
+.primary[disabled] {
+  pointer-events: none;
+  color: var(--white);
+  background-color: var(--gray);
+}
 .secondary {
   padding: 1rem;
   border-radius: 300px;

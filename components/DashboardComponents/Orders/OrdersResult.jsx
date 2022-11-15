@@ -4,12 +4,12 @@ import Divider from "../../Divider/Divider";
 import Button from "../../Button/Button";
 import { useOrderContext } from "../../../contexts/OrderContext";
 import { formatBytes } from "../../../shared/Functions/formatBytes";
+import services from "../../../shared/Data/services.json";
+import { formatPrice } from "../../../shared/Functions/formatPrice";
 const OrdersResult = () => {
   const { images } = useOrderContext();
-  console.log(images);
   const [invoice, setInvoice] = useState({});
   //TODO set price to come from Database
-  const price = 20;
   // const Invoice = {
   //   OrderLength: 0,
   //   OrderSize: 0,
@@ -20,6 +20,7 @@ const OrdersResult = () => {
   useEffect(() => {
     const ordersize = 0;
     const service = [];
+    let servicePrice;
     images.forEach((element) => {
       service.push(element.service);
       ordersize = ordersize + element.size;
@@ -31,7 +32,9 @@ const OrdersResult = () => {
     let pricetable = Object.entries(countService);
     let totalAmount = 0;
     pricetable.forEach((element) => {
-      element.push(element[1] * price);
+      servicePrice = services.find((item) => item.ServiceName === element[0]);
+      console.log("service price", servicePrice.Price);
+      element.push(element[1] * servicePrice.Price);
       totalAmount = totalAmount + element[2];
     });
     setInvoice({
@@ -42,7 +45,6 @@ const OrdersResult = () => {
     });
   }, [images]);
 
-  console.log("pricetable", invoice.PriceTable);
   return (
     <>
       <div className={styles.resultcard + " " + styles.outer}>
@@ -83,7 +85,7 @@ const OrdersResult = () => {
                     <tr key={element[0]}>
                       <td>{element[0]}</td>
                       <td>{element[1]}</td>
-                      <td>{element[2]}$</td>
+                      <td>{formatPrice(element[2])}</td>
                     </tr>
                   );
                 })
@@ -97,7 +99,9 @@ const OrdersResult = () => {
             <tr>
               <th>Total</th>
               <td>
-                <h4>{invoice.TotalAmount ? invoice.TotalAmount : 0} USD</h4>
+                <h4>
+                  {invoice.TotalAmount ? formatPrice(invoice.TotalAmount) : 0}
+                </h4>
               </td>
             </tr>
           </tbody>
@@ -108,21 +112,25 @@ const OrdersResult = () => {
         <table>
           <tbody>
             <tr>
-              <td>Order Created:</td>
+              <td>Created:</td>
               <td>Sun, May 7, 2022</td>
             </tr>
             <tr>
               <td>Subtotal:</td>
-              <td>150$</td>
+              <td>
+                {invoice.TotalAmount ? formatPrice(invoice.TotalAmount) : 0}
+              </td>
             </tr>
             <tr>
-              <td>Expected Delivery</td>
+              <td>Delivery by:</td>
               <td>Sun, May 14, 2022</td>
             </tr>
           </tbody>
         </table>
         <Divider direction="horizontal" />
-        <Button variant="primary">Confirm Order</Button>
+        <Button disabled={images.length ? false : true} variant="primary">
+          Confirm Order
+        </Button>
       </div>
     </>
   );

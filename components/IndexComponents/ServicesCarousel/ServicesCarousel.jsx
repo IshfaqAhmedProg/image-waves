@@ -42,7 +42,7 @@ const ServicesCarousel = () => {
                 beforeImageLink={service.BeforeImageLink}
                 afterImageLink={service.AfterImageLink}
                 serviceName={service.ServiceName}
-                pricing={service.Pricing}
+                price={service.Price}
                 details={service.Details}
               />
             </div>

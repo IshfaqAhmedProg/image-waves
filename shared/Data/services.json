@@ -2,241 +2,190 @@
   {
     "ID": "SRV001",
     "ServiceName": "Clipping Path",
-    "Pricing": "50",
+    "Price": "0.35",
     "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": [
-      "check1.jpg",
-      "before image"
-    ],
-    "AfterImageLink": [
-      "check2.png",
-      "after image"
-    ],
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
     "GotoLink": "/"
   },
   {
     "ID": "SRV002",
     "ServiceName": "Background Removal",
-    "Pricing": "50",
+    "Price": "0.3",
     "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": [
-      "check1.jpg",
-      "before image"
-    ],
-    "AfterImageLink": [
-      "check2.png",
-      "after image"
-    ],
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
     "GotoLink": "/"
   },
   {
     "ID": "SRV003",
     "ServiceName": "Image Masking",
-    "Pricing": "50",
+    "Price": "0.4",
     "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": [
-      "check1.jpg",
-      "before image"
-    ],
-    "AfterImageLink": [
-      "check2.png",
-      "after image"
-    ],
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
     "GotoLink": "/"
   },
   {
     "ID": "SRV004",
     "ServiceName": "Color Change",
-    "Pricing": "50",
+    "Price": "0.5",
     "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": [
-      "check1.jpg",
-      "before image"
-    ],
-    "AfterImageLink": [
-      "check2.png",
-      "after image"
-    ],
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
     "GotoLink": "/"
   },
   {
     "ID": "SRV005",
     "ServiceName": "Image Cropping",
-    "Pricing": "50",
+    "Price": "0.15",
     "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": [
-      "check1.jpg",
-      "before image"
-    ],
-    "AfterImageLink": [
-      "check2.png",
-      "after image"
-    ],
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
     "GotoLink": "/"
   },
   {
     "ID": "SRV006",
     "ServiceName": "Ghost Mannequin",
-    "Pricing": "50",
+    "Price": "0.5",
     "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": [
-      "check1.jpg",
-      "before image"
-    ],
-    "AfterImageLink": [
-      "check2.png",
-      "after image"
-    ],
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
     "GotoLink": "/"
   },
   {
     "ID": "SRV007",
     "ServiceName": "Object Shadows",
-    "Pricing": "50",
+    "Price": "0.5",
     "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": [
-      "check1.jpg",
-      "before image"
-    ],
-    "AfterImageLink": [
-      "check2.png",
-      "after image"
-    ],
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
     "GotoLink": "/"
   },
   {
     "ID": "SRV008",
     "ServiceName": "Raster to Vector",
-    "Pricing": "50",
+    "Price": "20",
     "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": [
-      "check1.jpg",
-      "before image"
-    ],
-    "AfterImageLink": [
-      "check2.png",
-      "after image"
-    ],
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
     "GotoLink": "/"
   },
   {
     "ID": "SRV009",
     "ServiceName": "Photo Retouching",
-    "Pricing": "50",
+    "Price": "0.5",
     "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": [
-      "check1.jpg",
-      "before image"
-    ],
-    "AfterImageLink": [
-      "check2.png",
-      "after image"
-    ],
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
     "GotoLink": "/"
   },
   {
     "ID": "SRV010",
     "ServiceName": "Product Showcase",
-    "Pricing": "50",
+    "Price": "1",
     "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": [
-      "check1.jpg",
-      "before image"
-    ],
-    "AfterImageLink": [
-      "check2.png",
-      "after image"
-    ],
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
     "GotoLink": "/"
   },
   {
     "ID": "SRV011",
     "ServiceName": "Neck Joint",
-    "Pricing": "50",
+    "Price": "0.4",
     "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": [
-      "check1.jpg",
-      "before image"
-    ],
-    "AfterImageLink": [
-      "check2.png",
-      "after image"
-    ],
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
     "GotoLink": "/"
   },
   {
     "ID": "SRV012",
-    "ServiceName": "Symmetrical Neck Joint",
-    "Pricing": "50",
+    "ServiceName": "Color Correction",
+    "Price": "1",
     "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": [
-      "check1.jpg",
-      "before image"
-    ],
-    "AfterImageLink": [
-      "check2.png",
-      "after image"
-    ],
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
     "GotoLink": "/"
   },
   {
     "ID": "SRV013",
-    "ServiceName": "Color Correction",
-    "Pricing": "50",
+    "ServiceName": "Multipath",
+    "Price": "0.7",
     "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": [
-      "check1.jpg",
-      "before image"
-    ],
-    "AfterImageLink": [
-      "check2.png",
-      "after image"
-    ],
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
     "GotoLink": "/"
   },
   {
     "ID": "SRV014",
-    "ServiceName": "Multipath",
-    "Pricing": "50",
+    "ServiceName": "Glamour Retouch",
+    "Price": "0.7",
     "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": [
-      "check1.jpg",
-      "before image"
-    ],
-    "AfterImageLink": [
-      "check2.png",
-      "after image"
-    ],
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
     "GotoLink": "/"
   },
   {
     "ID": "SRV015",
-    "ServiceName": "Glamour Retouch",
-    "Pricing": "50",
+    "ServiceName": "Reflection",
+    "Price": "0.3",
     "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": [
-      "check1.jpg",
-      "before image"
-    ],
-    "AfterImageLink": [
-      "check2.png",
-      "after image"
-    ],
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
     "GotoLink": "/"
   },
   {
     "ID": "SRV016",
-    "ServiceName": "Reflection",
-    "Pricing": "50",
+    "ServiceName": "Motion Graphics",
+    "Price": "50",
     "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": [
-      "check1.jpg",
-      "before image"
-    ],
-    "AfterImageLink": [
-      "check2.png",
-      "after image"
-    ],
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
+    "GotoLink": "/"
+  },
+  {
+    "ID": "SRV017",
+    "ServiceName": "Symmetrical Neck Joint",
+    "Price": "0.6",
+    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
+    "GotoLink": "/"
+  },
+  {
+    "ID": "SRV018",
+    "ServiceName": "Model Background Retouch",
+    "Price": "1",
+    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
+    "GotoLink": "/"
+  },
+  {
+    "ID": "SRV019",
+    "ServiceName": "Background Retouch",
+    "Price": "1",
+    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
+    "GotoLink": "/"
+  },
+  {
+    "ID": "SRV020",
+    "ServiceName": "Jewellery Retouch",
+    "Price": "1",
+    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
+    "GotoLink": "/"
+  },
+  {
+    "ID": "SRV021",
+    "ServiceName": "Product Retouch",
+    "Price": "1",
+    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
     "GotoLink": "/"
   }
 ]
