@@ -12,13 +12,16 @@ import OrdersInterface from "../components/DashboardComponents/Orders/OrdersInte
 import { useRouter } from "next/router";
 const Dashboard = () => {
   const [sbToggle, setSbToggle] = useState(false);
-  const router=useRouter()
+  const router = useRouter();
   return (
     <div className={styles.container}>
       <div className={styles.menu + " " + (sbToggle ? styles.toggled : "")}>
         <ul className={styles.menulist}>
           <li>
-            <Button variant="primary" onClick={()=>router.push('/secure/new_order')}>
+            <Button
+              variant="primary"
+              onClick={() => router.push("/secure/new_order")}
+            >
               <svg
                 width="20"
                 height="20"
@@ -101,7 +104,10 @@ const Dashboard = () => {
         <div className={styles.display + " " + styles.cards}>
           <span className={styles.displaytitle}>
             <h4>Ongoing Orders</h4>
-            <Button variant="primary">
+            <Button
+              variant="primary"
+              onClick={() => router.push("/secure/new_order")}
+            >
               <svg
                 width="20"
                 height="20"

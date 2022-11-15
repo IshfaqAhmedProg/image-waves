@@ -14,7 +14,10 @@
     --gradient:var(--white);
   color: var(--white);
 }
-
+.gray {
+  --gradient:var(--gray);
+color: var(--gray);
+}
 /* Direction of divider */
 .horizontal {
   width: 100%;

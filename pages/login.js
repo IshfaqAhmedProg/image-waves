@@ -55,7 +55,7 @@ export default function Login() {
   return (
     <div className={formStyles.main}>
       <Head>
-        <title>imageWAVES-Login to your account</title>
+        <title>ImageWaves-Login to your account</title>
         <meta name="description" content="imageWAVES login page" />
       </Head>
       <div className={formStyles.container}>

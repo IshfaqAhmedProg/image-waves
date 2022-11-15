@@ -1,12 +1,48 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "../../../styles/Modal.module.css";
 import Divider from "../../Divider/Divider";
 import Button from "../../Button/Button";
 import { useOrderContext } from "../../../contexts/OrderContext";
-
+import { formatBytes } from "../../../shared/Functions/formatBytes";
 const OrdersResult = () => {
   const { images } = useOrderContext();
   console.log(images);
+  const [invoice, setInvoice] = useState({});
+  //TODO set price to come from Database
+  const price = 20;
+  // const Invoice = {
+  //   OrderLength: 0,
+  //   OrderSize: 0,
+  //   ServiceAmount: 0,
+  //   Service: ["servicename", 0, 0],
+  //   TotalAmount: 0,
+  // };
+  useEffect(() => {
+    const ordersize = 0;
+    const service = [];
+    images.forEach((element) => {
+      service.push(element.service);
+      ordersize = ordersize + element.size;
+    });
+    let countService = service.reduce(
+      (cnt, cur) => ((cnt[cur] = cnt[cur] + 1 || 1), cnt),
+      {}
+    );
+    let pricetable = Object.entries(countService);
+    let totalAmount = 0;
+    pricetable.forEach((element) => {
+      element.push(element[1] * price);
+      totalAmount = totalAmount + element[2];
+    });
+    setInvoice({
+      OrderLength: images.length,
+      OrderSize: formatBytes(ordersize),
+      PriceTable: pricetable,
+      TotalAmount: totalAmount,
+    });
+  }, [images]);
+
+  console.log("pricetable", invoice.PriceTable);
   return (
     <>
       <div className={styles.resultcard + " " + styles.outer}>
@@ -19,18 +55,17 @@ const OrdersResult = () => {
           <tbody>
             <tr>
               <td>
-                <span>{images.length}</span> images
+                <span>{invoice.OrderLength}</span> images
               </td>
               <td>
-                <span>
-                  25.6<i>GB</i>
-                </span>
+                <span>{invoice.OrderSize}</span>
                 size
               </td>
             </tr>
           </tbody>
         </table>
-        7 Service&#40;s&#41; selected
+        {invoice.PriceTable ? invoice.PriceTable.length : 0} Service&#40;s&#41;
+        selected
       </div>
       <div className={styles.resultcard + " " + styles.outer}>
         <table>
@@ -42,21 +77,17 @@ const OrdersResult = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Clipping Path</td>
-              <td>15</td>
-              <td>50$</td>
-            </tr>
-            <tr>
-              <td>Clipping Path</td>
-              <td>15</td>
-              <td>50$</td>
-            </tr>
-            <tr>
-              <td>Clipping Path</td>
-              <td>15</td>
-              <td>50$</td>
-            </tr>
+            {invoice.PriceTable
+              ? invoice.PriceTable.map((element) => {
+                  return (
+                    <tr key={element[0]}>
+                      <td>{element[0]}</td>
+                      <td>{element[1]}</td>
+                      <td>{element[2]}$</td>
+                    </tr>
+                  );
+                })
+              : null}
           </tbody>
         </table>
       </div>
@@ -66,7 +97,7 @@ const OrdersResult = () => {
             <tr>
               <th>Total</th>
               <td>
-                <h4>150 USD</h4>
+                <h4>{invoice.TotalAmount ? invoice.TotalAmount : 0} USD</h4>
               </td>
             </tr>
           </tbody>

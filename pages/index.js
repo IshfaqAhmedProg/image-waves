@@ -41,7 +41,6 @@ const Footer = dynamic(() => import("../components/Footer/Footer"), {
   loading: () => <p>Loading caused by client page transition ...</p>,
 });
 export default function Home() {
-  //TODO fix code Splitting
   return (
     <>
       <Head>

@@ -55,7 +55,7 @@ const Signup = () => {
   return (
     <div className={formStyles.main}>
       <Head>
-        <title>imageWAVES-Create a new account</title>
+        <title>ImageWaves-Create a new account</title>
         <meta name="description" content="imageWAVES login page" />
       </Head>
       <div className={formStyles.container}>
