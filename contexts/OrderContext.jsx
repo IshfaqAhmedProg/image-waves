@@ -5,25 +5,69 @@ import { createContext, useContext, useState, useEffect } from "react";
 //   uploadBytesResumable,
 //   getDownloadURL,
 // } from "firebase/storage";
+import services from "../shared/Data/services.json";
+import { formatBytes } from "../shared/Functions/formatBytes";
 import { useAuth } from "./AuthContext";
 const OrderContext = createContext({});
 export const useOrderContext = () => useContext(OrderContext);
 export const OrderContextProvider = ({ children }) => {
   const { user } = useAuth();
-  const [images, setImages] = useState([]);
-  const [service, setService] = useState([]);
+  const [cart, setCart] = useState([]);
+  const [activeService, setActiveService] = useState([]);
   // const [urls, setUrls] = useState([]);
   // const [progress, setProgress] = useState(0);
   // const storage = getStorage();
+  const [invoice, setInvoice] = useState({});
+  useEffect(() => {
+    handleCartChange(cart);
+  }, [cart]);
 
   const handleInputChange = (e) => {
     for (let i = 0; i < e.target.files.length; i++) {
-      const newImage = e.target.files[i];
-      newImage["id"] = user.email + "IMG" + i;
-      newImage["service"] = service[0];
-      newImage["price"] = service[1];
-      setImages((prevState) => [...prevState, newImage]);
+      const newItem = e.target.files[i];
+      newItem["id"] = user.email + "IMG" + i;
+      newItem["service"] = activeService[0];
+      newItem["price"] = activeService[1];
+      setCart((prevState) => [...prevState, newItem]);
     }
+  };
+  const handleClearService = (service) => {
+    setCart((current) =>
+      current.filter((item) => {
+        return item.service !== service;
+      })
+    );
+    console.log("cart", cart);
+  };
+  const handleCartChange = (cart) => {
+    const ordersize = 0;
+    const serviceHolder = [];
+    let servicePrice;
+    //Build service arrray and count order size in bytes
+    cart.forEach((element) => {
+      serviceHolder.push(element.service);
+      ordersize = ordersize + element.size;
+    });
+    //Count the number of service in service array
+    let countService = serviceHolder.reduce(
+      (cnt, cur) => ((cnt[cur] = cnt[cur] + 1 || 1), cnt),
+      {}
+    );
+    let pricetable = Object.entries(countService);
+    let totalAmount = 0;
+    //Create price table
+    pricetable.forEach((element) => {
+      servicePrice = services.find((item) => item.ServiceName === element[0]);
+      element.push(element[1] * servicePrice.Price);
+      totalAmount = totalAmount + element[2];
+    });
+    //Set the state for invoice
+    setInvoice({
+      OrderLength: cart.length,
+      OrderSize: formatBytes(ordersize),
+      PriceTable: pricetable,
+      TotalAmount: totalAmount,
+    });
   };
   // const handleUpload = () => {
   //   images.map((image) => {
@@ -58,7 +102,15 @@ export const OrderContextProvider = ({ children }) => {
   //   });
   // };
   return (
-    <OrderContext.Provider value={{ handleInputChange, setService, images }}>
+    <OrderContext.Provider
+      value={{
+        handleInputChange,
+        setActiveService,
+        handleClearService,
+        cart,
+        invoice,
+      }}
+    >
       {children}
     </OrderContext.Provider>
   );

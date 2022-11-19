@@ -1,13 +1,15 @@
-export function formatPrice(value) {
+export function formatPrice(value, unit = true) {
   let result,
-    price = value;
-  price = Math.round(price * 100) / 100;
+    price = Math.round(value * 100) / 100;
+  if (unit == false) {
+    return price;
+  }
   if (price < 1.0) {
     result = (parseFloat(price) * 100).toString();
-    result = result + "¢";
+    result = result + "c";
   } else {
     result = parseFloat(price).toString();
-    result = result + "$";
+    result = result + "USD";
   }
   return result;
 }

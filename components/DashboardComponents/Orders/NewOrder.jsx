@@ -5,15 +5,16 @@ import Divider from "../../Divider/Divider";
 import NewOrderService from "./NewOrderService";
 import { OrderContextProvider } from "../../../contexts/OrderContext";
 import OrdersResult from "./OrdersResult";
+import Button from "../../Button/Button";
 
 const NewOrder = () => {
   const [active, setActive] = useState(false);
   return (
-    <OrderContextProvider>
-      <div className={styles.container}>
-        <h2>Create a new order</h2>
-        <div className={styles.content}>
-          <div className={styles.servicepanel}>
+    <div className={styles.container}>
+      <h2>Create a new order</h2>
+      <div className={styles.content}>
+        <div className={styles.servicepanel}>
+          <div className={styles.customservicecontainer}>
             <p>
               Select a service and either paste your image repository link i.e.
               Google Drive, Dropbox, Mediafire Link or Upload your Photos. You
@@ -29,6 +30,7 @@ const NewOrder = () => {
               }
             >
               <div
+                tabIndex="1"
                 className={styles.servicetitle}
                 onClick={() => setActive(!active)}
               >
@@ -51,26 +53,32 @@ const NewOrder = () => {
                   </svg>
                 </span>
               </div>
-              <div className={styles.serviceinfo + " " + styles.inner}>
+              <div
+                className={styles.serviceinfo + " " + styles.inner}
+                tabIndex={active ? "1" : "-1"}
+              >
+                <Button variant="close" onClick={() => setActive(!active)}>
+                  Close
+                </Button>
                 <p>Upload the images you need done on.</p>
               </div>
             </div>
-            <Divider direction="horizontal">or</Divider>
-            <p>Select from our most popular services</p>
-            <div className={styles.servicecontainer + " " + styles.inner}>
-              <ul className={styles.servicelist}>
-                {Services.map((service) => {
-                  return <NewOrderService key={service.ID} service={service} />;
-                })}
-              </ul>
-            </div>
           </div>
-          <div className={styles.resultpanel}>
-            <OrdersResult />
+          <Divider direction="horizontal">or</Divider>
+          <h4>Select from our most popular services</h4>
+          <div className={styles.servicecontainer + " " + styles.inner}>
+            <ul className={styles.servicelist}>
+              {Services.map((service) => {
+                return <NewOrderService key={service.ID} service={service} />;
+              })}
+            </ul>
           </div>
         </div>
+        <div className={styles.floating}>
+          <Button variant="primary">Done Selecting</Button>
+        </div>
       </div>
-    </OrderContextProvider>
+    </div>
   );
 };
 

@@ -3,48 +3,10 @@ import styles from "../../../styles/Modal.module.css";
 import Divider from "../../Divider/Divider";
 import Button from "../../Button/Button";
 import { useOrderContext } from "../../../contexts/OrderContext";
-import { formatBytes } from "../../../shared/Functions/formatBytes";
-import services from "../../../shared/Data/services.json";
 import { formatPrice } from "../../../shared/Functions/formatPrice";
 const OrdersResult = () => {
-  const { images } = useOrderContext();
-  const [invoice, setInvoice] = useState({});
-  //TODO set price to come from Database
-  // const Invoice = {
-  //   OrderLength: 0,
-  //   OrderSize: 0,
-  //   ServiceAmount: 0,
-  //   Service: ["servicename", 0, 0],
-  //   TotalAmount: 0,
-  // };
-  useEffect(() => {
-    const ordersize = 0;
-    const service = [];
-    let servicePrice;
-    images.forEach((element) => {
-      service.push(element.service);
-      ordersize = ordersize + element.size;
-    });
-    let countService = service.reduce(
-      (cnt, cur) => ((cnt[cur] = cnt[cur] + 1 || 1), cnt),
-      {}
-    );
-    let pricetable = Object.entries(countService);
-    let totalAmount = 0;
-    pricetable.forEach((element) => {
-      servicePrice = services.find((item) => item.ServiceName === element[0]);
-      console.log("service price", servicePrice.Price);
-      element.push(element[1] * servicePrice.Price);
-      totalAmount = totalAmount + element[2];
-    });
-    setInvoice({
-      OrderLength: images.length,
-      OrderSize: formatBytes(ordersize),
-      PriceTable: pricetable,
-      TotalAmount: totalAmount,
-    });
-  }, [images]);
-
+  const { invoice } = useOrderContext();
+  console.log(invoice);
   return (
     <>
       <div className={styles.resultcard + " " + styles.outer}>
@@ -85,7 +47,7 @@ const OrdersResult = () => {
                     <tr key={element[0]}>
                       <td>{element[0]}</td>
                       <td>{element[1]}</td>
-                      <td>{formatPrice(element[2])}</td>
+                      <td>{formatPrice(element[2], false)}</td>
                     </tr>
                   );
                 })
@@ -128,7 +90,7 @@ const OrdersResult = () => {
           </tbody>
         </table>
         <Divider direction="horizontal" />
-        <Button disabled={images.length ? false : true} variant="primary">
+        <Button disabled={invoice.OrderLength ? false : true} variant="primary">
           Confirm Order
         </Button>
       </div>

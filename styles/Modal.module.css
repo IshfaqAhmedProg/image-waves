@@ -2,12 +2,12 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   align-items: center;
   padding-top: 10vh;
   padding-inline: 3vw;
   padding-bottom: 3vh;
-  gap: 2.5rem;
+  gap: 1.5rem;
   color: var(--primary);
 }
 .content {
@@ -17,7 +17,7 @@
   gap: 1.5rem;
 }
 .servicepanel {
-  max-width: 64.125rem;
+  max-width: 80vw;
   min-width: 360px;
   display: flex;
   flex-direction: column;
@@ -26,36 +26,55 @@
 }
 .servicepanel p {
   font-size: 0.875rem;
-  text-align: center;
+  max-width: 750px;
   color: var(--gray--dark);
 }
+.servicepanel h4{
+  text-align: center;
+}
+.customservicecontainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
 .servicecontainer {
-  height: 60%;
+  height: 50vh;
   overflow: hidden;
+}
+.servicecontainer:focus {
+  border: 2px solid var(--accent);
 }
 .servicelist {
   list-style-type: none;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: stretch;
   gap: 1.5rem;
   overflow-y: scroll;
   padding: 1rem;
   max-height: 100%;
 }
 .service {
-  cursor: pointer;
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
   transition: all 0.15s ease;
 }
-.service:hover {
-  background-color: var(--light--gray);
-  scale: 0.99;
-}
 .servicetitle {
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   padding: 1.8rem 1.5rem;
+}
+.servicetitle:hover {
+  background: radial-gradient(
+    ellipse at center,
+    rgb(225, 248, 255) 0%,
+    rgba(205, 235, 244, 0) 100%
+  );
+  scale: 0.99;
 }
 .servicetitle span > p {
   font-size: 0.6875rem;
@@ -78,19 +97,41 @@
   scale: 1.2;
 }
 .serviceinfo {
+  padding-block: 1.5rem;
+  position: fixed;
+  height: 90vh;
+  width: 90vw;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 0;
   opacity: 0;
   transition: all 0.3s ease;
+  pointer-events: none;
+  background: var(--white);
+  z-index: 7;
 }
-
+.serviceinfooverlay {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.open .serviceinfooverlay {
+  position: fixed;
+  background: var(--gray--dark);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5;
+  pointer-events: all;
+  z-index: 5;
+}
 .open .serviceinfo {
-  margin: 1rem;
-  padding-block: 1.5rem;
-  max-height: 250px;
   opacity: 1;
+  pointer-events: all;
 }
 .open .arrow {
   rotate: 90deg;
@@ -129,6 +170,12 @@
   font-size: 25px;
   color: var(--accent);
 }
+.floating {
+  position: fixed;
+  top: 95%;
+  left: 50%;
+  translate: -50% -95%;
+}
 .sss {
   border-radius: 1.0625rem;
   background: var(--orange);
@@ -141,6 +188,7 @@
   border-radius: 1.0625rem;
   box-shadow: 0px 2px 17px -4px rgba(10, 78, 141, 0.24);
 }
+
 @media screen and (max-width: 780px) {
   .content {
     flex-wrap: wrap;

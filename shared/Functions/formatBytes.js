@@ -10,7 +10,7 @@ export function formatBytes(bytes, decimals = 2) {
   const i = Math.floor(Math.log(bytes) / Math.log(k));
   const number = parseFloat((bytes / Math.pow(k, i)).toFixed(dm));
   const unit = sizes[i];
-
+  console.log(unit);
   return (
     <>
       {number}

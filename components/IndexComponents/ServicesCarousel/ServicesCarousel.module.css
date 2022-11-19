@@ -61,6 +61,7 @@
   font-size: var(--carousel-title);
   font-weight: 700;
   color: var(--primary);
+  text-align: center;
 }
 .cardprice {
   color: var(--primary--light);

@@ -5,16 +5,17 @@ import Divider from "../../Divider/Divider";
 import InputField from "../../InputField/InputField";
 import forms from "../../../styles/Forms.module.css";
 import { formatPrice } from "../../../shared/Functions/formatPrice";
+import Button from "../../Button/Button";
 const NewOrderService = ({ service }) => {
   const [active, setActive] = useState(false);
-  const { handleInputChange, setService, images } = useOrderContext();
+  const { handleInputChange, setActiveService, handleClearService, cart } =
+    useOrderContext();
   const [imageCount, setImageCount] = useState("");
   useEffect(() => {
     setImageCount(
-      images.filter((item) => item.service === service.ServiceName).length
+      cart.filter((item) => item.service === service.ServiceName).length
     );
-  }, [images, service.ServiceName]);
-
+  }, [cart, service.ServiceName]);
   return (
     <li
       className={
@@ -22,14 +23,25 @@ const NewOrderService = ({ service }) => {
       }
     >
       <div className={styles.servicetitle} onClick={() => setActive(!active)}>
-        <span>{service.ServiceName}</span>
-        <span>starts at {formatPrice(service.Price)}/image</span>
+        <div>
+          <span>{service.ServiceName}</span>
+          <span>
+            starts at <strong>&nbsp;{formatPrice(service.Price)}</strong> /image
+          </span>
+          <span>
+            {" "}
+            <p>{imageCount != 0 ? imageCount + " image(s) selected" : ""}</p>
+          </span>
+        </div>
         <span>
-          <input type="checkbox" checked={imageCount != "" ? true : false} />
-          <p>{imageCount != 0 ? imageCount + " image(s) selected" : ""}</p>
+          <input
+            type="checkbox"
+            checked={imageCount != "" ? true : false}
+            readOnly
+          />
         </span>
         <span>
-          <svg
+        <svg
             width="10"
             height="auto"
             viewBox="0 0 14 21"
@@ -46,8 +58,12 @@ const NewOrderService = ({ service }) => {
           </svg>
         </span>
       </div>
-      <div className={styles.serviceinfo + " " + styles.inner}>
-        <form>
+      <div className={styles.serviceinfooverlay}></div>
+      <div className={styles.serviceinfo + " " + styles.outer}>
+        <Button variant="close" onClick={() => setActive(!active)}>
+          Close
+        </Button>
+        <form className={forms.form}>
           <fieldset className={forms.formfield}>
             <InputField type="url" placeholder="Paste your link here" id="link">
               Paste your Drive link here
@@ -64,8 +80,19 @@ const NewOrderService = ({ service }) => {
               multiple
               type="file"
               onChange={handleInputChange}
-              onClick={() => setService([service.ServiceName, service.Price])}
+              onClick={() =>
+                setActiveService([service.ServiceName, service.Price])
+              }
             />
+            <Button
+              variant="plain"
+              onClick={(e) => {
+                e.preventDefault();
+                handleClearService(service.ServiceName);
+              }}
+            >
+              Clear
+            </Button>
           </fieldset>
         </form>
       </div>

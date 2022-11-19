@@ -145,7 +145,7 @@
 
 @media screen and (max-width: 1290px) {
   .neworderbutton::before {
-    content: "New Order";
+    content: " New Order";
   }
 }
 @media screen and (max-width: 940px) {
