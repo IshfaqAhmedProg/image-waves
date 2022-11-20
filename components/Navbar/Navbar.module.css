@@ -56,7 +56,6 @@
 .menuItem:not(:nth-last-child(1)) {
   color: var(--primary--light);
   text-shadow: 0px 0px 5px var(--primary--light);
-  mix-blend-mode: exclusion;
 }
 
 @media screen and (max-width: 1290px) {
@@ -88,7 +87,10 @@
     padding-block: 1.5rem;
     position: relative;
   }
-
+  .menuItem:not(:nth-last-child(-n + 1)){
+    color: var(--primary);
+    text-shadow: 0px 0px 5px var(--primary--light);
+  }
   .menuItem:not(:nth-last-child(-n + 2))::before {
     content: "";
     background: linear-gradient(

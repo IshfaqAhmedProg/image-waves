@@ -2,7 +2,6 @@
   max-width: 90%;
   margin: 0 auto;
   position: relative;
-  accent-color: var(--accent);
   overflow: hidden;
 }
 @-moz-document url-prefix() {

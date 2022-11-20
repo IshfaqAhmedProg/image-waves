@@ -3,15 +3,26 @@ import styles from "../../../styles/Modal.module.css";
 import Services from "../../../shared/Data/services.json";
 import Divider from "../../Divider/Divider";
 import NewOrderService from "./NewOrderService";
-import { OrderContextProvider } from "../../../contexts/OrderContext";
-import OrdersResult from "./OrdersResult";
+import { useOrderContext } from "../../../contexts/OrderContext";
 import Button from "../../Button/Button";
+import { useRouter } from "next/router";
 
 const NewOrder = () => {
+  const { invoice } = useOrderContext();
+  const router = useRouter();
   const [active, setActive] = useState(false);
+  const customService={
+    "ID": "SRV000",
+    "ServiceName": "Custom Service",
+    "Price": "0.0",
+    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
+    "BeforeImageLink": ["check1.jpg", "before image"],
+    "AfterImageLink": ["check2.png", "after image"],
+    "GotoLink": "/"
+  }
   return (
     <div className={styles.container}>
-      <h2>Create a new order</h2>
+      <h2 className={styles.title}>Create a new order</h2>
       <div className={styles.content}>
         <div className={styles.servicepanel}>
           <div className={styles.customservicecontainer}>
@@ -54,18 +65,22 @@ const NewOrder = () => {
                 </span>
               </div>
               <div
-                className={styles.serviceinfo + " " + styles.inner}
+                className={styles.serviceupload + " " + styles.inner}
                 tabIndex={active ? "1" : "-1"}
               >
-                <Button variant="close" onClick={() => setActive(!active)}>
-                  Close
-                </Button>
+                <div className={styles.closeButton}>
+                  <Button variant="close" onClick={() => setActive(!active)}>
+                    Close
+                  </Button>
+                </div>
                 <p>Upload the images you need done on.</p>
               </div>
             </div>
+      
           </div>
-          <Divider direction="horizontal">or</Divider>
-          <h4>Select from our most popular services</h4>
+          <Divider direction="horizontal">
+            Or create new order for a specific service
+          </Divider>
           <div className={styles.servicecontainer + " " + styles.inner}>
             <ul className={styles.servicelist}>
               {Services.map((service) => {
@@ -75,7 +90,14 @@ const NewOrder = () => {
           </div>
         </div>
         <div className={styles.floating}>
-          <Button variant="primary">Done Selecting</Button>
+          <Button
+            alternate
+            variant="primary"
+            onClick={() => router.push("/secure/new_order?selection=success")}
+            disabled={invoice.OrderLength ? false : true}
+          >
+            Done Selecting
+          </Button>
         </div>
       </div>
     </div>

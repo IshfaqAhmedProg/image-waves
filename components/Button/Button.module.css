@@ -7,6 +7,18 @@
   justify-content: space-between;
   align-items: center;
 }
+
+
+/* Disabled Button styles */
+.buttonContainer:disabled,
+.buttonContainer[disabled] {
+  pointer-events: none;
+  color: var(--gray--dark);
+  background-color: var(--light--gray);
+}
+
+
+/* Plain button styles */
 .plain {
   border: none;
   padding: 1rem 2rem;
@@ -22,6 +34,9 @@
   scale: 0.99;
   box-shadow: 0px 0rem 0rem rgba(0, 0, 0, 0.25);
 }
+
+
+/* Primary button styles */
 .primary {
   --text: var(--primary);
   --hover-text: var(--accent--dark);
@@ -79,12 +94,9 @@
 .primary:active::before {
   background-color: var(--active-bg-before);
 }
-.primary:disabled,
-.primary[disabled] {
-  pointer-events: none;
-  color: var(--white);
-  background-color: var(--gray);
-}
+
+
+/* Secondary button styles */
 .secondary {
   padding: 1rem;
   border-radius: 300px;
@@ -103,6 +115,8 @@
   border-color: var(--white);
   background: var(--accent);
 }
+
+/* arrow styles */
 .arrow {
   background: none;
   border: none;
@@ -125,6 +139,8 @@
 .rightarrow {
   rotate: 180deg;
 }
+
+/* large button styles */
 .large {
   padding: 1rem 2rem;
   font-size: var(--h2);

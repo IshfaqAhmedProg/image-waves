@@ -15,7 +15,7 @@
   --light--gray: rgb(220, 220, 220);
   --gray: rgb(174, 174, 174);
   --red: hsla(0, 86.2%, 57.3%, 1);
-  --orange: hsla(36, 86%, 57%, 1);
+  --orange: hsla(36, 100%, 80%, 1);
   --green: hsla(112, 86.3%, 57.1%, 1);
   --gray--dark: rgb(81, 81, 81);
   --paragraph--color: var(--black);
@@ -36,6 +36,10 @@
   --primary-button: 1.12rem;
   --secondary-button: 1.12rem;
 }
+* {
+  accent-color: var(--accent);
+  box-sizing: border-box;
+}
 html,
 body {
   padding: 0;
@@ -52,9 +56,6 @@ a {
 }
 a:hover {
   color: var(--accent);
-}
-* {
-  box-sizing: border-box;
 }
 p {
   font-size: var(--paragraph);

@@ -7,8 +7,9 @@ import { formatPrice } from "../../../shared/Functions/formatPrice";
 const OrdersResult = () => {
   const { invoice } = useOrderContext();
   console.log(invoice);
-  return (
-    <>
+  return (<div className={styles.container}>
+
+    <div className={styles.resultpanel}>
       <div className={styles.resultcard + " " + styles.outer}>
         <table>
           <thead>
@@ -94,7 +95,9 @@ const OrdersResult = () => {
           Confirm Order
         </Button>
       </div>
-    </>
+    </div>
+  </div>
+
   );
 };
 

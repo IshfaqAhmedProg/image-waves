@@ -1,15 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useOrderContext } from "../../../contexts/OrderContext";
 import styles from "../../../styles/Modal.module.css";
-import Divider from "../../Divider/Divider";
-import InputField from "../../InputField/InputField";
-import forms from "../../../styles/Forms.module.css";
 import { formatPrice } from "../../../shared/Functions/formatPrice";
-import Button from "../../Button/Button";
+import NewOrderUpload from "./NewOrderUpload";
 const NewOrderService = ({ service }) => {
   const [active, setActive] = useState(false);
-  const { handleInputChange, setActiveService, handleClearService, cart } =
-    useOrderContext();
+  const { cart } = useOrderContext();
   const [imageCount, setImageCount] = useState("");
   useEffect(() => {
     setImageCount(
@@ -29,7 +25,6 @@ const NewOrderService = ({ service }) => {
             starts at <strong>&nbsp;{formatPrice(service.Price)}</strong> /image
           </span>
           <span>
-            {" "}
             <p>{imageCount != 0 ? imageCount + " image(s) selected" : ""}</p>
           </span>
         </div>
@@ -41,7 +36,7 @@ const NewOrderService = ({ service }) => {
           />
         </span>
         <span>
-        <svg
+          <svg
             width="10"
             height="auto"
             viewBox="0 0 14 21"
@@ -58,44 +53,13 @@ const NewOrderService = ({ service }) => {
           </svg>
         </span>
       </div>
-      <div className={styles.serviceinfooverlay}></div>
-      <div className={styles.serviceinfo + " " + styles.outer}>
-        <Button variant="close" onClick={() => setActive(!active)}>
-          Close
-        </Button>
-        <form className={forms.form}>
-          <fieldset className={forms.formfield}>
-            <InputField type="url" placeholder="Paste your link here" id="link">
-              Paste your Drive link here
-            </InputField>
-          </fieldset>
-          <fieldset className={forms.formfield}>
-            <Divider direction="horizontal" colorMode="gray">
-              or
-            </Divider>
-          </fieldset>
-          <fieldset className={forms.formfield + " " + styles.sss}>
-            <p>Upload the images you need {service.ServiceName} done on.</p>
-            <input
-              multiple
-              type="file"
-              onChange={handleInputChange}
-              onClick={() =>
-                setActiveService([service.ServiceName, service.Price])
-              }
-            />
-            <Button
-              variant="plain"
-              onClick={(e) => {
-                e.preventDefault();
-                handleClearService(service.ServiceName);
-              }}
-            >
-              Clear
-            </Button>
-          </fieldset>
-        </form>
-      </div>
+      <div className={styles.serviceuploadoverlay}></div>
+      <NewOrderUpload
+        service={service}
+        imageCount={imageCount}
+        active={active}
+        setActive={setActive}
+      />
     </li>
   );
 };

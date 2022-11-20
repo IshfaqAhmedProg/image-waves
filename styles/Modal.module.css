@@ -13,31 +13,33 @@
 .content {
   display: flex;
   flex-wrap: nowrap;
-  height: 90%;
+  min-height: 80vh;
   gap: 1.5rem;
+}
+.title{
+  text-align: center;
 }
 .servicepanel {
   max-width: 80vw;
   min-width: 360px;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
   gap: 1.5rem;
-  height: 100%;
 }
-.servicepanel p {
-  font-size: 0.875rem;
-  max-width: 750px;
-  color: var(--gray--dark);
-}
-.servicepanel h4{
-  text-align: center;
-}
+
 .customservicecontainer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
   gap: 1.5rem;
+}
+.customservicecontainer > p {
+  font-size: 0.875rem;
+  max-width: 750px;
+  color: var(--gray--dark);
 }
 .servicecontainer {
   height: 50vh;
@@ -92,34 +94,38 @@
   color: var(--primary--light);
 }
 .servicetitle span > input[type="checkbox"] {
-  accent-color: var(--accent);
   margin-inline-end: 1rem;
   scale: 1.2;
 }
-.serviceinfo {
-  padding-block: 1.5rem;
-  position: fixed;
+.serviceupload {
+  position: absolute;
   height: 90vh;
   width: 90vw;
   top: 50%;
   left: 50%;
   translate: -50% -50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: space-between;
   opacity: 0;
   transition: all 0.3s ease;
   pointer-events: none;
   background: var(--white);
   z-index: 7;
+  overflow-y: scroll;
 }
-.serviceinfooverlay {
+.open .serviceupload {
+  opacity: 1;
+  pointer-events: all;
+}
+.serviceupload > div:nth-child(4) {
+  width:20%;
+}
+.serviceuploadoverlay {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
-.open .serviceinfooverlay {
-  position: fixed;
+.open .serviceuploadoverlay {
+  position: absolute;
   background: var(--gray--dark);
   top: 0;
   left: 0;
@@ -129,9 +135,15 @@
   pointer-events: all;
   z-index: 5;
 }
-.open .serviceinfo {
-  opacity: 1;
-  pointer-events: all;
+
+.pastelink {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pastelink > p {
+  max-width: 550px;
 }
 .open .arrow {
   rotate: 90deg;
@@ -170,15 +182,16 @@
   font-size: 25px;
   color: var(--accent);
 }
+.closeButton {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+}
 .floating {
   position: fixed;
   top: 95%;
   left: 50%;
   translate: -50% -95%;
-}
-.sss {
-  border-radius: 1.0625rem;
-  background: var(--orange);
 }
 .inner {
   box-shadow: inset 0px 0px 13px rgba(15, 58, 95, 0.25);

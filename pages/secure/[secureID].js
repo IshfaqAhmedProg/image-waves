@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import NewOrder from "../../components/DashboardComponents/Orders/NewOrder";
+import OrdersResult from "../../components/DashboardComponents/Orders/OrdersResult";
 import { OrderContextProvider } from "../../contexts/OrderContext";
 
 function Secure({ pageName }) {
@@ -14,12 +15,12 @@ function Secure({ pageName }) {
       break;
     case "new_order":
       {
-        const a = 0;
-        return (
-          <OrderContextProvider>
-            <NewOrder />
-          </OrderContextProvider>
-        );
+        const { selection } = router.query;
+        let comp2render = <NewOrder />;
+        if (selection == "success") {
+          comp2render = <OrdersResult />;
+        }
+        return <OrderContextProvider>{comp2render}</OrderContextProvider>;
       }
       break;
     default:

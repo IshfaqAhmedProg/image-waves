@@ -28,7 +28,10 @@ color: var(--gray);
   height: 100%;
   flex-direction: column;
 }
-
+.container>p{
+  text-align: center;
+  width: 100%;
+}
 /* Color for dual divider */
 .container.horizontal > .divider {
   height: 2px;
