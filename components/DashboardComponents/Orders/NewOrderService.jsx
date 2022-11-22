@@ -5,20 +5,24 @@ import { formatPrice } from "../../../shared/Functions/formatPrice";
 import NewOrderUpload from "./NewOrderUpload";
 const NewOrderService = ({ service }) => {
   const [active, setActive] = useState(false);
-  const { cart } = useOrderContext();
+  const { cart, setActiveService } = useOrderContext();
   const [imageCount, setImageCount] = useState("");
   useEffect(() => {
-    setImageCount(
-      cart.filter((item) => item.service === service.ServiceName).length
-    );
-  }, [cart, service.ServiceName]);
+    setImageCount(cart.filter((item) => item.service === service.ID).length);
+  }, [cart, service.ID]);
   return (
     <li
       className={
         styles.service + " " + styles.outer + (active ? " " + styles.open : "")
       }
     >
-      <div className={styles.servicetitle} onClick={() => setActive(!active)}>
+      <div
+        className={styles.servicetitle}
+        onClick={() => {
+          setActive(!active);
+          setActiveService([service.ID, service.Price]);
+        }}
+      >
         <div>
           <span>{service.ServiceName}</span>
           <span>
@@ -53,6 +57,7 @@ const NewOrderService = ({ service }) => {
           </svg>
         </span>
       </div>
+
       <div className={styles.serviceuploadoverlay}></div>
       <NewOrderUpload
         service={service}

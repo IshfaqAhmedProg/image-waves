@@ -31,13 +31,22 @@ export const OrderContextProvider = ({ children }) => {
       setCart((prevState) => [...prevState, newItem]);
     }
   };
+  const handleDrop = (e) => {
+    e.preventDefault();
+    for (let i = 0; i < e.dataTransfer.files.length; i++) {
+      const newItem = e.dataTransfer.files[i];
+      newItem["id"] = user.email + "IMG" + i;
+      newItem["service"] = activeService[0];
+      newItem["price"] = activeService[1];
+      setCart((prevState) => [...prevState, newItem]);
+    }
+  };
   const handleClearService = (service) => {
     setCart((current) =>
       current.filter((item) => {
         return item.service !== service;
       })
     );
-    console.log("cart", cart);
   };
   const handleCartChange = (cart) => {
     const ordersize = 0;
@@ -57,7 +66,7 @@ export const OrderContextProvider = ({ children }) => {
     let totalAmount = 0;
     //Create price table
     pricetable.forEach((element) => {
-      servicePrice = services.find((item) => item.ServiceName === element[0]);
+      servicePrice = services.find((item) => item.ID === element[0]);
       element.push(element[1] * servicePrice.Price);
       totalAmount = totalAmount + element[2];
     });
@@ -69,6 +78,15 @@ export const OrderContextProvider = ({ children }) => {
       TotalAmount: totalAmount,
     });
   };
+  // const getServiceImages = (service) => {
+  //   const extractUrl = cart.filter((item) => item.service === service.ID);
+  //   let displayimages = null;
+  //   extractUrl.forEach((element) => {
+  //     const objectUrl = URL.createObjectURL(element);
+  //     displayimages = (prev) => [...prev, objectUrl];
+  //   });
+  //   return displayimages;
+  // };
   // const handleUpload = () => {
   //   images.map((image) => {
   //     const storageRef = ref(storage, user.email + "/" + image.name);
@@ -107,8 +125,10 @@ export const OrderContextProvider = ({ children }) => {
         handleInputChange,
         setActiveService,
         handleClearService,
+        handleDrop,
         cart,
         invoice,
+        activeService,
       }}
     >
       {children}

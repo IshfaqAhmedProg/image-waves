@@ -11,15 +11,16 @@ const NewOrder = () => {
   const { invoice } = useOrderContext();
   const router = useRouter();
   const [active, setActive] = useState(false);
-  const customService={
-    "ID": "SRV000",
-    "ServiceName": "Custom Service",
-    "Price": "0.0",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
-    "GotoLink": "/"
-  }
+  const customService = {
+    ID: "SRV000",
+    ServiceName: "Custom Service",
+    Price: "0.0",
+    Details:
+      "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
+    BeforeImageLink: ["check1.jpg", "before image"],
+    AfterImageLink: ["check2.png", "after image"],
+    GotoLink: "/",
+  };
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Create a new order</h2>
@@ -27,10 +28,8 @@ const NewOrder = () => {
         <div className={styles.servicepanel}>
           <div className={styles.customservicecontainer}>
             <p>
-              Select a service and either paste your image repository link i.e.
-              Google Drive, Dropbox, Mediafire Link or Upload your Photos. You
-              can use our Secure Storage Servers&#40;SSS&#41; for an additional
-              fee.
+              Users have the choice to create their own custom order or select
+              from one of the services below.
             </p>
             <div
               className={
@@ -76,7 +75,6 @@ const NewOrder = () => {
                 <p>Upload the images you need done on.</p>
               </div>
             </div>
-      
           </div>
           <Divider direction="horizontal">
             Or create new order for a specific service

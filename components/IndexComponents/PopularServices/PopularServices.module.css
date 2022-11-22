@@ -76,7 +76,7 @@
   width: 95%;
   height: 80%;
   background-color: var(--gray);
-  border-radius: 1.4375rem;
+  border-radius: var(--border-radius);
   display: flex;
   justify-content: center;
   align-items: center;

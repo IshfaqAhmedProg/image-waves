@@ -50,7 +50,7 @@
   align-items: center;
   gap: 1rem;
   background-color: var(--primary);
-  border-radius: 1.0625rem;
+  border-radius: var(--border-radius);
   isolation: isolate;
   color: var(--white);
   overflow: hidden;
@@ -78,7 +78,7 @@
   background: var(--primary--dark);
   width: 90%;
   min-height: 10.375rem;
-  border-radius: 1.0625rem;
+  border-radius: var(--border-radius);
 }
 .packages > div:nth-child(1) > .packagecontent {
   background: var(--primary);
