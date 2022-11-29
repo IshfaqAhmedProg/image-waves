@@ -7,9 +7,19 @@ const NewOrderService = ({ service }) => {
   const [active, setActive] = useState(false);
   const { cart, setActiveService } = useOrderContext();
   const [imageCount, setImageCount] = useState("");
+
   useEffect(() => {
-    setImageCount(cart.filter((item) => item.service === service.ID).length);
+    const imageServices = cart.filter(
+      (item) => item.variant == "Image" && item.service === service.ID
+    ).length;
+    const linkServices = cart.filter(
+      (item) => item.variant == "Link" && item.service === service.ID
+    ).length;
+    imageServices == 0 && linkServices != 0
+      ? setImageCount("Drive Link")
+      : setImageCount(imageServices);
   }, [cart, service.ID]);
+
   return (
     <li
       className={
@@ -62,6 +72,7 @@ const NewOrderService = ({ service }) => {
       <NewOrderUpload
         service={service}
         imageCount={imageCount}
+        setImageCount={setImageCount}
         active={active}
         setActive={setActive}
       />

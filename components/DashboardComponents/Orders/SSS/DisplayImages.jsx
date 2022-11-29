@@ -13,7 +13,9 @@ const DisplayImages = ({ imageCount, service }) => {
   //   }
   // }, [cart, service.ID, activeService]);
   useEffect(() => {
-    const extractUrl = cart.filter((item) => item.service === service.ID);
+    const extractUrl = cart.filter(
+      (item) => item.variant == "Image" && item.service === service.ID
+    );
     const objectUrl = [];
     if (activeService[0] == service.ID) {
       extractUrl.forEach((element) => {

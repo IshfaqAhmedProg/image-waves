@@ -3,6 +3,7 @@ import Head from "next/head";
 import dynamic from "next/dynamic";
 import Hero from "../components/IndexComponents/Hero/Hero";
 import PopularServices from "../components/IndexComponents/PopularServices/PopularServices";
+import WaterMark from "../components/WaterMark/WaterMark";
 /*import ServicesCarousel from "../components/IndexComponents/ServicesCarousel/ServicesCarousel"; 
 import BestDeals from "../components/IndexComponents/BestDeals/BestDeals";
 import OrderSteps from "../components/IndexComponents/OrderSteps/OrderSteps";
@@ -72,6 +73,9 @@ export default function Home() {
         </section>
         <section>
           <Banner />
+        </section>
+        <section>
+          <WaterMark />
         </section>
       </main>
       <Footer />

@@ -20,6 +20,7 @@ function MyApp({ Component, pageProps }) {
       startEvent: "DOMContentLoaded",
       initClassName: "aos-init",
       animatedClassName: "aos-animate",
+      disable: "mobile",
     });
   }, []);
   const router = useRouter();

@@ -12,7 +12,6 @@ export default function BGImageTransition() {
   const images = [bg1, bg2, bg3, bg4, bg5, bg6, bg7];
   const [active, setActive] = useState(1);
   const delay = 3000; //ms
-
   function activeSlide() {
     //set active slide
     active > images.length - 1 ? setActive(1) : setActive(active + 1);

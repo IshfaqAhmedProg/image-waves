@@ -216,7 +216,7 @@
   display: block;
 }
 .resultcard i {
-  font-size: 25px;
+  font-size:0.8em;
   color: var(--accent);
 }
 .closeButton {

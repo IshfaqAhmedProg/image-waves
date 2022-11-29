@@ -33,6 +33,7 @@
   flex-direction: column;
   padding-inline: 3.8125rem;
   gap: 2rem;
+  isolation: isolate;
 }
 
 .uploadbutton {

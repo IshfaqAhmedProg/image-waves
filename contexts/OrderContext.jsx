@@ -1,22 +1,23 @@
 import { createContext, useContext, useState, useEffect } from "react";
-// import {
-//   getStorage,
-//   ref,
-//   uploadBytesResumable,
-//   getDownloadURL,
-// } from "firebase/storage";
+import {
+  getStorage,
+  uploadBytesResumable,
+  getDownloadURL,
+  ref,
+} from "firebase/storage";
 import services from "../shared/Data/services.json";
 import { formatBytes } from "../shared/Functions/formatBytes";
 import { useAuth } from "./AuthContext";
+import { v5 as uuidv5 } from "uuid";
+
 const OrderContext = createContext({});
 export const useOrderContext = () => useContext(OrderContext);
 export const OrderContextProvider = ({ children }) => {
   const { user } = useAuth();
   const [cart, setCart] = useState([]);
   const [activeService, setActiveService] = useState([]);
-  // const [urls, setUrls] = useState([]);
-  // const [progress, setProgress] = useState(0);
-  // const storage = getStorage();
+  const [urls, setUrls] = useState([]);
+  const [progress, setProgress] = useState(0);
   const [invoice, setInvoice] = useState({});
   useEffect(() => {
     handleCartChange(cart);
@@ -28,6 +29,7 @@ export const OrderContextProvider = ({ children }) => {
       newItem["id"] = user.email + "IMG" + i;
       newItem["service"] = activeService[0];
       newItem["price"] = activeService[1];
+      newItem["variant"] = "Image";
       setCart((prevState) => [...prevState, newItem]);
     }
   };
@@ -38,8 +40,18 @@ export const OrderContextProvider = ({ children }) => {
       newItem["id"] = user.email + "IMG" + i;
       newItem["service"] = activeService[0];
       newItem["price"] = activeService[1];
+      newItem["variant"] = "Image";
       setCart((prevState) => [...prevState, newItem]);
     }
+  };
+  const handlePasteLink = (e, pasteLink) => {
+    e.preventDefault();
+    const newItem = pasteLink;
+    newItem["id"] = user.email + "Link";
+    newItem["service"] = activeService[0];
+    newItem["price"] = activeService[1];
+    newItem["variant"] = "Link";
+    setCart((prevState) => [...prevState, newItem]);
   };
   const handleClearService = (service) => {
     setCart((current) =>
@@ -54,39 +66,88 @@ export const OrderContextProvider = ({ children }) => {
     let servicePrice;
     //Build service arrray and count order size in bytes
     cart.forEach((element) => {
-      serviceHolder.push(element.service);
-      ordersize = ordersize + element.size;
+      switch (element.variant) {
+        case "Image":
+          {
+            serviceHolder.push(element.service);
+            ordersize = ordersize + element.size;
+          }
+          break;
+        case "Link": {
+          for (let i = 0; i < element.amount; i++) {
+            serviceHolder.push(element.service);
+          }
+        }
+        default:
+          break;
+      }
     });
     //Count the number of service in service array
     let countService = serviceHolder.reduce(
       (cnt, cur) => ((cnt[cur] = cnt[cur] + 1 || 1), cnt),
       {}
     );
-    let pricetable = Object.entries(countService);
+    let priceTable = Object.entries(countService);
     let totalAmount = 0;
     //Create price table
-    pricetable.forEach((element) => {
-      servicePrice = services.find((item) => item.ID === element[0]);
-      element.push(element[1] * servicePrice.Price);
+    priceTable.forEach((element) => {
+      servicePrice = services.find((item) => item.ID === element[0]); //finding price from services.json
+      element.push(element[1] * servicePrice.Price); //pushing the multiplied price inside pricetable eg.(SRV001, 5, 0.3554)
+      element.push(servicePrice.ServiceName); //pushing the name inside pricetable eg.(SRV001, 5, 0.3554)
       totalAmount = totalAmount + element[2];
     });
     //Set the state for invoice
     setInvoice({
-      OrderLength: cart.length,
+      OrderLength: serviceHolder.length,
       OrderSize: formatBytes(ordersize),
-      PriceTable: pricetable,
+      PriceTable: priceTable,
       TotalAmount: totalAmount,
     });
   };
-  // const getServiceImages = (service) => {
-  //   const extractUrl = cart.filter((item) => item.service === service.ID);
-  //   let displayimages = null;
-  //   extractUrl.forEach((element) => {
-  //     const objectUrl = URL.createObjectURL(element);
-  //     displayimages = (prev) => [...prev, objectUrl];
-  //   });
-  //   return displayimages;
-  // };
+  const handleOrderConfirm = () => {
+    //Upload the images to Storage
+    const MY_NAMESPACE = process.env.NEXT_PUBLIC_UUID_NAMESPACE;
+    const orderId = uuidv5(user.email, MY_NAMESPACE).slice(0, 8);
+    
+    const storage = getStorage();
+    cart.map((item) => {
+      if (item.variant == "Image") {
+        const storageRef = ref(
+          storage,
+          user.email + "/" + orderId + "/" + item.name
+        );
+        const uploadTask = uploadBytesResumable(storageRef, item);
+        uploadTask.on(
+          "state_changed",
+          (snapshot) => {
+            setProgress(
+              () => (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+            );
+            console.log("Upload is " + progress + "% done");
+            switch (snapshot.state) {
+              case "paused":
+                console.log("Upload is paused");
+                break;
+              case "running":
+                console.log("Upload is running");
+                break;
+            }
+          },
+          (error) => {
+            console.log([error]);
+          },
+          () => {
+            console.log("upload complete");
+            getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+              setUrls((prev) => [...prev, downloadURL]);
+              //TODO per image progress
+            });
+          }
+        );
+      }
+    });
+  };
+
   // const handleUpload = () => {
   //   images.map((image) => {
   //     const storageRef = ref(storage, user.email + "/" + image.name);
@@ -126,6 +187,8 @@ export const OrderContextProvider = ({ children }) => {
         setActiveService,
         handleClearService,
         handleDrop,
+        handlePasteLink,
+        handleOrderConfirm,
         cart,
         invoice,
         activeService,
