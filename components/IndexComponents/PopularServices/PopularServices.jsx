@@ -9,14 +9,16 @@ const PopularServices = () => {
   const [service, setService] = useState({});
   const [active, setActive] = useState(0);
   useEffect(() => {
-    setService({
-      name: Services[active].ServiceName,
-      details: Services[active].Details,
-      beforeImg: Services[active].BeforeImageLink[0],
-      beforeAlt: Services[active].BeforeImageLink[1],
-      afterImg: Services[active].AfterImageLink[0],
-      afterAlt: Services[active].AfterImageLink[1],
-    });
+    if (Services[active].ID != "SRV016") {
+      setService({
+        name: Services[active].ServiceName,
+        details: Services[active].Details,
+        beforeImg: Services[active].BeforeImageLink[0],
+        beforeAlt: Services[active].BeforeImageLink[1],
+        afterImg: Services[active].AfterImageLink[0],
+        afterAlt: Services[active].AfterImageLink[1],
+      });
+    }
   }, [active]);
 
   return (
@@ -24,12 +26,8 @@ const PopularServices = () => {
       <div className={styles.textbg}></div>
       <div className={styles.textcontent}>
         <div className={styles.title}>
-          <h2 data-aos="fade-right">
-            Our Most
-          </h2>
-          <h1 data-aos="fade-right">
-            Popular Services
-          </h1>
+          <h2 data-aos="fade-right">Our Most</h2>
+          <h1 data-aos="fade-right">Popular Services</h1>
         </div>
         <div className={styles.preview}>
           <div className={styles.previewdesc} data-aos="fade-up">
@@ -50,7 +48,7 @@ const PopularServices = () => {
               beforeImg={
                 <Image
                   alt={service.beforeAlt}
-                  src={"/" + service.beforeImg}
+                  src={service.beforeImg}
                   layout="fill"
                   objectFit="cover"
                 />
@@ -58,7 +56,7 @@ const PopularServices = () => {
               afterImg={
                 <Image
                   alt={service.afterAlt}
-                  src={"/" + service.afterImg}
+                  src={service.afterImg}
                   layout="fill"
                   objectFit="cover"
                 />

@@ -67,6 +67,7 @@ const NewOrderUpload = ({
                   type="number"
                   placeholder="Number of Pictures"
                   id="number"
+                  min={1}
                   onChange={(e) =>
                     setPasteLink({ ...pasteLink, amount: e.target.value })
                   }

@@ -204,6 +204,7 @@
 .resultcard table {
   width: 80%;
 }
+
 .resultcard td:nth-child(2) {
   text-align: center;
 }
@@ -216,7 +217,7 @@
   display: block;
 }
 .resultcard i {
-  font-size:0.8em;
+  font-size: 0.8em;
   color: var(--accent);
 }
 .closeButton {

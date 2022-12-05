@@ -18,7 +18,7 @@ const WaterMark = () => {
     <div style={containerStyle}>
       <p>
         Designed and Developed by{" "}
-        <Link href="https://ishfaqahmed.netlify.app">Ishfaq Ahmed</Link>.
+        <strong><Link href="https://ishfaqahmed.netlify.app">Ishfaq Ahmed</Link></strong>.
       </p>
       <svg
         width="35"

@@ -40,7 +40,7 @@ export const AuthContextProvider = ({ children }) => {
   }, []);
 
   //Sign Up Auth function
-  const signup = (email, password) => {
+  const signup = async (email, password) => {
     return createUserWithEmailAndPassword(auth, email, password).then(
       async (cred) => {
         await setDoc(doc(db, "users", cred.user.uid), {

@@ -4,6 +4,7 @@ import Divider from "../../Divider/Divider";
 import Button from "../../Button/Button";
 import { useOrderContext } from "../../../contexts/OrderContext";
 import { formatPrice } from "../../../shared/Functions/formatPrice";
+import { formatBytes } from "../../../shared/Functions/formatBytes";
 const OrdersResult = () => {
   const { invoice, handleOrderConfirm } = useOrderContext();
   return (
@@ -22,7 +23,7 @@ const OrdersResult = () => {
                   <span>{invoice.OrderLength}</span> images
                 </td>
                 <td>
-                  <span>{invoice.OrderSize}</span>
+                  <span>{formatBytes(invoice.OrderSize)}</span>
                   size
                 </td>
               </tr>
@@ -75,7 +76,7 @@ const OrdersResult = () => {
             <tbody>
               <tr>
                 <td>Created:</td>
-                <td>Sun, May 7, 2022</td>
+                <td>{invoice.OrderDate}</td>
               </tr>
               <tr>
                 <td>Subtotal:</td>
@@ -85,7 +86,7 @@ const OrdersResult = () => {
               </tr>
               <tr>
                 <td>Delivery by:</td>
-                <td>Sun, May 14, 2022</td>
+                <td>{invoice.DeliveryDate}</td>
               </tr>
             </tbody>
           </table>

@@ -19,7 +19,7 @@ const ServicesCard = ({
           beforeImg={
             <Image
               alt={beforeImageLink[1]}
-              src={"/" + beforeImageLink[0]}
+              src={beforeImageLink[0]}
               layout="fill"
               objectFit="cover"
             />
@@ -27,7 +27,7 @@ const ServicesCard = ({
           afterImg={
             <Image
               alt={afterImageLink[1]}
-              src={"/" + afterImageLink[0]}
+              src={afterImageLink[0]}
               layout="fill"
               objectFit="cover"
             />

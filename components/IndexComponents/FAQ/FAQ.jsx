@@ -8,39 +8,25 @@ import LineDrawer from "../../LineDrawer/LineDrawer";
 const FAQ = () => {
   const faqContent = [
     {
-      question:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam?",
-      answer: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta ipsa
-    voluptate commodi quasi nam ducimus cumque dolore quam obcaecati alias
-    corrupti cum maiores ratione in, dolor mollitia illo odio voluptates.`,
+      question: "Which kind of customers do you serve?",
+      answer: `We serve a wide range of customers which includes catalogue companies, photography studios and marketing companies, among others.`,
+    },
+    {
+      question: "How long does it take to complete a project?",
+      answer: `Our usual turnaround time for photo editing services is about 24-48 hours. But, the project completion time may vary depending on the project complexity, format, image size and volumes.`,
+    },
+    {
+      question: "How do you ensure that my images are secure?",
+      answer: `We follow strict security guidelines while dealing with our clients. We make sure that none of the client photos are distributed, sold, or published on any third-party website. Your photos are safe with us.`,
     },
     {
       question:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam?",
-      answer: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta ipsa
-  voluptate commodi quasi nam ducimus cumque dolore quam obcaecati alias
-  corrupti cum maiores ratione in, dolor mollitia illo odio voluptates.`,
+        "Is there any restriction about the format, size, and resolution of the image sent for editing?",
+      answer: `No, there are no restrictions. We deliver back the edited and the original images in the format of your choice.`,
     },
     {
-      question:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam?",
-      answer: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta ipsa
-  voluptate commodi quasi nam ducimus cumque dolore quam obcaecati alias
-  corrupti cum maiores ratione in, dolor mollitia illo odio voluptates.`,
-    },
-    {
-      question:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam?",
-      answer: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta ipsa
-  voluptate commodi quasi nam ducimus cumque dolore quam obcaecati alias
-  corrupti cum maiores ratione in, dolor mollitia illo odio voluptates.`,
-    },
-    {
-      question:
-        "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam?",
-      answer: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta ipsa
-  voluptate commodi quasi nam ducimus cumque dolore quam obcaecati alias
-  corrupti cum maiores ratione in, dolor mollitia illo odio voluptates.`,
+      question: "Do you edit product or commercial photos?",
+      answer: `Yes. We do undertake photo editing of products and commercial images.`,
     },
   ];
   const [isActive, setIsActive] = useState(false);

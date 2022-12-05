@@ -3,189 +3,324 @@
     "ID": "SRV001",
     "ServiceName": "Clipping Path",
     "Price": "0.35",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "Carefully hand-drawn clipping paths for crisp, clean photos\r\nPut your product on any background. Take tedious, nitty-gritty photo edits off your plate with outsourced clipping path services.",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/K8P408PD/Clipping-Pathbefore.webp",
+      "Clipping Path before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/KcHTMCzm/Clipping-Pathafter-png.webp",
+      "Clipping Path after"
+    ],
     "GotoLink": "/"
   },
   {
     "ID": "SRV002",
     "ServiceName": "Background Removal",
     "Price": "0.3",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "Make product photos pop with a clean white (or any other color you choose) background. Also Shadow Resize is included if you want.",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/ZqbxJgjp/Background-Removalbefore.webp",
+      "Background Removal before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/8k94LZPg/Background-Removalafter.webp",
+      "Background Removal after"
+    ],
     "GotoLink": "/"
   },
   {
     "ID": "SRV003",
     "ServiceName": "Image Masking",
     "Price": "0.4",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "For more intricate shots (like anything involving hair or fur), image masking gives you that extra level of precision, for cutouts that look completely natural.",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/QCJpLJ50/Image-Maskingbefore.webp",
+      "Image Masking before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/NfPKKngR/Image-Maskinafter.webp",
+      "Image Masking after"
+    ],
     "GotoLink": "/"
   },
   {
     "ID": "SRV004",
     "ServiceName": "Color Change",
     "Price": "0.5",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "Show true-to-life colors and minimize returns from customers who are disappointed their items don’t match the photo — without having to shoot every shade.",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/3JZZzYFY/Color-Changebefore.webp",
+      "Color Change before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/sgwwGsMw/Color-Changeafter.webp",
+      "Color Change after"
+    ],
     "GotoLink": "/"
   },
   {
     "ID": "SRV005",
     "ServiceName": "Image Cropping",
     "Price": "0.15",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "Crop your images to improve the composition, remove distractions, or to focus on a particular subject.",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/RZXnL0QJ/Image-Croppingbefore.webp",
+      "Image Cropping before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/zDbSDTwt/Image-Croppingafter.webp",
+      "Image Cropping after"
+    ],
     "GotoLink": "/"
   },
   {
     "ID": "SRV006",
     "ServiceName": "Ghost Mannequin",
     "Price": "0.5",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "Remove mannequins or models to showcase the natural fit and drape of apparel, while still keeping the focus on your products.",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/k4kSRhNj/Ghost-Mannequinbefore.webp",
+      "Ghost Mannequin before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/kGbxjdX3/Ghost-Mannequinafter.webp",
+      "Ghost Mannequin after"
+    ],
     "GotoLink": "/"
   },
   {
     "ID": "SRV007",
     "ServiceName": "Object Shadows",
     "Price": "0.5",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "Natural-looking shadows make products look more realistic — and generate more sales. Add depth and make your images more visually appealing.",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/CLw2RvvM/Object-Shadowsbefore.webp",
+      "Object Shadows before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/PqC9tPSm/Object-Shadowsafter.webp",
+      "Object Shadows after"
+    ],
     "GotoLink": "/"
   },
   {
     "ID": "SRV008",
     "ServiceName": "Raster to Vector",
     "Price": "20",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "If you like to print a big surface area, screen advertising, use in web pages, and other activities without reducing the quality or resolution you need Raster-to-Vector.",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/8cQ6HRTk/Raster-To-Vectorbefore.webp",
+      "Raster to Vector before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/tTV6WSQm/Raster-To-Vectorafter.webp",
+      "Raster to Vector after"
+    ],
     "GotoLink": "/"
   },
   {
     "ID": "SRV009",
     "ServiceName": "Photo Retouching",
     "Price": "0.5",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "Get the perfect shot, even after the fact. Correct flaws or imperfections, and make every element of your image shine.",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/cJdC2GTy/Photo-Retouchingbefore.webp",
+      "Photo Retouching before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/9f10jgN4/Photo-Retouchingafter.webp",
+      "Photo Retouching after"
+    ],
     "GotoLink": "/"
   },
   {
     "ID": "SRV010",
     "ServiceName": "Product Showcase",
     "Price": "1",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "In today's market, product showcase is more important than ever. With so many products available, it can be difficult to know which ones are right for you. That's where product showcase comes in.",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/T2sywS2g/Product-Showcasebefore.webp",
+      "Product Showcase before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/LXCJjQtd/Product-Showcaseafter.webp",
+      "Product Showcase after"
+    ],
     "GotoLink": "/"
   },
   {
     "ID": "SRV011",
     "ServiceName": "Neck Joint",
     "Price": "0.4",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "A neck joint on ghost service is when a retoucher works on the neck part of the cloth and fills out the space that has been created after removing the mannequin, known as neck joint",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/B6r0WxsL/Neck-Jointbefore.webp",
+      "Neck Joint before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/Y9q7fpR0/Neck-Jointafter.webp",
+      "Neck Joint after"
+    ],
     "GotoLink": "/"
   },
   {
     "ID": "SRV012",
-    "ServiceName": "Color Correction",
+    "ServiceName": "Pattern Retouch",
     "Price": "1",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "Get the perfect pattern and find the inner beauty of your pattern as we fix symmetry, shape, color or repetitions of any broken pattern.",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/pXdZN3Gj/Patter-Retouchbefore.webp",
+      "Pattern Retouch before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/9XY8Hdc6/Pattern-Retouchafter.webp",
+      "Pattern Retouch after"
+    ],
     "GotoLink": "/"
   },
   {
     "ID": "SRV013",
     "ServiceName": "Multipath",
     "Price": "0.7",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "Sometimes clipping paths are simple, but most times they’re… not. When you have a shot that needs tweaks to different areas and subjects, you need to isolate each element of the image with its own path before you get to work on the fun creative edits.",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/Hs7gtvww/Multipathbefore.webp",
+      "Multipath before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/3J3XXz56/Multipathafter-png.webp",
+      "Multipath after"
+    ],
     "GotoLink": "/"
   },
   {
     "ID": "SRV014",
     "ServiceName": "Glamour Retouch",
     "Price": "0.7",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "Enhance the appearance of photographs. When you need to make skin look smoother, remove blemishes, and even change the shape of a person's body.",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/tJJVfGqC/Glamour-Retouchbefore.webp",
+      "Glamour Retouch before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/N08T2xCY/Glamour-Retouchafter.webp",
+      "Glamour Retouch after"
+    ],
     "GotoLink": "/"
   },
   {
     "ID": "SRV015",
     "ServiceName": "Reflection",
     "Price": "0.3",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "Get perfectly accurate reflections on any surface of any object.",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/TwRbVWBb/Reflectionbefore.webp",
+      "Reflection before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/hPh9ZTvb/Reflectionafter.webp",
+      "Reflection after"
+    ],
     "GotoLink": "/"
   },
   {
     "ID": "SRV016",
     "ServiceName": "Motion Graphics",
     "Price": "50",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "We will design and animate a curated motion graphic, made for your advertisement or product, for all platforms from Social Media, TV to Billboards!",
+    "BeforeImageLink": [],
+    "AfterImageLink": [],
     "GotoLink": "/"
   },
   {
     "ID": "SRV017",
     "ServiceName": "Symmetrical Neck Joint",
     "Price": "0.6",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "A neck joint on ghost service is when a retoucher works on the neck part of the cloth and fills out the space that has been created after removing the mannequin, known as neck joint",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/3xxJFFwY/Symmetrical-Neck-Jointbefore.webp",
+      "Symmetrical Neck Joint before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/sXQM99wv/Symmetrical-Neck-Jointafter.webp",
+      "Symmetrical Neck Joint after"
+    ],
     "GotoLink": "/"
   },
   {
     "ID": "SRV018",
     "ServiceName": "Model Background Retouch",
     "Price": "1",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "Got your model to pop using our retouching services? Now you can also fix any background flaws using this service.",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/0QgWPZMs/Model-Background-Retouchbefore.webp",
+      "Model Retouch before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/brhBHLpT/Model-Background-Retouchafter.webp",
+      "Model Background Retouch  after"
+    ],
     "GotoLink": "/"
   },
   {
     "ID": "SRV019",
     "ServiceName": "Background Retouch",
     "Price": "1",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "Get the perfect background image using our Background Retouch service.",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/ZRgqWtLg/Background-Retouchbefore.webp",
+      "Background Retouch before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/xTmXbChP/Background-Retouchafter.webp",
+      "Background Retouch after"
+    ],
     "GotoLink": "/"
   },
   {
     "ID": "SRV020",
     "ServiceName": "Jewellery Retouch",
     "Price": "1",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "Whether you’re a professional photographer or simply enjoy taking photos of your jewelry as a hobby, you may find yourself in need of a little jewelry retouching from time to time. Also Color Correction is included if you need",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/7ZsnY9RR/Jewellery-Retouchbefore.webp",
+      "Jewellery Retouch before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/d0NHpwvL/Jewellery-Retouchafter.webp",
+      "Jewellery Retouch after"
+    ],
     "GotoLink": "/"
   },
   {
     "ID": "SRV021",
     "ServiceName": "Product Retouch",
     "Price": "1",
-    "Details": "Make sure you walk through handing over the proper permissions for the account in question. Curing this process you’ll get a warning that Google hasn’t verified the app. Go ahead and okay that by",
-    "BeforeImageLink": ["check1.jpg", "before image"],
-    "AfterImageLink": ["check2.png", "after image"],
+    "Details": "Improve the appearance of a product in a photograph or other digital image. It can be used to correct flaws, such as blemishes, or to add special effects, such as changing the color of a product.",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/nztk6zgV/Product-Retouchbefore.webp",
+      "Product Retouch before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/T3FQJQcD/Product-Retouchafter.webp",
+      "Product Retouch after"
+    ],
+    "GotoLink": "/"
+  },
+  {
+    "ID": "SRV022",
+    "ServiceName": "Product Resize",
+    "Price": "1",
+    "Details": "When you need to change the size of a product in a composition by making it larger or smaller. We've got your back.",
+    "BeforeImageLink": [
+      "https://i.postimg.cc/SRnJdLdn/Shadow-Removalbefore.webp",
+      "Product Resize before"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/QtxB9ZWk/Shadow-Removalafter.webp",
+      "Product Resize after"
+    ],
     "GotoLink": "/"
   }
 ]

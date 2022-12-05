@@ -66,7 +66,7 @@ const SSSInterface = ({
                 </svg>
               </label>
             ) : (
-              <Button variant="primary" onClick={() => setActive(!active)}>
+              <Button variant="plain" onClick={() => setActive(!active)}>
                 Done Selecting
               </Button>
             )}
