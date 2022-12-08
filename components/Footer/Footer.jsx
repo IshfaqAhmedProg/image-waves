@@ -45,17 +45,23 @@ const Footer = () => {
             <br /> alps
           </p>
           <div className={styles.socials}>
-            <Link href="/">
+            <Link
+              href="https://www.facebook.com/photo/?fbid=111723115101488&set=a.111723645101435"
+              passHref={true}
+            >
               <a>
                 <Image src={FacebookLogo} alt="contact us on facebook" />
               </a>
             </Link>
-            <Link href="/">
+            <Link
+              href="https://www.linkedin.com/in/image-waves-663b08258/overlay/contact-info/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BjFPwN3GwR%2BWZgHFDxWXGFw%3D%3D"
+              passHref={true}
+            >
               <a>
                 <Image src={LinkedInLogo} alt="contact us on Linked In" />
               </a>
             </Link>
-            <Link href="/">
+            <Link href="https://www.pinterest.com/imagewaves5/" passHref={true}>
               <a>
                 <Image src={PinterestLogo} alt="contact us on Pinterest" />
               </a>
