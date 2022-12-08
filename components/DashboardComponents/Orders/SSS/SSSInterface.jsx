@@ -33,7 +33,6 @@ const SSSInterface = ({
               <strong>Free</strong>, for the first
               <strong> 2 GB</strong>, and then <strong>50c per 1 GB</strong>.
             </p>
-            {/* TODO change button once images selected to Done Selecting */}
             {buttonState ? (
               <label
                 htmlFor="uploadfile"

@@ -1,18 +1,57 @@
-import React, { useState } from "react";
-import Button from "../components/Button/Button";
-import styles from "../styles/Home.module.css";
-import Divider from "../components/Divider/Divider";
+import React, { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
+import styles from "../styles/Home.module.css";
+import Button from "../components/Button/Button";
+import Divider from "../components/Divider/Divider";
+import RecentOrdersElement from "../components/DashboardComponents/RecentOrdersElement";
 import OrdersIcon from "../public/Icons/Ordersicon.svg";
 import ImageIcon from "../public/Icons/Imageicon.svg";
 import ServiceIcon from "../public/Icons/Serviceicon.svg";
 import AccountIcon from "../public/Icons/Accounticon.svg";
-import OrdersInterface from "../components/DashboardComponents/Orders/OrdersInterface";
-import { useRouter } from "next/router";
+import {
+  collection,
+  query,
+  where,
+  getDocs,
+  limit,
+  orderBy,
+  startAfter,
+} from "firebase/firestore";
+import { db } from "../firebase/config";
+import { useAuth } from "../contexts/AuthContext";
 const Dashboard = () => {
+  const { user } = useAuth();
+  const [ordersData, setOrdersData] = useState([]);
+  const [dataLoading, setDataLoading] = useState(true);
   const [sbToggle, setSbToggle] = useState(false);
   const router = useRouter();
+  let lastOrder = null;
+  useEffect(() => {
+    (async () => {
+      if (dataLoading == true) {
+        const q = query(
+          collection(db, "orders"),
+          where("uid", "==", user.uid),
+          orderBy("OrderDate"),
+          startAfter(lastOrder || 0),
+          limit(5)
+        );
+        const querySnapshot = await getDocs(q);
+        const docs = querySnapshot.docs.map((doc) => {
+          const data = doc.data();
+          data.id = doc.id;
+          // doc.data() is never undefined for query doc snapshots
+          return data;
+        });
+        console.log(docs);
+        setOrdersData(docs);
+        lastOrder = docs[docs.length - 1];
+      }
+      setDataLoading(false);
+    })();
+  }, [user.uid, dataLoading]);
   return (
     <div className={styles.container}>
       <div className={styles.menu + " " + (sbToggle ? styles.toggled : "")}>
@@ -40,28 +79,29 @@ const Dashboard = () => {
           <li>
             <h4>
               <Image src={OrdersIcon} alt="All Orders" />
-              <Link href="/">All Orders</Link>
+              <Link href="/interface/under_construction">All Orders</Link>
             </h4>
           </li>
           <li>
             <h4>
               <Image src={ImageIcon} alt="Images" />
-              <Link href="/">Your Images</Link>
+              <Link href="/interface/under_construction">Your Images</Link>
             </h4>
           </li>
           <li>
             <h4>
               <Image src={ServiceIcon} alt="Services" />
-              <Link href="/">Services</Link>
+              <Link href="/interface/under_construction">Services</Link>
             </h4>
           </li>
           <li>
             <Divider direction="horizontal" />
           </li>
+
           <li>
             <h4>
               <Image src={AccountIcon} alt="Account" />
-              <Link href="/">Account</Link>
+              <Link href="/interface/under_construction">Account</Link>
             </h4>
           </li>
         </ul>
@@ -72,10 +112,11 @@ const Dashboard = () => {
             Message!
           </Button>
           <h3>or</h3>
+          <p>Send us an Email:</p>
           <p>
-            Send us an Email:
-            <br />
-            <Link href="/">imagewaves@gmail.com</Link>
+            <Link href="/interface/under_construction">
+              imagewaves@gmail.com
+            </Link>
           </p>
         </div>
         <div
@@ -123,19 +164,35 @@ const Dashboard = () => {
             </Button>
           </span>
           <div className={styles.content}>
-            <div className={styles.order}></div>
+            {ordersData.map((order) => {
+              return (
+                <RecentOrdersElement
+                  key={order.OrderId}
+                  ordernum={order.OrderId}
+                  orderamount={order.OrderLength}
+                  orderdate={order.OrderDate}
+                  orderstatus={order.OrderStatus}
+                />
+              );
+            })}
           </div>
         </div>
         <Divider direction="horizontal" />
         <div className={styles.display + " " + styles.list}>
           <h4>Recent Orders</h4>
           <div className={styles.content}>
-            <OrdersInterface
-              ordernum={23548689}
-              orderamount={215}
-              orderdate="Nov 5, 2022"
-              orderstatus="Recieved"
-            />
+            {ordersData.map((order) => {
+              return (
+                <RecentOrdersElement
+                  dataloading={dataLoading}
+                  key={order.OrderId}
+                  ordernum={order.OrderId}
+                  orderamount={order.OrderLength}
+                  orderdate={order.OrderDate}
+                  orderstatus={order.OrderStatus}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

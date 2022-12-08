@@ -60,18 +60,14 @@ const Signup = () => {
       </Head>
       <div className={formStyles.container}>
         <h1>Create your account</h1>
-        {
-          //TODO ReAdd google submit handler later
-        }
+    
         <Button variant="plain" onClick={handleGoogleLogin}>
           Sign Up with Google&nbsp; <Image src={google} alt="google logo" />
         </Button>
         <div style={{ width: "20vw" }}>
           <Divider direction="horizontal">or</Divider>
         </div>
-        {
-          //TODO ReAdd submit handler later
-        }
+   
         <form className={formStyles.form} onSubmit={handleSignup}>
           <fieldset className={formStyles.formfield}>
             <InputField

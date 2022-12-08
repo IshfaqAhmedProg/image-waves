@@ -57,7 +57,9 @@
   content: " Create New Order";
 }
 .menucontact {
-  padding: 1rem 1.5rem;
+  padding-block: 1.5rem;
+  height: fit-content;
+  width: 98%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -70,10 +72,11 @@
 }
 .menucontact > p {
   color: var(--white);
-  line-height: 110%;
 }
 .menucontact > p > a {
   color: var(--primary--light);
+  word-break: break-all;
+  white-space: normal;
 }
 .displaycontainer {
   width: 75%;
@@ -92,26 +95,98 @@
 }
 .cards {
   height: 40%;
+  --color: var(--white);
 }
 .list {
   height: 60%;
+  --color: var(--accent);
 }
 .content {
   width: 100%;
   height: 100%;
-  margin-top: 2rem;
+  z-index: 5;
 }
-.list > .content {
+.cards .content {
+  display: flex;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  overflow-x: scroll;
+  scrollbar-width: thin;
+}
+.cards .order {
+  border-radius: var(--border-radius);
+  width: 25%;
+  min-width: 14.0625em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  padding-bottom: 1.5rem;
+  margin-top: 1rem;
+}
+.cards .order[data-status="Complete"] {
+  background-color: var(--primary);
+}
+.cards .order[data-status="Recieved"] {
+  background-color: var(--primary--lighter);
+}
+.cards .order[data-status="Processing"] {
+  background-color: var(--primary--light);
+}
+.orderdetail {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+}
+.cards .orderdetail {
+  color: var(--white);
+}
+.cards .orderdetail:nth-child(1) {
+  position: absolute;
+  top: 10%;
+  left: 20%;
+}
+.cards .orderdetail:nth-child(1) p {
+  display: none;
+}
+.cards .orderdetail:nth-child(1) h4 {
+  font-size: 1.8em;
+  position: relative;
+}
+.cards .orderdetail:nth-child(1) h4::before {
+  content: "#";
+  position: absolute;
+  top: 0;
+  left: -20%;
+  opacity: 0.8;
+}
+
+.cards .orderdetail:nth-child(3) {
+  position: absolute;
+  top: 25%;
+  left: 20%;
+  color: var(--white);
+  opacity: 0.8;
+}
+.cards .orderdetail:nth-child(4) {
+  display: none;
+}
+.list .content {
+  margin-top: 2rem;
   padding-inline: 1rem;
   border-radius: 1rem;
   overflow-y: scroll;
   box-shadow: inset 0px 0px 13px rgba(15, 58, 95, 0.25);
 }
-.list > .content > .order {
+.list .order {
   margin-block: 1rem;
+  padding-block: 1.5rem;
   width: 100%;
-  min-height: 20%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
@@ -120,27 +195,21 @@
   color: var(--primary--light);
 }
 /* OrdersInterface.jsx */
-.orderdetail {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  width: 20%;
-}
-.orderdetail:nth-child(4) {
+
+.list .orderdetail:nth-child(4) {
   justify-content: flex-start;
 }
 .list .orderdetail > h4 {
   color: var(--primary);
 }
 .list .orderdetail > span[data-status="Complete"] {
-  color: var(--accent);
+  color: var(--primary);
 }
 .list .orderdetail > span[data-status="Recieved"] {
-  color: var(--orange);
+  color: var(--primary--light);
 }
 .list .orderdetail > span[data-status="Processing"] {
-  color: var(--primary);
+  color: var(--primary--lighter);
 }
 
 @media screen and (max-width: 1290px) {
@@ -158,6 +227,8 @@
     left: -50%;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
+    isolation: isolate;
+    z-index: 2;
   }
   .sidebartoggle {
     display: inline;
@@ -173,11 +244,13 @@
     cursor: pointer;
     transition: left 0.4s ease-in-out;
   }
+  .content {
+    z-index: 1;
+  }
   .displaycontainer {
     width: 100%;
   }
   .toggled ~ .displaycontainer {
-    isolation: isolate;
     z-index: -1;
   }
   .orderdetail {

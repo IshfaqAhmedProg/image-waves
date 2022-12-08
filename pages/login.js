@@ -63,13 +63,11 @@ export default function Login() {
         <Button variant="plain" onClick={handleGoogleLogin}>
           Sign in with Google&nbsp; <Image src={google} alt="google logo" />
         </Button>
-        {
-          //TODO ReAdd submit handler later
-        }
+
         <div style={{ width: "20vw" }}>
           <Divider direction="horizontal">or</Divider>
         </div>
-        <form className={formStyles.form} /* onSubmit={handleLogin} */>
+        <form className={formStyles.form} onSubmit={handleLogin}>
           {errorMsg && (
             <fieldset className={formStyles.formfield}>
               <div className={formStyles.error}>{errorMsg}</div>
@@ -127,10 +125,6 @@ export default function Login() {
             )}
           </Button>
         </form>
-
-        {
-          //TODO ReAdd google submit handler later
-        }
 
         <div className={formStyles.formfield}>
           Don`t have an account?&nbsp;

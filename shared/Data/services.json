@@ -229,8 +229,12 @@
     "ServiceName": "Motion Graphics",
     "Price": "50",
     "Details": "We will design and animate a curated motion graphic, made for your advertisement or product, for all platforms from Social Media, TV to Billboards!",
-    "BeforeImageLink": [],
-    "AfterImageLink": [],
+    "BeforeImageLink": [
+      "https://i.postimg.cc/zBFfMRgL/Motion-Graphicsbefore.webp"
+    ],
+    "AfterImageLink": [
+      "https://i.postimg.cc/HnWLCsw6/Motion-Graphicsafter.webp"
+    ],
     "GotoLink": "/"
   },
   {

@@ -47,7 +47,7 @@ const ServicesCard = ({
         <Button variant="primary" alternate>
           Order Now
         </Button>
-        <Link href="/">Details</Link>
+        <Link href="/interface/under_construction">Details</Link>
       </div>
     </div>
   );
