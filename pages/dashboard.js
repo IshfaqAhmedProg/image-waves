@@ -165,15 +165,16 @@ const Dashboard = () => {
           </span>
           <div className={styles.content}>
             {ordersData.map((order) => {
-              return (
-                <RecentOrdersElement
-                  key={order.OrderId}
-                  ordernum={order.OrderId}
-                  orderamount={order.OrderLength}
-                  orderdate={order.OrderDate}
-                  orderstatus={order.OrderStatus}
-                />
-              );
+              if (order.OrderStatus != "Complete")
+                return (
+                  <RecentOrdersElement
+                    key={order.OrderId}
+                    ordernum={order.OrderId}
+                    orderamount={order.OrderLength}
+                    orderdate={order.OrderDate}
+                    orderstatus={order.OrderStatus}
+                  />
+                );
             })}
           </div>
         </div>
