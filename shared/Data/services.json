@@ -20,11 +20,11 @@
     "Price": "0.3",
     "Details": "Make product photos pop with a clean white (or any other color you choose) background. Also Shadow Resize is included if you want.",
     "BeforeImageLink": [
-      "https://i.postimg.cc/ZqbxJgjp/Background-Removalbefore.webp",
+      "https://i.postimg.cc/bNrDzfhY/Background-Removalbefore.webp",
       "Background Removal before"
     ],
     "AfterImageLink": [
-      "https://i.postimg.cc/8k94LZPg/Background-Removalafter.webp",
+      "https://i.postimg.cc/hPtxf79B/Background-Removalafter.webp",
       "Background Removal after"
     ],
     "GotoLink": "/"
@@ -35,11 +35,11 @@
     "Price": "0.4",
     "Details": "For more intricate shots (like anything involving hair or fur), image masking gives you that extra level of precision, for cutouts that look completely natural.",
     "BeforeImageLink": [
-      "https://i.postimg.cc/QCJpLJ50/Image-Maskingbefore.webp",
-      "Image Masking before"
+      "https://i.postimg.cc/8k0kmF2D/Image-Maskingbefore.webp",
+      "Image Masking"
     ],
     "AfterImageLink": [
-      "https://i.postimg.cc/NfPKKngR/Image-Maskinafter.webp",
+      "https://i.postimg.cc/Pr0xTLyK/Image-Maskinafter.webp",
       "Image Masking after"
     ],
     "GotoLink": "/"
@@ -50,11 +50,11 @@
     "Price": "0.5",
     "Details": "Show true-to-life colors and minimize returns from customers who are disappointed their items don’t match the photo — without having to shoot every shade.",
     "BeforeImageLink": [
-      "https://i.postimg.cc/3JZZzYFY/Color-Changebefore.webp",
+      "https://i.postimg.cc/MpRGTWrw/Color-Changebefore.webp",
       "Color Change before"
     ],
     "AfterImageLink": [
-      "https://i.postimg.cc/sgwwGsMw/Color-Changeafter.webp",
+      "https://i.postimg.cc/X7rJRKfp/Color-Changeafter.webp",
       "Color Change after"
     ],
     "GotoLink": "/"
@@ -65,11 +65,11 @@
     "Price": "0.15",
     "Details": "Crop your images to improve the composition, remove distractions, or to focus on a particular subject.",
     "BeforeImageLink": [
-      "https://i.postimg.cc/RZXnL0QJ/Image-Croppingbefore.webp",
+      "https://i.postimg.cc/SRvKXjhS/Image-Croppingbefore.webp",
       "Image Cropping before"
     ],
     "AfterImageLink": [
-      "https://i.postimg.cc/zDbSDTwt/Image-Croppingafter.webp",
+      "https://i.postimg.cc/90MMFZsg/Image-Croppingafter.webp",
       "Image Cropping after"
     ],
     "GotoLink": "/"
@@ -80,11 +80,11 @@
     "Price": "0.5",
     "Details": "Remove mannequins or models to showcase the natural fit and drape of apparel, while still keeping the focus on your products.",
     "BeforeImageLink": [
-      "https://i.postimg.cc/k4kSRhNj/Ghost-Mannequinbefore.webp",
+      "https://i.postimg.cc/j5v2bZ3J/Ghost-Mannequinbefore.webp",
       "Ghost Mannequin before"
     ],
     "AfterImageLink": [
-      "https://i.postimg.cc/kGbxjdX3/Ghost-Mannequinafter.webp",
+      "https://i.postimg.cc/zfC3dJn7/Ghost-Mannequinafter.webp",
       "Ghost Mannequin after"
     ],
     "GotoLink": "/"
@@ -155,11 +155,11 @@
     "Price": "0.4",
     "Details": "A neck joint on ghost service is when a retoucher works on the neck part of the cloth and fills out the space that has been created after removing the mannequin, known as neck joint",
     "BeforeImageLink": [
-      "https://i.postimg.cc/B6r0WxsL/Neck-Jointbefore.webp",
+      "https://i.postimg.cc/2SqZxRc9/Neck-Jointbefore.webp",
       "Neck Joint before"
     ],
     "AfterImageLink": [
-      "https://i.postimg.cc/Y9q7fpR0/Neck-Jointafter.webp",
+      "https://i.postimg.cc/ryJxV9Rj/Neck-Jointafter.webp",
       "Neck Joint after"
     ],
     "GotoLink": "/"
@@ -170,11 +170,11 @@
     "Price": "1",
     "Details": "Get the perfect pattern and find the inner beauty of your pattern as we fix symmetry, shape, color or repetitions of any broken pattern.",
     "BeforeImageLink": [
-      "https://i.postimg.cc/pXdZN3Gj/Patter-Retouchbefore.webp",
+      "https://i.postimg.cc/brNGDKST/Pattern-Retouchbefore.webp",
       "Pattern Retouch before"
     ],
     "AfterImageLink": [
-      "https://i.postimg.cc/9XY8Hdc6/Pattern-Retouchafter.webp",
+      "https://i.postimg.cc/mDSzrbkk/Pattern-Retouchafter.webp",
       "Pattern Retouch after"
     ],
     "GotoLink": "/"
@@ -185,11 +185,11 @@
     "Price": "0.7",
     "Details": "Sometimes clipping paths are simple, but most times they’re… not. When you have a shot that needs tweaks to different areas and subjects, you need to isolate each element of the image with its own path before you get to work on the fun creative edits.",
     "BeforeImageLink": [
-      "https://i.postimg.cc/Hs7gtvww/Multipathbefore.webp",
+      "https://i.postimg.cc/43VHrvTz/Multipathbefore.webp",
       "Multipath before"
     ],
     "AfterImageLink": [
-      "https://i.postimg.cc/3J3XXz56/Multipathafter-png.webp",
+      "https://i.postimg.cc/6pd9KMy5/Multipathafter.webp",
       "Multipath after"
     ],
     "GotoLink": "/"
@@ -224,30 +224,18 @@
     ],
     "GotoLink": "/"
   },
-  {
-    "ID": "SRV016",
-    "ServiceName": "Motion Graphics",
-    "Price": "50",
-    "Details": "We will design and animate a curated motion graphic, made for your advertisement or product, for all platforms from Social Media, TV to Billboards!",
-    "BeforeImageLink": [
-      "https://i.postimg.cc/zBFfMRgL/Motion-Graphicsbefore.webp"
-    ],
-    "AfterImageLink": [
-      "https://i.postimg.cc/HnWLCsw6/Motion-Graphicsafter.webp"
-    ],
-    "GotoLink": "/"
-  },
+
   {
     "ID": "SRV017",
     "ServiceName": "Symmetrical Neck Joint",
     "Price": "0.6",
     "Details": "A neck joint on ghost service is when a retoucher works on the neck part of the cloth and fills out the space that has been created after removing the mannequin, known as neck joint",
     "BeforeImageLink": [
-      "https://i.postimg.cc/3xxJFFwY/Symmetrical-Neck-Jointbefore.webp",
+      "https://i.postimg.cc/V6zvp3g8/Symmetrical-Neck-Jointbefore.webp",
       "Symmetrical Neck Joint before"
     ],
     "AfterImageLink": [
-      "https://i.postimg.cc/sXQM99wv/Symmetrical-Neck-Jointafter.webp",
+      "https://i.postimg.cc/5td6qHFj/Symmetrical-Neck-Jointafter.webp",
       "Symmetrical Neck Joint after"
     ],
     "GotoLink": "/"
@@ -318,11 +306,11 @@
     "Price": "1",
     "Details": "When you need to change the size of a product in a composition by making it larger or smaller. We've got your back.",
     "BeforeImageLink": [
-      "https://i.postimg.cc/SRnJdLdn/Shadow-Removalbefore.webp",
+      "https://i.postimg.cc/LsfKLTcg/Shadow-Removalbefore.webp",
       "Product Resize before"
     ],
     "AfterImageLink": [
-      "https://i.postimg.cc/QtxB9ZWk/Shadow-Removalafter.webp",
+      "https://i.postimg.cc/26DpwWYc/Shadow-Removalafter.webp",
       "Product Resize after"
     ],
     "GotoLink": "/"

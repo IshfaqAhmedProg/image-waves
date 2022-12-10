@@ -54,7 +54,7 @@ const Footer = () => {
               </a>
             </Link>
             <Link
-              href="https://www.linkedin.com/in/image-waves-663b08258/overlay/contact-info/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base%3BjFPwN3GwR%2BWZgHFDxWXGFw%3D%3D"
+              href="https://www.linkedin.com/in/image-waves-663b08258/"
               passHref={true}
             >
               <a>
