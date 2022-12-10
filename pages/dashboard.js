@@ -76,7 +76,7 @@ const Dashboard = () => {
               <span className={styles.neworderbutton}></span>
             </Button>
           </li>
-          <li>
+          {/* <li>
             <h4>
               <Image src={OrdersIcon} alt="All Orders" />
               <Link href="/interface/under_construction">All Orders</Link>
@@ -103,7 +103,7 @@ const Dashboard = () => {
               <Image src={AccountIcon} alt="Account" />
               <Link href="/interface/under_construction">Account</Link>
             </h4>
-          </li>
+          </li> */}
         </ul>
         <div className={styles.menucontact}>
           <p>If you have any questions or queries please</p>
