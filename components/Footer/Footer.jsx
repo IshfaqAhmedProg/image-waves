@@ -7,6 +7,7 @@ import MaestroLogo from "../../public/Logos/PaymentMethod/Maestro.png";
 import MastercardLogo from "../../public/Logos/PaymentMethod/Mastercard.png";
 import PayPalLogo from "../../public/Logos/PaymentMethod/PayPal.png";
 import VisaLogo from "../../public/Logos/PaymentMethod/Visa.png";
+import BankTransferLogo from "../../public/Logos/PaymentMethod/BankTransfer.png";
 import FacebookLogo from "../../public/Logos/Socials/Facebook.svg";
 import PinterestLogo from "../../public/Logos/Socials/Pinterest.svg";
 import LinkedInLogo from "../../public/Logos/Socials/LinkedIn.svg";
@@ -39,10 +40,9 @@ const Footer = () => {
         <div className={styles.menu + " " + styles.address}>
           <h4>Contact Us</h4>
           <p>
-            <span>Email us at:</span> support@imagewaves.com
-            <br /> dolor sit
-            <br /> 1235486 568-986
-            <br /> alps
+            <span>Email us at:</span> imagewaves5@gmail.com
+            <br /> <span>Phone Number</span>
+            <br /> 01765-182126
           </p>
           <div className={styles.socials}>
             <Link
@@ -76,6 +76,7 @@ const Footer = () => {
             <Image src={MaestroLogo} alt="We Accept Maestro" />
             <Image src={AmexLogo} alt="We Accept Amex" />
             <Image src={PayPalLogo} alt="We Accept PayPal" />
+            <Image src={BankTransferLogo} alt="We Accept Bank Transfer" />
           </div>
         </div>
       </div>

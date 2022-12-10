@@ -31,7 +31,7 @@ const PromoSection = () => {
         </h2>
         <h2>processed every day!</h2>
       </div>
-      <Divider direction="horizontal"  />
+      <Divider direction="horizontal" />
       <div className={styles.contentcontainer}>
         <div className={styles.content} data-aos="fade-left">
           <div className={styles.contentimage}>
@@ -43,8 +43,8 @@ const PromoSection = () => {
             </h3>
           </div>
           <div className={styles.contentdesc}>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
-            sit accusantium aspernatur repudiandae tempore!
+            Get your images back in as little as 24 hours, even if you have
+            thousands of shots to get through
           </div>
         </div>
         <div
@@ -61,8 +61,8 @@ const PromoSection = () => {
             </h3>
           </div>
           <div className={styles.contentdesc}>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
-            sit accusantium aspernatur repudiandae tempore!
+            Your dedicated customer support team is ready to help, whenever you
+            need us
           </div>
         </div>
         <div
@@ -79,8 +79,8 @@ const PromoSection = () => {
             </h3>
           </div>
           <div className={styles.contentdesc}>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
-            sit accusantium aspernatur repudiandae tempore!
+            Our designers can handle even the most complex cutouts — no straight
+            polygonal lasso lines where they shouldn’t be
           </div>
         </div>
         <div
@@ -97,14 +97,16 @@ const PromoSection = () => {
             </h3>
           </div>
           <div className={styles.contentdesc}>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti
-            sit accusantium aspernatur repudiandae tempore!
+            Every edit is done by a professional retoucher, not a machine, for
+            complete control and the cleanest edges
           </div>
         </div>
       </div>
       <div className={styles.title}>
-        <h2  data-aos="fade-down">All our</h2>
-        <h1  data-aos="fade-down" data-aos-delay="200">Services</h1>
+        <h2 data-aos="fade-down">All our</h2>
+        <h1 data-aos="fade-down" data-aos-delay="200">
+          Services
+        </h1>
       </div>
     </div>
   );
