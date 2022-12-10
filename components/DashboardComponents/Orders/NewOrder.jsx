@@ -31,50 +31,6 @@ const NewOrder = () => {
               Users have the choice to create their own custom order or select
               from one of the services below.
             </p>
-            <div
-              className={
-                styles.service +
-                " " +
-                styles.outer +
-                (active ? " " + styles.open : "")
-              }
-            >
-              <div
-                tabIndex="1"
-                className={styles.servicetitle}
-                onClick={() => setActive(!active)}
-              >
-                <span>Create a custom order</span>
-                <span>
-                  <svg
-                    width="10"
-                    height="auto"
-                    viewBox="0 0 14 21"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    className={styles.arrow}
-                  >
-                    <path
-                      d="M2 1.5L11 10.5L2 19.5"
-                      stroke="var(--primary)"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                </span>
-              </div>
-              <div
-                className={styles.serviceupload + " " + styles.inner}
-                tabIndex={active ? "1" : "-1"}
-              >
-                <div className={styles.closeButton}>
-                  <Button variant="close" onClick={() => setActive(!active)}>
-                    Close
-                  </Button>
-                </div>
-                <p>Upload the images you need done on.</p>
-              </div>
-            </div>
           </div>
           <Divider direction="horizontal">
             Or create new order for a specific service
