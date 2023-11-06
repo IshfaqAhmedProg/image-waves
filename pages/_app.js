@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import Navbar from "../components/Navbar/Navbar";
 import { AuthContextProvider } from "../contexts/AuthContext";
-import { useRouter, Router } from "next/router";
+import { useRouter } from "next/router";
 import { ProtectedRoute } from "../components/ProtectedRoute";
 import { useEffect } from "react";
 //"Prompt"-font imports
@@ -24,12 +24,6 @@ function MyApp({ Component, pageProps }) {
     });
   }, []);
   const router = useRouter();
-  Router.events.on("routeChangeStart", (url) => {
-    console.log("route is changing");
-  });
-  Router.events.on("routeChangeComplete", (url) => {
-    console.log("route changed");
-  });
   return (
     <AuthContextProvider>
       <Navbar></Navbar>

@@ -77,8 +77,8 @@
     overflow: hidden;
   }
 }
-@media screen and (max-height: 719px) {
+/* @media screen and (max-height: 719px) {
   .container {
     padding-top: 45%;
   }
-}
+} */
