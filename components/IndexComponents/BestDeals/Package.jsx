@@ -15,17 +15,12 @@ const Package = ({
     <div
       className={styles.package}
       data-aos="fade-left"
-      data-aos-delay={100 * (parseInt(title) - 1)}
       data-aos-anchor-placement="bottom-bottom"
       data-aos-duration={(parseInt(title) / 100) * 200}
       data-aos-once="true"
     >
       {bestDeal ? (
-        <div
-          className={styles.bestbanner}
-          data-aos="zoom-in-right"
-          data-aos-delay="800"
-        >
+        <div className={styles.bestbanner} data-aos="zoom-in-right">
           Best Deal!
         </div>
       ) : (
@@ -48,7 +43,11 @@ const Package = ({
           return (
             <li key={feature}>
               <div>
-                <Image src={"/Icons/" + feature[0]} alt="feature icon" layout="fill" />
+                <Image
+                  src={"/Icons/" + feature[0]}
+                  alt="feature icon"
+                  layout="fill"
+                />
               </div>
               {feature[1]}
             </li>
